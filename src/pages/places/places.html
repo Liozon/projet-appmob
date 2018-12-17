@@ -6,13 +6,18 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>PlacesMap</ion-title>
+  <ion-navbar color="tabs">
+    <ion-title>
+      <img src="assets/imgs/LogoWhite.png" width="150">
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-Let's have a place !
+  Let's have a place !
+
 </ion-content>
+
+<div class='map' leaflet [leafletOptions]='mapOptions'></div>

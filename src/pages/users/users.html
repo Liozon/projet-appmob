@@ -6,13 +6,17 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>TripList</ion-title>
+  <ion-navbar color="tabs">
+    <ion-title>
+      <img src="assets/imgs/LogoWhite.png" width="150">
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-Let's have a trip
+  Let's have a trip
+  <button ion-button (click)='takePicture()'>Take Picture</button>
+  <img *ngIf='pictureData' src='data:image/jpeg;base64,{{ pictureData }}' />
 </ion-content>

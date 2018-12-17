@@ -15,6 +15,7 @@ import { config } from '../../app/config';
     selector: 'page-account',
     templateUrl: 'account.html',
 })
+
 export class AccountPage {
 
     constructor(private auth: AuthProvider, public http: HttpClient, public navCtrl: NavController, public navParams: NavParams) {
