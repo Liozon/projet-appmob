@@ -20,8 +20,13 @@ export class AuthProvider {
 
   constructor(private http: HttpClient, private storage: Storage) {
     this.authSource = new ReplaySubject(1);
-    this.authSource.next(undefined);
+    //this.authSource.next(undefined);
     this.auth$ = this.authSource.asObservable();
+
+    this.storage.get('auth').then(auth => {
+      // Push the loaded value into the observable stream.
+      this.authSource.next(auth);
+    });
   }
 
   isAuthenticated(): Observable<boolean> {
@@ -53,6 +58,7 @@ export class AuthProvider {
 
   logOut() {
     this.authSource.next(null);
+    this.storage.remove('auth');
     console.log('User logged out');
   }
 
