@@ -11,8 +11,9 @@ import { CreateTripPage } from '../pages/create-trip/create-trip';
 import { PlacesMapPage } from '../pages/places-map/places-map';
 import { TripListPage } from '../pages/trip-list/trip-list';
 import { AuthProvider } from '../providers/auth/auth';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginPage } from '../pages/login/login';
+import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,9 @@ import { LoginPage } from '../pages/login/login';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    AuthProvider
+    AuthProvider,
+    AuthInterceptorProvider,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true }
   ]
 })
 export class AppModule { }
