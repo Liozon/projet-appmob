@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { AuthProvider } from '../../providers/auth/auth';
+import { config } from '../../app/config';
 
 /**
  * Generated class for the TripListPage page.
@@ -20,7 +21,7 @@ export class TripListPage {
   }
 
   ionViewDidLoad() {
-    const url = 'https://comem-travel-log-api.herokuapp.com/api/trips';
+    const url = `${config.apiUrl}/trips`;
     this.http.get(url).subscribe(trips => {
       console.log(`Trips loaded`, trips);
     });
