@@ -1,5 +1,7 @@
 {
   "name": "travel-log",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
