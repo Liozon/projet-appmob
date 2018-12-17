@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
 import { Observable, ReplaySubject } from 'rxjs/Rx';
-import { map } from 'rxjs/operators';
+import { delayWhen, map } from 'rxjs/operators';
+import { Storage } from '@ionic/storage';
 
 import { AuthRequest } from '../../models/auth-request';
 import { AuthResponse } from '../../models/auth-response';
@@ -17,7 +18,7 @@ export class AuthProvider {
   private auth$: Observable<AuthResponse>;
   private authSource: ReplaySubject<AuthResponse>;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private storage: Storage) {
     this.authSource = new ReplaySubject(1);
     this.authSource.next(undefined);
     this.auth$ = this.authSource.asObservable();
@@ -39,6 +40,9 @@ export class AuthProvider {
 
     const authUrl = 'https://comem-travel-log-api.herokuapp.com/api/auth';
     return this.http.post<AuthResponse>(authUrl, authRequest).pipe(
+      delayWhen(auth => {
+        return this.saveAuth(auth);
+      }),
       map(auth => {
         this.authSource.next(auth);
         console.log(`User ${auth.user.name} logged in`);
@@ -50,6 +54,10 @@ export class AuthProvider {
   logOut() {
     this.authSource.next(null);
     console.log('User logged out');
+  }
+
+  private saveAuth(auth: AuthResponse): Observable<void> {
+    return Observable.fromPromise(this.storage.set('auth', auth));
   }
 
 }
