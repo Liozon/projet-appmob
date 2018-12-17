@@ -4,23 +4,23 @@ import { AuthProvider } from '../../providers/auth/auth';
 import { LoginPage } from '../login/login';
 
 /**
- * Generated class for the CreateTripPage page.
+ * Generated class for the TripsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
 
 @Component({
-  selector: 'page-create-trip',
-  templateUrl: 'create-trip.html',
+  selector: 'page-trip',
+  templateUrl: 'trips.html',
 })
-export class CreateTripPage {
+export class TripsPage {
 
   constructor(private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CreateTripPage');
+    console.log('ionViewDidLoad TripsPage');
   }
 
    // TODO: add a method to log out.

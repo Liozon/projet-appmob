@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { CreateTripPage } from '../create-trip/create-trip';
-import { PlacesMapPage } from '../places-map/places-map';
-import { TripListPage } from '../trip-list/trip-list';
+import { TripsPage } from '../trips/trips';
+import { PlacesPage } from '../places/places';
+import { UsersPage } from '../users/users';
+import { AccountPage } from '../account/account';
 
 export interface HomePageTab {
   title: string;
@@ -22,9 +23,10 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {
     this.tabs = [
-      { title: 'New Trip', icon: 'add', component: CreateTripPage },
-      { title: 'Places Map', icon: 'map', component: PlacesMapPage },
-      { title: 'Trip List', icon: 'list', component: TripListPage }
+      { title: 'Trips', icon: 'plane', component: TripsPage },
+      { title: 'Places', icon: 'map', component: PlacesPage },
+      { title: 'Users', icon: 'people', component: UsersPage },
+      { title: 'Account', icon: 'home', component: AccountPage }
     ];
   }
 }
