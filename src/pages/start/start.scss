@@ -1,0 +1,72 @@
+* {
+  text-align: center;
+}
+
+h1 {
+  padding-top: 30px;
+  font-weight: lighter;
+  font-size: 40px;
+  color: rgb(29, 71, 62);
+}
+
+img {
+  margin-bottom: 10px;
+  width: 160px;
+}
+
+.content-md {
+  background-image: url("../../assets/imgs/Background.jpg");
+  background-size: 100% auto;
+}
+
+.square button {
+  width: 130px;
+  height: 130px;
+  border: 2px solid rgb(29, 71, 62);
+  border-radius: 10px;
+  margin: 2px;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: rgba(252, 250, 238, 0.8);
+  color: rgb(29, 71, 62);
+}
+
+.square button:hover {
+  background-color: rgb(252, 250, 238) !important;
+  font-weight: normal;
+}
+
+ion-icon {
+  zoom: 5;
+}
+
+label {
+  display: block;
+}
+
+.button-md {
+  background-color: transparent;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: none;
+  text-transform: none;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+
+
+p {}
+
+p,
+button {
+  color: rgb(252, 250, 238);
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+button:hover {
+    background-color: transparent !important;
+    font-weight: bold;
+}

@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
+import { StartPage } from '../pages/start/start';
 import { HomePage } from '../pages/home/home';
 import { TripsPage } from '../pages/trips/trips';
 import { PlacesPage } from '../pages/places/places';
@@ -23,6 +24,7 @@ import { Camera } from '@ionic-native/camera';
 @NgModule({
   declarations: [
     MyApp,
+    StartPage,
     HomePage,
     TripsPage,
     PlacesPage,
@@ -40,6 +42,7 @@ import { Camera } from '@ionic-native/camera';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    StartPage,
     HomePage,
     TripsPage,
     PlacesPage,

@@ -1,0 +1,39 @@
+<ion-content>
+
+  <h1>Welcome to</h1>
+  <img src="assets/imgs/LogoGreen.png">
+
+  <p class="square">
+    <button ion-button (click)="tripPage()">
+      <div>
+        <ion-icon name="map"></ion-icon>
+        <br />Trips
+      </div>
+    </button>
+    <button ion-button (click)="placePage()">
+      <div>
+        <ion-icon name="pin"></ion-icon>
+        <label>Places</label>
+      </div>
+    </button>
+    <button ion-button (click)="userPage()">
+      <div>
+        <ion-icon name="people"></ion-icon>
+        <label>Users</label>
+      </div>
+    </button>
+    <button ion-button (click)="accountPage()">
+      <div>
+        <ion-icon name="home"></ion-icon>
+        <label>Account</label>
+      </div>
+    </button>
+  </p>
+
+  <p>
+    <button ion-button (click)="signUpPage()">Sign up</button>
+    |
+    <button ion-button (click)="logInPage()">Log in</button>
+  </p>
+
+</ion-content>

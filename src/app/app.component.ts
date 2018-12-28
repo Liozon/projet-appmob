@@ -7,18 +7,19 @@ import { HomePage } from '../pages/home/home';
 
 import { LoginPage } from '../pages/login/login';
 import { AuthProvider } from '../providers/auth/auth';
+import { StartPage } from '../pages/start/start';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any
+  rootPage: any 
   constructor(private auth: AuthProvider,
     platform: Platform,
     statusBar: StatusBar,
     splashScreen: SplashScreen) {
     this.auth.isAuthenticated().subscribe(authenticated => {
       if (authenticated) {
-        this.rootPage = HomePage;
+        this.rootPage = StartPage;
       } else {
         this.rootPage = LoginPage;
       }

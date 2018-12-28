@@ -23,8 +23,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {
     this.tabs = [
-      { title: 'Trips', icon: 'plane', component: TripsPage },
-      { title: 'Places', icon: 'map', component: PlacesPage },
+      { title: 'Trips', icon: 'map', component: TripsPage },
+      { title: 'Places', icon: 'pin', component: PlacesPage },
       { title: 'Users', icon: 'people', component: UsersPage },
       { title: 'Account', icon: 'home', component: AccountPage }
     ];

@@ -15,3 +15,10 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+* {
+    font-family: 'Segoe UI';
+}
+
+.content-md {
+  background-color: rgb(252, 250, 238) !important;
+}
