@@ -1,3 +1,14 @@
 page-login {
 
+    .toolbar-background-md {
+        
+        background: color($colors, secondary);
+        border-color: color($colors, primary);
+    }
+
+    form {
+        margin: 10px;
+    }
+
+
 }

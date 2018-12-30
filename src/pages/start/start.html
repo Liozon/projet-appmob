@@ -1,13 +1,13 @@
-<ion-content>
+<ion-content padding>
 
   <h1>Welcome to</h1>
   <img src="assets/imgs/LogoGreen.png">
 
-  <p class="square">
+  <ion-buttons class="square">
     <button ion-button (click)="tripPage()">
       <div>
         <ion-icon name="map"></ion-icon>
-        <br />Trips
+        <label>Trips</label>
       </div>
     </button>
     <button ion-button (click)="placePage()">
@@ -28,12 +28,16 @@
         <label>Account</label>
       </div>
     </button>
-  </p>
+  </ion-buttons>
 
-  <p>
-    <button ion-button (click)="signUpPage()">Sign up</button>
-    |
-    <button ion-button (click)="logInPage()">Log in</button>
-  </p>
+
 
 </ion-content>
+
+<ion-footer>
+  <ion-buttons id="footer">
+    <button ion-button (click)="signUpPage()" class="footer">Sign up</button>
+    |
+    <button ion-button (click)="logInPage()" class="footer">Log in</button>
+  </ion-buttons>
+</ion-footer>

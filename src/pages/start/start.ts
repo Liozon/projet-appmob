@@ -10,13 +10,7 @@ import { UsersPage } from '../users/users';
 import { AccountPage } from '../account/account';
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
-
-
-export interface StartPageTab {
-    title: string;
-    icon: string;
-    component: Function;
-}
+import { SignupPage } from '../signup/signup';
 
 @Component({
     selector: 'page-start',
@@ -25,47 +19,39 @@ export interface StartPageTab {
 
 export class StartPage {
 
-    // list of tabs
-    bigTabs: StartPageTab[];
-
     constructor(private auth: AuthProvider, public http: HttpClient, public navCtrl: NavController, public navParams: NavParams) {
-        this.bigTabs = [
-            { title: 'Trips', icon: 'map', component: TripsPage },
-            { title: 'Places', icon: 'pin', component: PlacesPage },
-            { title: 'Users', icon: 'people', component: UsersPage },
-            { title: 'Account', icon: 'home', component: AccountPage }
-        ];
+
     }
 
     ionViewDidLoad() {
         const url = `${config.apiUrl}/trips`;
         this.http.get(url).subscribe(trips => {
-            console.log(`Trips loaded`, trips);
+            console.log(`StartPage loaded`, trips);
         });
-        console.log('ionViewDidLoad AccountPage');
+        console.log('ionViewDidLoad StartPage');
     }
 
     tripPage() {
-        this.navCtrl.setRoot(TripsPage);
+        this.navCtrl.setRoot(HomePage, { opentab: 0 });
     }
 
     placePage() {
-        this.navCtrl.setRoot(PlacesPage);
+        this.navCtrl.setRoot(HomePage, { opentab: 1 });
     }
 
     userPage() {
-        this.navCtrl.setRoot(UsersPage);
+        this.navCtrl.setRoot(HomePage, { opentab: 2 });
     }
 
     accountPage() {
-        this.navCtrl.setRoot(AccountPage);
+        this.navCtrl.setRoot(HomePage, { opentab: 3 });
     }
 
     signUpPage() {
-        this.navCtrl.setRoot(TripsPage);
+        this.navCtrl.push(SignupPage);
     }
 
     logInPage() {
-        this.navCtrl.setRoot(LoginPage);
+        this.navCtrl.push(LoginPage);
     }
 }
