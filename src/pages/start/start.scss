@@ -1,0 +1,81 @@
+page-start {
+
+  * {
+    text-align: center;
+  }
+
+  h1 {
+    padding-top: 30px;
+    font-weight: lighter;
+    font-size: 40px;
+    color: color($colors, primary);
+  }
+
+  img {
+    width: 50%;
+  }
+
+  .content-md {
+    background-image: url("../../assets/imgs/Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .square button {
+    width: 40%;
+    height: 120px;
+    border: 2px solid color($colors, primary);
+    border-radius: 10px;
+    margin: 2px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: rgba(252, 250, 238, 0.8);
+    color: color($colors, primary);
+  }
+
+  .square button:hover {
+    background-color: color($colors, secondary);
+    font-weight: normal;
+  }
+
+  ion-icon {
+    zoom: 5;
+  }
+
+  label {
+    display: block;
+  }
+
+  .button-md {
+    background-color: transparent;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: none;
+    text-transform: none;
+    font-weight: normal;
+    vertical-align: middle;
+    color: color($colors, secondary);
+  }
+
+  ion-buttons {
+    color: color($colors, secondary);
+    margin-top: 10px;
+  }
+
+  button:hover {
+    background-color: transparent !important;
+    font-weight: bold;
+  }
+
+  ion-footer {
+    background-color: transparent;
+    margin-bottom: 10px;
+  }
+
+  .footer {
+    font-size: 18px;
+  }
+}

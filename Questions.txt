@@ -1,0 +1,9 @@
+----------------
+QUESTIONS APPMOB
+----------------
+
+(1) Comment et où le backend est-il implémenté ?
+
+(2) Les modifications d'un fichier .ts entraînent un affichage incorrect...
+
+(3) Quelle page s'affiche après le "login" ?

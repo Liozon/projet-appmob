@@ -1,7 +1,34 @@
+<!-- --------------------------
+----------- HEADER ------------
+--------------------------- -->
+<ion-header>
+
+  <ion-navbar color="primary">
+
+    <ion-title>
+      <img src="assets/imgs/LogoWhite.png" width="150" (click)="returnToStart()">
+    </ion-title>
+
+    <!-- Login button -->
+    <ion-buttons end>
+      <button ion-button icon-only (click)='logIn()'>
+        <ion-icon name='log-in'></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content color="secondary"></ion-content>
 
 
-<ion-tabs color="tabs">
-  <ion-tab *ngFor='let tab of tabs'
-           [tabTitle]='tab.title' [tabIcon]='tab.icon' [root]='tab.component'>
+<!-- --------------------------
+----------- FOOTER ------------
+--------------------------- -->
+<ion-tabs color="primary" [selectedIndex]='setindex'>
+  
+  <ion-tab *ngFor='let tab of tabs' [tabTitle]='tab.title' [tabIcon]='tab.icon' [root]='tab.component'>
   </ion-tab>
+
 </ion-tabs>

@@ -1,0 +1,43 @@
+<ion-content padding>
+
+  <h1>Welcome to</h1>
+  <img src="assets/imgs/LogoGreen.png">
+
+  <ion-buttons class="square">
+    <button ion-button (click)="tripPage()">
+      <div>
+        <ion-icon name="map"></ion-icon>
+        <label>Trips</label>
+      </div>
+    </button>
+    <button ion-button (click)="placePage()">
+      <div>
+        <ion-icon name="pin"></ion-icon>
+        <label>Places</label>
+      </div>
+    </button>
+    <button ion-button (click)="userPage()">
+      <div>
+        <ion-icon name="people"></ion-icon>
+        <label>Users</label>
+      </div>
+    </button>
+    <button ion-button (click)="accountPage()">
+      <div>
+        <ion-icon name="home"></ion-icon>
+        <label>Account</label>
+      </div>
+    </button>
+  </ion-buttons>
+
+
+
+</ion-content>
+
+<ion-footer no-border>
+  <ion-buttons id="footer">
+    <button ion-button (click)="signUpPage()" class="footer">Sign up</button>
+    |
+    <button ion-button (click)="logInPage()" class="footer">Log in</button>
+  </ion-buttons>
+</ion-footer>

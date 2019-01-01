@@ -1,4 +1,4 @@
-page-login {
+page-signup {
 
   .toolbar-background-md {
 
@@ -31,13 +31,18 @@ page-login {
     margin: 10px;
   }
 
-  #login {
+  .note {
+    font-size: 9px;
+
+  }
+
+  #signup {
     color: color($colors, primary);
     text-align: center;
     font-size: 12px;
   }
 
-  #login button {
+  #signup button {
     color: color($colors, primary);
     background-color: transparent;
     text-transform: uppercase;
@@ -50,7 +55,7 @@ page-login {
   }
 
   .button-block-md {
-      margin-top: 30px;
+    margin-top: 30px;
   }
 
   ion-footer {

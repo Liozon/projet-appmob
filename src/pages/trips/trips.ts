@@ -23,9 +23,16 @@ export class TripsPage {
     console.log('ionViewDidLoad TripsPage');
   }
 
-   // TODO: add a method to log out.
-   logOut() {
+  // TODO: add a method to log out.
+  logIn() {
     this.auth.logOut();
   }
+
+  // TODO: add a method to log out.
+  logOut() {
+    this.auth.logOut();
+  }
+
+  addTrip(){}
 
 }
