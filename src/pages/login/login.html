@@ -1,19 +1,14 @@
-<!--
-  Generated template for the LoginPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Login to your Account</ion-title>
+    <ion-title>Log in</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-title>Login to your Account</ion-title>
   <form (submit)='onSubmit($event)'>
     <ion-list>
 
@@ -41,7 +36,7 @@
 
     </ion-list>
 
-    <div padding>
+    <div>
 
       <!-- Submit button -->
       <button type='submit' [disabled]='form.invalid' ion-button block>
@@ -54,3 +49,10 @@
     </div>
   </form>
 </ion-content>
+
+<ion-footer no-border>
+  <p id="login">
+    No Account?&emsp;–&emsp;
+    <button ion-button (click)="signUpPage()">Sign up</button>
+  </p>
+</ion-footer>

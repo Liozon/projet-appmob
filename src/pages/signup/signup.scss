@@ -1,0 +1,65 @@
+page-signup {
+
+  .toolbar-background-md {
+
+    background: color($colors, secondary);
+    border-color: color($colors, primary);
+  }
+
+  ion-navbar {
+    text-transform: uppercase;
+  }
+
+  ion-navbar ion-title {
+    margin-left: 25%;
+    font-size: 16px;
+  }
+
+  ion-content ion-title {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: color($colors, primary);
+    font-size: 20px;
+  }
+
+  div.toolbar-title.toolbar-title-md {
+    font-size: unset;
+    color: unset;
+  }
+
+  form {
+    margin: 10px;
+  }
+
+  .note {
+    font-size: 9px;
+
+  }
+
+  #signup {
+    color: color($colors, primary);
+    text-align: center;
+    font-size: 12px;
+  }
+
+  #signup button {
+    color: color($colors, primary);
+    background-color: transparent;
+    text-transform: uppercase;
+    text-decoration: underline;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    font-size: 11px;
+  }
+
+  .button-block-md {
+    margin-top: 30px;
+  }
+
+  ion-footer {
+    box-shadow: 0;
+    border-width: 0;
+  }
+}

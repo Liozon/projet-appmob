@@ -15,6 +15,7 @@ import { AccountPage } from '../pages/account/account';
 import { AuthProvider } from '../providers/auth/auth';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
 import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-interceptor';
 import { Geolocation } from '@ionic-native/geolocation';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
@@ -30,6 +31,7 @@ import { Camera } from '@ionic-native/camera';
     PlacesPage,
     UsersPage,
     LoginPage,
+    SignupPage,
     AccountPage
   ],
   imports: [
@@ -48,6 +50,7 @@ import { Camera } from '@ionic-native/camera';
     PlacesPage,
     UsersPage,
     LoginPage,
+    SignupPage,
     AccountPage
   ],
   providers: [

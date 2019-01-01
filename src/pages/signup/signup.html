@@ -1,0 +1,72 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sign up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-title>Create an Account</ion-title>
+  <form (submit)='onSubmit($event)'>
+    <ion-list>
+
+      <!-- Username input -->
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type='text' name='username' #usernameInput='ngModel' [(ngModel)]='authRequest.username' required></ion-input>
+      </ion-item>
+
+      <!-- Error message displayed if the username is invalid -->
+      <ion-item *ngIf='usernameInput.invalid && usernameInput.dirty' no-lines>
+        <p ion-text color='danger'>Username is required.</p>
+      </ion-item>
+
+      <!-- Password input -->
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type='password' name='password' #passwordInput='ngModel' [(ngModel)]='authRequest.password' required></ion-input>
+      </ion-item>
+
+      <!-- Error message displayed if the password is invalid -->
+      <ion-item *ngIf='passwordInput.invalid && passwordInput.dirty' no-lines>
+        <p ion-text color='danger'>Password is required.</p>
+      </ion-item>
+
+      <!-- Confirm Password input -->
+      <ion-item>
+        <ion-label floating>Confirm Password</ion-label>
+        <ion-input type='password' name='confirmPassword' #passwordInput='ngModel' [(ngModel)]='authRequest.confirmPassword'
+          required></ion-input>
+      </ion-item>
+
+      <!-- Error message displayed if the password is invalid -->
+      <ion-item *ngIf='passwordInput.invalid && passwordInput.dirty' no-lines>
+        <p ion-text color='danger'>Confirmation of the password is required.</p>
+      </ion-item>
+
+    </ion-list>
+
+    <div>
+
+      <!-- Submit button -->
+      <button type='submit' [disabled]='form.invalid' ion-button block>
+        <ion-icon name="md-arrow-round-forward"></ion-icon>
+      </button>
+
+      <!-- Error message displayed if the login failed 
+      <p *ngIf='loginError' ion-text color='danger'>Username or password is invalid.</p>-->
+
+      <p class="note">By creating an account you agree to our Terms of Service and Privacy Policy</p>
+
+    </div>
+  </form>
+</ion-content>
+
+<ion-footer no-border>
+  <p id="signup">
+    Already have an account?&emsp;–&emsp;
+    <button ion-button (click)="logInPage()">Log in</button>
+  </p>
+</ion-footer>
