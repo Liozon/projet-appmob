@@ -53,9 +53,9 @@ export class SignupPage {
         this.loginError = false;
 
         // Perform the authentication request to the API.
-        this.auth.logIn(this.authRequest).subscribe(undefined, err => {
+        this.auth.createUser(this.authRequest).subscribe(()=> this.logInPage(), err => {
             this.loginError = true;
-            console.warn(`Authentication failed: ${err.message}`);
+            console.warn(`Creating User failed: ${err.message}`);
         });
     }
 
