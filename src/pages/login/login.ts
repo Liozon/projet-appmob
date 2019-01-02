@@ -6,6 +6,7 @@ import { AuthRequest } from '../../models/auth-request';
 import { AuthProvider } from '../../providers/auth/auth';
 import { HomePage } from '../home/home';
 import { SignupPage } from '../signup/signup';
+import { AccountPage } from '../account/account';
 
 
 @Component({
@@ -53,7 +54,7 @@ export class LoginPage {
     this.loginError = false;
 
     // Perform the authentication request to the API.
-    this.auth.logIn(this.authRequest).subscribe(undefined, err => {
+    this.auth.logIn(this.authRequest).subscribe(() => this.accountPage(), err => {
       this.loginError = true;
       console.warn(`Authentication failed: ${err.message}`);
     });
@@ -61,5 +62,9 @@ export class LoginPage {
 
   signUpPage() {
     this.navCtrl.push(SignupPage, {}, { animate: false });
+  }
+
+  accountPage() {
+    this.navCtrl.push(AccountPage, {}, { animate: false });
   }
 }
