@@ -67,4 +67,9 @@ export class AuthProvider {
     return Observable.fromPromise(this.storage.set('auth', auth));
   }
 
+createUser(authRequest: AuthRequest): Observable<User> {
+
+  const createUserUrl = `${config.apiUrl}/users`;
+  return this.http.post<User>(createUserUrl, authRequest);
+}
 }
