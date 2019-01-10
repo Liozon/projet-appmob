@@ -19,7 +19,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 })
 export class UsersPage {
 
-  pictureData: string;
+  
 
   constructor(private auth: AuthProvider, public http: HttpClient, public navCtrl: NavController, public navParams: NavParams, private camera: Camera) {
     
@@ -34,18 +34,6 @@ export class UsersPage {
   }
 
   
-  takePicture() {
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
-    };
-    this.camera.getPicture(options).then(pictureData => {
-      this.pictureData = pictureData;
-    }).catch(err => {
-      console.warn(`Could not take picture because: ${err.message}`);
-    });
-  }
+  
 
 }

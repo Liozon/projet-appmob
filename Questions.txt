@@ -2,8 +2,14 @@
 QUESTIONS APPMOB
 ----------------
 
-(1) Comment et où le backend est-il implémenté ?
+(1) Les modifications entraînent un affichage incorrect...
 
-(2) Les modifications d'un fichier .ts entraînent un affichage incorrect...
+(2) Comment et où le backend est-il implémenté ?
 
-(3) Quelle page s'affiche après le "login" ?
+(3) Comment accéder aux données de l'utilisateur enregistré ?
+
+(4) Est-ce qu'il faut de créer un dossier pour tous les pages (voir mock-up)?
+
+(5) "tripsCount" for places ?
+
+(6) account.ts => fonctions 

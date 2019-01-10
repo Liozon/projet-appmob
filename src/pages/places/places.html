@@ -1,4 +1,13 @@
 <ion-content padding>
-  Let's have a place !
+
+  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+
+  <button ion-button (click)="addTrip()" id="add">
+    <ion-icon name="add"></ion-icon>
+  </button>
+
+  <button ion-button (click)='takePicture()'>Take a Picture</button>
+  <img *ngIf='pictureData' src='data:image/jpeg;base64,{{ pictureData }}' />
   <div class='map' leaflet [leafletOptions]='mapOptions'></div>
 </ion-content>
