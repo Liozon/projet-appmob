@@ -1,3 +1,34 @@
 <ion-content padding>
-  Let's see your account
+
+  <button ion-button id="edit" (click)="editUser()">
+    <div>
+      <ion-icon name="md-create"></ion-icon> <!-- name="ios-create-outline" -->
+    </div>
+  </button>
+
+  <h1>[name]</h1>
+  <p>User since [createdAt] (Updated ["updatedAt"])</p>
+
+
 </ion-content>
+
+<ion-footer no-border>
+  <ion-buttons class="square">
+    <button ion-button (click)="tripPage()">
+      <div>
+        <ion-icon name="map"></ion-icon>
+        <label>XX Trips</label>
+        <!--"tripsCount"-->
+      </div>
+    </button>
+    <button ion-button (click)="placePage()">
+      <div>
+        <ion-icon name="pin"></ion-icon>
+        <label>XX Places</label>
+        <!--"placesCount"-->
+      </div>
+    </button>
+  </ion-buttons>
+
+  <button ion-button (click)='logout()' id="logout">Log out</button>
+</ion-footer>

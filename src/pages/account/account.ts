@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, GESTURE_REFRESHER } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { AuthProvider } from '../../providers/auth/auth';
+import { AuthRequest } from '../../models/auth-request';
 import { config } from '../../app/config';
+import { HomePage } from '../home/home';
+import { StartPage } from '../start/start';
 
 /**
  * Generated class for the AccountPage page.
@@ -18,6 +21,8 @@ import { config } from '../../app/config';
 
 export class AccountPage {
 
+    authProvider : AuthProvider;
+
     constructor(private auth: AuthProvider, public http: HttpClient, public navCtrl: NavController, public navParams: NavParams) {
     }
 
@@ -27,6 +32,18 @@ export class AccountPage {
             console.log(`Trips loaded`, trips);
         });
         console.log('ionViewDidLoad AccountPage');
+    }
+    
+    tripPage() {
+        this.navCtrl.setRoot(HomePage, { opentab: 0 });
+    }
+
+    placePage() {
+        this.navCtrl.setRoot(HomePage, { opentab: 1 });
+    }
+
+    logout() {
+        this.navCtrl.setRoot(StartPage);
     }
 
 }

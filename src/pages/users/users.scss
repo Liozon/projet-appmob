@@ -1,3 +1,21 @@
-page-trip-list {
+page-users {
+
+    ion-searchbar {
+      width: 80%;
+      float: left;
+    }
+
+    #add {
+      margin-top: 8px;
+      height: 43px;
+      width: 18%;
+      float: right;
+      background-color: rgb(29, 71, 62);
+    }
+
+    ion-icon {
+      zoom: 2;
+      color: rgb(252, 250, 238);
+    }
 
 }

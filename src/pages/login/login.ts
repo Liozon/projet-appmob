@@ -65,6 +65,6 @@ export class LoginPage {
   }
 
   accountPage() {
-    this.navCtrl.push(AccountPage, {}, { animate: false });
+    this.navCtrl.setRoot(HomePage, { opentab: 3 });
   }
 }
