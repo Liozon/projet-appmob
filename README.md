@@ -62,18 +62,18 @@ Once you run the ```ionic serve -c``` command, open Ionic DevApp.
 
 1. First, log in to your account or create one. Don't worry, it's absolutely free
 
-    ![login screen](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Login Screen")
+    ![login screen](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/1.%20Login%20screen.jpg "Login Screen")
 
 2. A list with running Ionic app will be displayed. Search your app within the list. To distinguish your app from the other, you can either use the name of the app and the name of your computer.
 
     Make sure you're on the same network on both your computer and your smartphone
 
-    ![App list](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "App list")
+    ![App list](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/2.%20App%20list.jpg "App list")
 
 3. Click on the name of your app to start using it with your smartphone, and voilà !
 
-    ![Running app](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Running app")
+    ![Running app](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/3.%20App%20opened.jpg "Running app")
 
 4. When you want to stop using it, and go back to the app list, just swipe down with three fingers or shake your device
 
-    ![How to close app](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "How to close app")
+    ![How to close app](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/4.%20Close%20app.jpg "How to close app")
