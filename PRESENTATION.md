@@ -1,6 +1,6 @@
-# Presentation of the app from  the projet application mobile
+# Presentation of the app from  the projet mobile application
 
-- [Presentation of the app from the projet application mobile](#presentation-of-the-app-from-the-projet-application-mobile)
+- [Presentation of the app from the projet mobile application](#presentation-of-the-app-from-the-projet-mobile-application)
   - [Introduction](#introduction)
   - [Presentation of the app](#presentation-of-the-app)
   - [Functionalities](#functionalities)
