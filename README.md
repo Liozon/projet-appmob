@@ -1,6 +1,6 @@
 # Project application mobile
 
-## Table of content:
+## Table of content
 
 - [Introduction](#introduction)
 - [Preview](#preview)
