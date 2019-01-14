@@ -17,7 +17,7 @@ As part of the AppMob course from third and last year of Bachelor, we have creat
 
 ## Preview
 
-In order to preview the app, please use your mobile device and go to this [link](http://tiny.cc/appmob-app) or consult the mock-up [here](https://xd.adobe.com/view/0bde5725-48a2-44d4-98ec-80ba0b79f1c6-5e8d/?fullscreen)
+In order to preview the app, please use your mobile device and go to this [link](http://tiny.cc/appmob-app) or test our interactive mock-up [here](https://xd.adobe.com/view/0bde5725-48a2-44d4-98ec-80ba0b79f1c6-5e8d/?fullscreen)
 
 ## Presentation
 
