@@ -1,9 +1,6 @@
 # Project application mobile
 
-## Table of content
-
 - [Project application mobile](#project-application-mobile)
-  - [Table of content](#table-of-content)
   - [Introduction](#introduction)
   - [Preview](#preview)
   - [Presentation](#presentation)
