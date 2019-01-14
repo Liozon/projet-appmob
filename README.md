@@ -71,7 +71,7 @@ Once you run the ```ionic serve -c``` command, open Ionic DevApp.
 
 2. A list with running Ionic app will be displayed. Search your app within the list. To distinguish your app from the other, you can either use the name of the app and the name of your computer.
 
-    Make sure you're on the same network on both your computer and your smartphone
+    **Make sure you're on the same network on both your computer and your smartphone !**
 
     ![App list](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/2.%20App%20list.jpg "App list")
 
