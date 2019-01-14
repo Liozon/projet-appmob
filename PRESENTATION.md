@@ -3,6 +3,7 @@
 ## Table of content
 
 - [Introduction](#introduction)
+- [Presentation of the app](#presentation-of-the-app)
 - [Functionnalities](#functionnalities)
 
 ## Introduction
