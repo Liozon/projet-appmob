@@ -16,9 +16,9 @@ This application aims to centralize and log all your trips and places you visit.
 
 In addition, you can share your travels with all TraveLog users, and discover your next trip to organize!
 
-## Functionnalities
+## Functionalities
 
-Here is a list of all functionnalities of the app:
+Here is a list of all functionalities of the app:
 
 - Account creation
 - Account login
