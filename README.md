@@ -1,7 +1,8 @@
-# Projet application mobile
+# Project application mobile
 
 - [Introduction](#introduction)
 - [Preview](#preview)
+- [Presentation](#presentation)
 - [How to install](#installation)
   - [Hardware](#hardware)
   - [Software](#software)
@@ -15,6 +16,10 @@ As part of the AppMob course from third and last year of Bachelor, we have creat
 ## Preview
 
 In order to preview the app, please use your mobile device and go to this [link](https://example.com).
+
+## presentation
+
+To read and learn more about thir app, please read the [app presentation here](https://github.com/Liozon/projet-appmob/blob/master/PRESENTATION.md).
 
 ## Installation
 
