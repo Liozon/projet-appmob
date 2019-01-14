@@ -20,6 +20,7 @@ import { AuthInterceptorProvider } from '../providers/auth-interceptor/auth-inte
 import { Geolocation } from '@ionic-native/geolocation';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { Camera } from '@ionic-native/camera';
+import { PictureProvider } from '../providers/picture/picture';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { Camera } from '@ionic-native/camera';
     AuthInterceptorProvider,
     Geolocation,
     Camera,
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
+    PictureProvider
   ]
 })
 export class AppModule { }
