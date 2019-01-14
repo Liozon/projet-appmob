@@ -37,7 +37,7 @@ export class AuthProvider {
   getUser(): Observable<User> {
     return this.auth$.pipe(map(auth => auth ? auth.user : undefined));
   }
-
+  
   getToken(): Observable<string> {
     return this.auth$.pipe(map(auth => auth ? auth.token : undefined));
   }

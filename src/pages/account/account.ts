@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams, App, Platform } from 'ionic-angular';
+import { NavController, NavParams, App, Platform, DateTime } from 'ionic-angular';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthProvider } from '../../providers/auth/auth';
 import { AuthRequest } from '../../models/auth-request';
@@ -9,6 +9,8 @@ import { StartPage } from '../start/start';
 import { LoginPage } from '../login/login';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { UsersPage } from '../users/users';
+import { User } from '../../models/user';
 
 /**
  * Generated class for the AccountPage page.
@@ -25,6 +27,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 export class AccountPage {
 
     authProvider : AuthProvider;
+    username : string;
+    createdAt: DateTime;
+    updatedAt: DateTime;
+    tripsCount: Number;
+    //placesCount: number;
 
     constructor(private auth: AuthProvider, public http: HttpClient, public navCtrl: NavController, public navParams: NavParams, private app: App, 
         platform: Platform,
@@ -47,8 +54,20 @@ export class AccountPage {
     }
 
     ionViewDidLoad() {
+        const url = `${config.apiUrl}/trips`;
+        this.http.get(url).subscribe(trips => {
+            console.log(`Trips loaded`, trips);
+        });
+
+        this.auth.getUser().subscribe(user => {
+        this.username = user.name;
+        this.createdAt = user.createdAt;
+        this.tripsCount = user.tripsCount;
+        console.log(user);
+        });
+
         console.log('ionViewDidLoad AccountPage');
-    }
+    } 
     
     tripPage() {
         this.navCtrl.parent.select(0);
@@ -67,5 +86,4 @@ export class AccountPage {
         });
         */
     }
-
 }
