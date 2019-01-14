@@ -62,12 +62,18 @@ Once you run the ```ionic serve -c``` command, open Ionic DevApp.
 
 1. First, log in to your account or create one. Don't worry, it's absolutely free
 
-![login screen](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+    ![login screen](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Login Screen")
 
 2. A list with running Ionic app will be displayed. Search your app within the list. To distinguish your app from the other, you can either use the name of the app and the name of your computer. 
 
     Make sure you're on the same network on both your computer and your smartphone
 
-3. Click on the name of your app to start using it with your smartphone, and voilà ! 
+    ![App list](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "App list")
+
+3. Click on the name of your app to start using it with your smartphone, and voilà !
+
+    ![Running app](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Running app")
 
 4. When you want to stop using it, and go back to the app list, just swipe down with three fingers or shake your device
+
+    ![How to close app](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "How to close app")
