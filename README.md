@@ -3,9 +3,9 @@
 - [Introduction](#introduction)
 - [Preview](#preview)
 - [How to install](#installation)
-    - [Hardware](#hardware)
-    - [Software](#software)
-    - [Installation process](#installation-process)
+  - [Hardware](#hardware)
+  - [Software](#software)
+  - [Installation process](#installation-process)
 - [Other](#other)
 
 ## Introduction
@@ -64,7 +64,7 @@ Once you run the ```ionic serve -c``` command, open Ionic DevApp.
 
     ![login screen](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Login Screen")
 
-2. A list with running Ionic app will be displayed. Search your app within the list. To distinguish your app from the other, you can either use the name of the app and the name of your computer. 
+2. A list with running Ionic app will be displayed. Search your app within the list. To distinguish your app from the other, you can either use the name of the app and the name of your computer.
 
     Make sure you're on the same network on both your computer and your smartphone
 
