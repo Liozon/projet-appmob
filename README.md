@@ -17,7 +17,9 @@ As part of the AppMob course from third and last year of Bachelor, we have creat
 
 ## App preview
 
-In order to preview the app, please use your mobile device and go to this [link](http://tiny.cc/appmob-app) or test our interactive mock-up [here](https://xd.adobe.com/view/0bde5725-48a2-44d4-98ec-80ba0b79f1c6-5e8d/?fullscreen)
+We really recommend that you first download the app and compile it with Ionic first, like [described here](#installation-procedure).
+
+But if you want to preview the app without all the hassle of installing stuff and compiling the code, please use your mobile device and go to [this link](http://tiny.cc/appmob-app) to test the app live or you can test our interactive mock-up [here](https://xd.adobe.com/view/0bde5725-48a2-44d4-98ec-80ba0b79f1c6-5e8d/?fullscreen).
 
 ## Presentation of the app
 
