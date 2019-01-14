@@ -2,42 +2,45 @@
 
 - [Project application mobile](#project-application-mobile)
   - [Introduction](#introduction)
-  - [Preview](#preview)
-  - [Presentation](#presentation)
-  - [Installation](#installation)
-    - [Hardware](#hardware)
-    - [Software](#software)
-    - [Installation process](#installation-process)
+  - [App preview](#app-preview)
+  - [Presentation of the app](#presentation-of-the-app)
+  - [Installation procedure](#installation-procedure)
+    - [Requirements](#requirements)
+      - [Hardware](#hardware)
+      - [Software](#software)
+    - [How to install](#how-to-install)
   - [How to use Ionic DevApp](#how-to-use-ionic-devapp)
 
 ## Introduction
 
 As part of the AppMob course from third and last year of Bachelor, we have created an API. This API is a travel journal, and we'll build an app to work with the API.
 
-## Preview
+## App preview
 
 In order to preview the app, please use your mobile device and go to this [link](http://tiny.cc/appmob-app) or test our interactive mock-up [here](https://xd.adobe.com/view/0bde5725-48a2-44d4-98ec-80ba0b79f1c6-5e8d/?fullscreen)
 
-## Presentation
+## Presentation of the app
 
 To read and learn more about this app, please read the [app presentation here](https://github.com/Liozon/projet-appmob/blob/master/PRESENTATION.md).
 
-## Installation
+## Installation procedure
+
+### Requirements
 
 If you want to run and test the app locally on your device, you'll need the following:
 
-### Hardware
+#### Hardware
 
 - a PC or Mac computer
 - a mobile device
 
-### Software
+#### Software
 
 - [NPM](https://www.npmjs.com/), on your computer
 - [Git](https://git-scm.com/downloads), on your computer
 - [Ionic DevApp](https://ionicframework.com/docs/appflow/devapp/), install it on your smartphone (require Android 4.1 or later // iOS 9.2 or later)
 
-### Installation process
+### How to install
 
 1. First, download [a copy of this repo](https://github.com/Liozon/projet-appmob/archive/master.zip) on your computer
 
