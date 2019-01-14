@@ -1,6 +1,6 @@
-# Project application mobile
+# Project mobile application
 
-- [Project application mobile](#project-application-mobile)
+- [Project mobile application](#project-mobile-application)
   - [Introduction](#introduction)
   - [App preview](#app-preview)
   - [Presentation of the app](#presentation-of-the-app)
