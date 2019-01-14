@@ -31,6 +31,7 @@ export class UsersPage {
       console.log(`Trips loaded`, trips);
     });
     console.log('ionViewDidLoad UsersPage');
+
   }
 
   
