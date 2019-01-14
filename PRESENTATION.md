@@ -5,10 +5,11 @@
 - [Introduction](#introduction)
 - [Presentation of the app](#presentation-of-the-app)
 - [Functionnalities](#functionnalities)
+- [Technology](#technology-used)
 
 ## Introduction
 
-Here, you'll find a presentation of the app. Subjects like functionnalities, views and technologies will be addressed in this document.
+Here, you'll find a presentation of the app. Subjects like functionalities and technology used will be addressed in this document.
 
 ## Presentation of the app
 
@@ -29,3 +30,14 @@ Here is a list of all functionalities of the app:
 - Trip search
 - User profile edit
 - User search
+
+## Technology used
+
+For developping this app, we used the following technologies:
+
+- [Ionic](https://ionicframework.com/)
+- [Visual Studio Code](https://code.visualstudio.com/) (or equivalent code editor)
+- [Ionic DevApp](https://ionicframework.com/docs/appflow/devapp/)
+- [JavaScript](https://www.javascript.com/)
+- [HTML 5](https://www.w3.org/TR/html52/)
+- [CSS](https://www.w3.org/Style/CSS/)
