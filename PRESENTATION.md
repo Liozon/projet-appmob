@@ -1,11 +1,10 @@
 # Presentation of the app from  the projet application mobile
 
-## Table of content
-
-- [Introduction](#introduction)
-- [Presentation of the app](#presentation-of-the-app)
-- [Functionnalities](#functionnalities)
-- [Technology](#technology-used)
+- [Presentation of the app from the projet application mobile](#presentation-of-the-app-from-the-projet-application-mobile)
+  - [Introduction](#introduction)
+  - [Presentation of the app](#presentation-of-the-app)
+  - [Functionalities](#functionalities)
+  - [Technology used](#technology-used)
 
 ## Introduction
 
