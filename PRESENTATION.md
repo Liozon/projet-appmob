@@ -9,6 +9,12 @@
 
 Here, you'll find a presentation of the app. Subjects like functionnalities, views and technologies will be addressed in this document.
 
+## Presentation of the app
+
+This application aims to centralize and log all your trips and places you visit. TraveLog aims to use geolocation and images to accurately catalog your travels.
+
+In addition, you can share your travels with all TraveLog users, and discover your next trip to organize!
+
 ## Functionnalities
 
 Here is a list of all functionnalities of the app:
