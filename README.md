@@ -23,7 +23,7 @@ But if you want to preview the app without all the hassle of installing stuff an
 
 ## Presentation of the app
 
-To read and learn more about this app, please read the [app presentation here](https://github.com/Liozon/projet-appmob/blob/master/PRESENTATION.md).
+To read and learn more about this app, please kindly read the [app presentation here](https://github.com/Liozon/projet-appmob/blob/master/PRESENTATION.md).
 
 ## Installation procedure
 
