@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { latLng, MapOptions, tileLayer } from 'leaflet';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { QimgImage } from '../../models/qimg-image';
+import { PictureProvider } from '../../providers/picture/picture';
 
 
 /**
@@ -18,8 +20,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 export class PlacesPage {
 
   mapOptions: MapOptions;
-
-  pictureData: string;
+  picture: QimgImage;
+  //pictureData: string;
 
 
   ionViewDidLoad() {
@@ -27,6 +29,12 @@ export class PlacesPage {
   }
 
   takePicture() {
+    this.pictureService.takeAndUploadPicture().subscribe(picture => {
+      this.picture = picture;
+    }, err => {
+      console.warn('Could not take picture', err);
+    });
+    /*
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
@@ -38,9 +46,10 @@ export class PlacesPage {
     }).catch(err => {
       console.warn(`Could not take picture because: ${err.message}`);
     });
+    */
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private pictureService: PictureProvider) {
     const tileLayerUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     const tileLayerOptions = { maxZoom: 18 };
     this.mapOptions = {
@@ -50,6 +59,6 @@ export class PlacesPage {
       zoom: 13,
       center: latLng(46.778186, 6.641524)
     };
-  }
+}
 
 }
