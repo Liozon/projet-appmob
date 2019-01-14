@@ -11,4 +11,14 @@ Here, you'll find a presentation of the app. Subjects like functionnalities, vie
 
 ## Functionnalities
 
-This app uses
+Here is a list of all functionnalities of the app:
+
+- Account creation
+- Account login
+- Picture creation
+- Place creation
+- Place search
+- Trip creation
+- Trip search
+- User profile edit
+- User search
