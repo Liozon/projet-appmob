@@ -40,3 +40,4 @@ For developping this app, we used the following technologies:
 - [JavaScript](https://www.javascript.com/)
 - [HTML 5](https://www.w3.org/TR/html52/)
 - [CSS](https://www.w3.org/Style/CSS/)
+- [NPM](https://www.npmjs.com/)
