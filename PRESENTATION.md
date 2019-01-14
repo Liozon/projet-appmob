@@ -1,6 +1,6 @@
 # Presentation of the app from  the projet application mobile
 
-## Table of content:
+## Table of content
 
 - [Introduction](#introduction)
 - [Functionnalities](#functionnalities)
