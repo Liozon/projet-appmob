@@ -21,12 +21,13 @@ export class MyApp {
     platform: Platform,
     statusBar: StatusBar,
     splashScreen: SplashScreen) {
+      
       /*
     this.auth.isAuthenticated().subscribe(authenticated => {
       if (authenticated) {
-        this.rootPage = HomePage;
+        this.rootPage = StartPage;
       } else {
-        this.rootPage = LoginPage;
+        //this.rootPage = LoginPage;
       }
     });*/
 
