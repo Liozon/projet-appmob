@@ -2,14 +2,16 @@
 
 ## Table of content
 
-- [Introduction](#introduction)
-- [Preview](#preview)
-- [Presentation](#presentation)
-- [How to install](#installation)
-  - [Hardware](#hardware)
-  - [Software](#software)
-  - [Installation process](#installation-process)
-- [Other](#other)
+- [Project application mobile](#project-application-mobile)
+  - [Table of content](#table-of-content)
+  - [Introduction](#introduction)
+  - [Preview](#preview)
+  - [Presentation](#presentation)
+  - [Installation](#installation)
+    - [Hardware](#hardware)
+    - [Software](#software)
+    - [Installation process](#installation-process)
+  - [How to use Ionic DevApp](#how-to-use-ionic-devapp)
 
 ## Introduction
 
