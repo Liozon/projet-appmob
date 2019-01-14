@@ -1,0 +1,43 @@
+# Presentation of the app from  the projet application mobile
+
+- [Presentation of the app from the projet application mobile](#presentation-of-the-app-from-the-projet-application-mobile)
+  - [Introduction](#introduction)
+  - [Presentation of the app](#presentation-of-the-app)
+  - [Functionalities](#functionalities)
+  - [Technology used](#technology-used)
+
+## Introduction
+
+Here, you'll find a presentation of the app. Subjects like functionalities and technology used will be addressed in this document.
+
+## Presentation of the app
+
+This application aims to centralize and log all your trips and places you visit. TraveLog aims to use geolocation and images to accurately catalog your travels.
+
+In addition, you can share your travels with all TraveLog users, and discover your next trip to organize!
+
+## Functionalities
+
+Here is a list of all functionalities of the app:
+
+- Account creation
+- Account login
+- Picture creation
+- Place creation
+- Place search
+- Trip creation
+- Trip search
+- User profile edit
+- User search
+
+## Technology used
+
+For developping this app, we used the following technologies:
+
+- [Ionic](https://ionicframework.com/)
+- [Visual Studio Code](https://code.visualstudio.com/) (or equivalent code editor)
+- [Ionic DevApp](https://ionicframework.com/docs/appflow/devapp/)
+- [JavaScript](https://www.javascript.com/)
+- [HTML 5](https://www.w3.org/TR/html52/)
+- [CSS](https://www.w3.org/Style/CSS/)
+- [NPM](https://www.npmjs.com/)
