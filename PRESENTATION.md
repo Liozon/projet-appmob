@@ -1,12 +1,14 @@
 # Presentation of the app from  the projet application mobile
 
+## Table of content:
+
 - [Introduction](#introduction)
 - [Functionnalities](#functionnalities)
 
 ## Introduction
 
-As part of the AppMob course from third and last year of Bachelor, we have created an API. This API is a travel journal, and we'll build an app to work with the API
+Here, you'll find a presentation of the app. Subjects like functionnalities, views and technologies will be addressed in this document.
 
 ## Functionnalities
 
-In order to preview the app, please use your mobile device and go to this [link](https://example.com).
+This app uses
