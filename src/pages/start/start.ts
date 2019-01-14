@@ -24,10 +24,12 @@ export class StartPage {
     }
 
     ionViewDidLoad() {
+        /*
         const url = `${config.apiUrl}/trips`;
         this.http.get(url).subscribe(trips => {
             console.log(`StartPage loaded`, trips);
         });
+        */
         console.log('ionViewDidLoad StartPage');
     }
 
