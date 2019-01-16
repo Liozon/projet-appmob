@@ -1,23 +1,12 @@
-import { NavController, NavParams, App, Platform, DateTime } from 'ionic-angular';
-import { Component, OnInit, Input } from '@angular/core';
+import { NavController, NavParams, App, Platform, DateTime, LoadingController } from 'ionic-angular';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthProvider } from '../../providers/auth/auth';
-import { AuthRequest } from '../../models/auth-request';
-import { config } from '../../app/config';
-import { HomePage } from '../home/home';
 import { StartPage } from '../start/start';
 import { LoginPage } from '../login/login';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { UsersPage } from '../users/users';
-import { User } from '../../models/user';
-
-/**
- * Generated class for the AccountPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { EditAccountPage } from '../account/editAccount';
 
 @Component({
     selector: 'page-account',
@@ -26,20 +15,25 @@ import { User } from '../../models/user';
 
 export class AccountPage {
 
-    authProvider : AuthProvider;
-    username : string;
+    authProvider: AuthProvider;
+    username: string;
     createdAt: DateTime;
     updatedAt: DateTime;
     tripsCount: Number;
-    //placesCount: number;
+    //placesCount: Number;
 
-    constructor(private auth: AuthProvider, public http: HttpClient, public navCtrl: NavController, public navParams: NavParams, private app: App, 
-        platform: Platform,
-        statusBar: StatusBar,
-        splashScreen: SplashScreen) {
+    constructor(private auth: AuthProvider, public http: HttpClient, public navCtrl: NavController, public navParams: NavParams, private app: App,
+        platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public loadingCtrl: LoadingController) {
         this.auth.isAuthenticated().subscribe(authenticated => {
             if (authenticated) {
                 //this.navCtrl.setRoot(HomePage, { opentab: 3 });
+                this.auth.getUser().subscribe(user => {
+                    this.username = user.name;
+                    this.createdAt = user.createdAt;
+                    this.tripsCount = user.tripsCount;
+                    this.updatedAt = user.updatedAt;
+                    console.log(user);
+                });
                 this.navCtrl.parent.select(3);
             } else {
                 this.navCtrl.push(LoginPage);
@@ -54,21 +48,22 @@ export class AccountPage {
     }
 
     ionViewDidLoad() {
-        const url = `${config.apiUrl}/trips`;
-        this.http.get(url).subscribe(trips => {
-            console.log(`Trips loaded`, trips);
+        /*
+        const url = `${config.apiUrl}/users`;
+        this.http.get(url).subscribe(users => {
+            console.log(`User loaded`, users);
         });
+        */
 
-        this.auth.getUser().subscribe(user => {
-        this.username = user.name;
-        this.createdAt = user.createdAt;
-        this.tripsCount = user.tripsCount;
-        console.log(user);
-        });
+        
 
         console.log('ionViewDidLoad AccountPage');
-    } 
-    
+    }
+
+    editUser() {
+        this.navCtrl.push(EditAccountPage);
+    }
+
     tripPage() {
         this.navCtrl.parent.select(0);
     }
@@ -80,10 +75,23 @@ export class AccountPage {
     logout() {
         this.auth.logOut();
         this.app.getRootNav().setRoot(StartPage);
+
         /*
         this.app.getRootNav().setRoot(StartPage).then(res => {
             this.auth.logOut();
         });
         */
     }
+
+    /*
+    presentLoading() {
+        const loader = this.loadingCtrl.create({
+            content: "Please wait...",
+            duration: 3000
+        });
+        loader.present();
+    }
+    */
+
+
 }

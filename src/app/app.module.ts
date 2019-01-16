@@ -21,6 +21,16 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { Camera } from '@ionic-native/camera';
 import { PictureProvider } from '../providers/picture/picture';
+import { EditAccountPage } from '../pages/account/editAccount';
+import { EditTripPage } from '../pages/trips/editTrip';
+import { NewTripPage } from '../pages/trips/newTrip';
+import { TripPage } from '../pages/trips/trip';
+import { TripLocationPage } from '../pages/trips/tripLocation';
+import { RestProvider } from '../providers/rest/rest';
+import { EditPlacePage } from '../pages/places/editPlace';
+import { NewPlacePage } from '../pages/places/newPlace';
+import { PlacePage } from '../pages/places/place';
+import { PlaceLocationPage } from '../pages/places/placeLocation';
 
 
 @NgModule({
@@ -29,11 +39,20 @@ import { PictureProvider } from '../providers/picture/picture';
     StartPage,
     HomePage,
     TripsPage,
+    EditTripPage,
+    NewTripPage,
+    TripPage,
+    TripLocationPage,
     PlacesPage,
+    EditPlacePage,
+    NewPlacePage,
+    PlacePage,
+    PlaceLocationPage,
     UsersPage,
     LoginPage,
     SignupPage,
-    AccountPage
+    AccountPage,
+    EditAccountPage
   ],
   imports: [
     BrowserModule,
@@ -48,11 +67,20 @@ import { PictureProvider } from '../providers/picture/picture';
     StartPage,
     HomePage,
     TripsPage,
+    EditTripPage,
+    NewTripPage,
+    TripPage,
+    TripLocationPage,
     PlacesPage,
+    EditPlacePage,
+    NewPlacePage,
+    PlacePage,
+    PlaceLocationPage,
     UsersPage,
     LoginPage,
     SignupPage,
-    AccountPage
+    AccountPage,
+    EditAccountPage
   ],
   providers: [
     StatusBar,
@@ -63,7 +91,8 @@ import { PictureProvider } from '../providers/picture/picture';
     Geolocation,
     Camera,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
-    PictureProvider
+    PictureProvider,
+    RestProvider
   ]
 })
 export class AppModule { }

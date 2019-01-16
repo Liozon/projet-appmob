@@ -1,14 +1,37 @@
 <ion-content padding>
-  
-  <ion-searchbar 
-    [(ngModel)]="myInput" 
-    [showCancelButton]="shouldShowCancel" 
-    (ionInput)="onInput($event)" 
-    (ionCancel)="onCancel($event)">
+
+  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
   </ion-searchbar>
 
   <button ion-button (click)="addTrip()" id="add">
     <ion-icon name="add"></ion-icon>
   </button>
+
+  <ion-list>
+    <ion-item (click)="showTrip()">
+      <h1>((title))</h1>
+      <!-- {{trips.title}} -->
+      <p>((description))</p>
+      <!-- {{trips.description}}-->
+
+      <div id="symb">
+        <button ion-button (click)="showUser()">
+          <ion-icon name="md-person"> ((username))</ion-icon>
+          <!-- {{username}} -->
+        </button>
+
+        <ion-icon name="md-time"> ((updatedAt))</ion-icon>
+        <!--{{trips.updatedAt}}-->
+
+        <button ion-button (click)="showTrip()">
+          <ion-icon name="add-circle"></ion-icon>
+        </button>
+      </div>
+
+    </ion-item>
+
+  </ion-list>
+
+
 
 </ion-content>

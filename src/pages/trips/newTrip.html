@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>New Trip</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <form (submit)='onSubmit($event)'>
+
+    <ion-list>
+
+      <!-- Trip Name -->
+      <ion-item>
+        <ion-label floating>Trip Name</ion-label>
+        <ion-input type='text' name='name'></ion-input>
+      </ion-item>
+
+      <!-- Trip Description -->
+      <ion-item>
+        <ion-label floating>Trip Description</ion-label>
+        <ion-textarea rows="5" type='text' name='description'></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+
+    <div>
+
+      <!-- Submit button -->
+      <button type='submit' ion-button block>
+        <ion-icon name="md-arrow-round-forward"></ion-icon>
+      </button>
+
+    </div>
+  </form>
+
+</ion-content>

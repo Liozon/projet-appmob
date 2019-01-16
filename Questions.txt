@@ -2,6 +2,43 @@
 QUESTIONS APPMOB
 ----------------
 
-(1) Comment accéder aux données de l'utilisateur enregistré ?
+---
+ACCOUNT
 
-(2) account.ts => fonctions 
+(1) login works after a few tries
+
+(2) after logout: Problem!
+
+(3) auth.ts => deleteUser() | editUser()
+
+
+---
+TRIPS
+
+(1) trips.ts => showTrip() - load twice!
+
+(2) datas trip? (=> providers/rest/rest.ts)
+
+(3) trips => Search?
+
+(4) tripLocation => show places?
+
+
+---
+PLACES
+
+(1) Same questions as in TRIPS: datas place? | place => Search?
+
+(2)
+
+
+---
+USERS
+
+(1) Xxx
+
+
+---
+GENERAL
+
+(1) Headers => ionViewDidLoad() 
