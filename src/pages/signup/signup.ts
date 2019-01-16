@@ -37,7 +37,7 @@ export class SignupPage {
     }
 
     /**
-   * Called when the login form is submitted.
+   * Called when the signup form is submitted.
    */
     onSubmit($event) {
 

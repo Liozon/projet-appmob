@@ -3,15 +3,36 @@
   <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
   </ion-searchbar>
 
-  <button ion-button (click)="addTrip()" id="add">
-    <ion-icon name="add"></ion-icon>
-  </button>
+  <ion-list>
+    <ion-item (click)="showPlace()">
+      <h1>((title))</h1>
+      <!-- {{trips.title}} -->
+      <ion-img src="assets/imgs/background.jpg" alt="Image of the ((PLACENAME))"></ion-img>
+      <!-- {{ pictureUrl }} -->
+      <p>((description dnsk jfln alkfnkj dsalnfjlkdsanfjkldsanökjfdsanöfnsdaöfndödsnfjnsdkjfnkjdsnfkjdsnfkjndsakjfnkjdsanfkjndskjfnkjdsanfkjndsakjfnkjdsanfkjsankjkjsafnkjdslanflkj))</p>
+      <!-- {{trips.description}}-->
 
-  <!--<button ion-button (click)='takePicture()'>Take a Picture</button>
-  <img *ngIf='pictureData' src='data:image/jpeg;base64,{{ pictureData }}' />-->
-  <button ion-button (click)='takePicture()'>Take picture</button>
-  <img *ngIf='picture' [src]='picture.url' />
+      <div id="symb">
+        <button ion-button (click)="showTrip()">
+          <ion-icon name="map"> ((tripname))</ion-icon>
+          <!-- {{trip.name}} -->
+        </button>
 
-  <div class='map' leaflet [leafletOptions]='mapOptions'></div>
+        <button ion-button (click)="showUser()">
+          <ion-icon name="md-person"> ((username))</ion-icon>
+          <!-- {{username}} -->
+        </button>
+
+        <ion-icon name="md-time"> ((updatedAt))</ion-icon>
+        <!--{{trips.updatedAt}}-->
+
+        <button ion-button (click)="showPlace()">
+          <ion-icon name="add-circle"></ion-icon>
+        </button>
+      </div>
+
+    </ion-item>
+
+  </ion-list>
 
 </ion-content>

@@ -4,16 +4,29 @@ page-account {
     text-align: center;
   }
 
+  .title {
+    background-color: transparent;
+  }
+
+  .title p {
+    font-size: 10px;
+  }
+
+  .title h1 {
+    font-size: 25px;
+    font-weight: bold;
+    color: color($colors, primary);
+  }
+
+  .item-md.item-block .item-inner {
+    border-bottom: 0;
+  }
+
   #edit {
     all: unset;
     zoom: 0.4;
     margin-bottom: 5%;
     margin-left: 90%;
-  }
-
-  h1 {
-    font-size: 35px;
-    color: color($colors, primary);
   }
 
   .square button {
@@ -45,7 +58,6 @@ page-account {
   }
 
   p {
-    font-size: 10px;
     margin-bottom: 10%;
     color: color($colors, primary);
   }
@@ -68,3 +80,75 @@ page-account {
 
 
 }
+
+page-editAccount {
+
+  *{
+    text-align: center;
+  }
+
+  #edit {
+    all: unset;
+    zoom: 2;
+    margin-bottom: 0%;
+    margin-left: 90%;
+    color: color($colors, primary);
+  }
+
+  ion-header {
+    margin-top: 55px;
+    color: color($colors, primary);
+  }
+
+  .toolbar-background-md {
+    background-color: transparent;
+  }
+
+  .toolbar-title-md {
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .title {
+    background-color: transparent;
+  }
+
+  .title p {
+    font-size: 10px;
+    margin-bottom: 5%;
+  }
+
+  .title h1 {
+    font-size: 25px;
+    font-weight: bold;
+    color: color($colors, primary);
+  }
+
+  .item-md.item-block .item-inner {
+    border-bottom: 0;
+  }
+
+  .button-effect {
+    transform-origin: unset;
+  }
+
+  .item-md {
+    background-color: unset;
+  }
+
+  .button-md {
+    margin-top: 20%;
+  }
+
+  #lbl-3, #lbl-4{
+    text-align: left;
+  }
+
+  input {
+      text-align: left;
+  }
+
+
+}
+
+

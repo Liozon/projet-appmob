@@ -5,9 +5,9 @@
       <ion-icon name="md-create"></ion-icon> <!-- name="ios-create-outline" -->
     </div>
   </button>
-    <ion-item>
+  <ion-item class="title">
     <h1>{{username}}</h1>
-    <p>User since {{createdAt | date:'dd/MM/yyyy'}} and updated</p>
+    <p>User since {{createdAt | date:'dd/MM/yyyy'}} (Updated {{updatedAt | date:'dd/MM/yyyy'}})</p>
   </ion-item>
 </ion-content>
 
@@ -17,14 +17,12 @@
       <div>
         <ion-icon name="map"></ion-icon>
         <label>{{tripsCount}} Trips</label>
-        <!--"tripsCount"-->
       </div>
     </button>
     <button ion-button (click)="placePage()">
       <div>
         <ion-icon name="pin"></ion-icon>
         <label>{{placesCount}} Places</label>
-        <!--"placesCount"-->
       </div>
     </button>
   </ion-buttons>

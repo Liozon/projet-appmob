@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>((TRIP NAME))</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <button ion-button id="edit" (click)="editTrip()">
+    <div>
+      <ion-icon name="md-create"></ion-icon> <!-- name="ios-create-outline" -->
+    </div>
+  </button>
+
+  <ion-item class="title">
+    <h1>((TRIP Name))</h1>
+  </ion-item>
+
+  <div class="symb">
+    <button ion-button (click)="showUser()">
+      <ion-icon name="md-person"> ((username))</ion-icon>
+      <!-- {{username}} -->
+    </button>
+
+    <br>
+
+    <ion-icon name="md-time"> ((updatedAt))</ion-icon>
+    <!--{{trips.updatedAt}}-->
+    <br>
+  </div>
+
+  <div class="desc">
+    <p>((Descriptionnfkjdsanfkjnkjdsanfkjdsanfkjndsafkjndsakjflndsajfnjdsaklnfkjdsanfksndakjfbdjfnakjsdmflkdsamfkldsamflkdsanfkjdsnakjfnsakjfdndskjanfjdsknfkjldsanfkjasnmfdlksdnfjknnjkfdsankjflndsjkflnlkjsanfjlksanfjklndsalkjfnsalkjfdnjlknjlknjkdfnfnfnfnfnfnfnnfnfnfnfnfnfnfnfnnfnfdjslkanjkljklhjkhjlkhjlkhkjlhkjlhlkjhjklhjlkhjklhlklnjklnjklnjklnkjlnjklnkjlnkjlnkjnkjnkjlnkjlnkjnkjlnjklnjklnjklnjlnkjnlkjdsakjfndslkanfkjdsanflkasndfkndsfjksa))</p>
+  </div>
+
+  <ion-buttons class="square">
+    <button ion-button (click)="showPlaces()">
+      <div>
+        <ion-icon name="pin"></ion-icon>
+        <label>XX Places</label>
+      </div>
+    </button>
+
+    <button ion-button (click)="addPlace()">
+      <div>
+        <ion-icon name="add-circle"></ion-icon>
+        <label>Add Place</label>
+      </div>
+    </button>
+  </ion-buttons>
+
+</ion-content>

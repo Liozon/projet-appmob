@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>New Place</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+<!--<button ion-button (click)='takePicture()'>Take a Picture</button>
+  <img *ngIf='pictureData' src='data:image/jpeg;base64,{{ pictureData }}' />-->
+<button ion-button (click)='takePicture()'>Take picture</button>
+<img *ngIf='picture' [src]='picture.url' />
+
+</ion-content>

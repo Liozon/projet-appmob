@@ -1,20 +1,240 @@
+page-trips {
+
+  ion-searchbar {
+    width: 80%;
+    float: left;
+    margin-bottom: 15px;
+  }
+
+  #add {
+    margin-top: 8px;
+    height: 43px;
+    width: 18%;
+    float: right;
+    background-color: rgb(29, 71, 62);
+  }
+
+  ion-icon {
+    zoom: 2;
+    color: rgb(252, 250, 238);
+  }
+
+  .item-md {
+    margin-left: 8px;
+    width: 96%;
+    color: color($colors, primary);
+  }
+
+  .item-md h1 {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .item-md p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .item-md ion-icon {
+    zoom: 1.2;
+    font-size: 12px;
+    color: color($colors, primary);
+    background-color: transparent;
+  }
+
+  .item-md .item-button {
+    all: unset;
+  }
+
+  .button-md {
+    margin-top: 0;
+    padding-top: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .button-inner {
+    padding: 0;
+    margin: 0;
+  }
+
+  #symb {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+}
+
+page-editTrip {
+  .toolbar-title-md {
+    text-align: left;
+    font-size: 16px;
+  }
+
+  ion-header {
+    margin-top: 55px;
+    color: color($colors, primary);
+  }
+
+  .toolbar-background-md {
+    background-color: transparent;
+  }
+}
+
+page-newTrip {
+  
+  .toolbar-title-md {
+    text-align: left;
+    font-size: 16px;
+  }
+
+  ion-header {
+    margin-top: 55px;
+    color: color($colors, primary);
+  }
+
+  .toolbar-background-md {
+    background-color: transparent;
+  }
+}
+
 page-trip {
 
-    ion-searchbar {
-        width: 80%;
-        float: left;
-    }
+  * {
+    text-align: center;
+  }
+  
+  .toolbar-title-md {
+    text-align: left;
+    font-size: 16px;
+  }
 
-    #add {
-        margin-top: 8px;
-        height: 43px;
-        width: 18%;
-        float: right;
-        background-color: rgb(29, 71, 62);
-    }
+  ion-header {
+    margin-top: 55px;
+    color: color($colors, primary);
+  }
 
-    ion-icon {
-        zoom: 2;
-        color: rgb(252, 250, 238);
-    }
+  .toolbar-background-md {
+    background-color: transparent;
+  }
+
+  #edit {
+    all: unset;
+    zoom: 2;
+    margin-bottom: 0%;
+    margin-left: 90%;
+    color: color($colors, primary);
+  }
+
+  .title {
+    background-color: transparent;
+  }
+
+  .title h1 {
+    font-size: 25px;
+    font-weight: bold;
+    color: color($colors, primary);
+  }
+
+  .item-md.item-block .item-inner {
+    border-color: color($colors, primary);
+    border-bottom-width: 2px;
+    margin-bottom: 10px;
+  }
+
+  .symb {
+    float: left;
+    color: color($colors, primary);
+    font-size: 12px;
+  }
+
+  .desc {
+    margin-top: 20px;
+    float: left;
+    margin-left: 15px;
+    width: 90%;
+    height: 25%;
+    overflow-y:scroll;
+  }
+
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(29, 71, 62, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
+
+  .desc p {
+    margin-top:0;
+    padding-top:0;
+    padding-bottom: 0;
+    padding-right: 10px;
+    text-align: left;
+    font-size: 18px;
+    color: color($colors, primary);
+  }
+
+  .button-md {
+    font-size: 12px;
+    margin-top: 0;
+    padding-top: 0;
+    background-color: transparent;
+    box-shadow: none;
+    color: color($colors, primary);
+  }
+
+  .square button {
+    margin-top: 20px;
+    width: 40%;
+    height: 60px;
+    /*border: 2px solid color($colors, primary);
+    border-radius: 10px;
+    margin: 2px;
+    */
+    margin-bottom: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    color: color($colors, primary);
+  }
+
+  .square button:hover {
+    background-color: color($colors, secondary);
+    font-weight: normal;
+  }
+
+  .square ion-icon {
+    zoom: 2.5;
+    color: color($colors, primary);
+  }
+
+  label {
+    display: block;
+  }
+
+}
+
+page-tripLocation {
+  .toolbar-title-md {
+    text-align: left;
+    font-size: 16px;
+  }
+
+  ion-header {
+    margin-top: 55px;
+    color: color($colors, primary);
+  }
+
+  .toolbar-background-md {
+    background-color: transparent;
+  }
+
+  .map {
+    height: 87%;
+  }
 }

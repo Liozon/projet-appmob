@@ -1,0 +1,63 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Edit User: {{username}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <button ion-button id="edit" (click)="deleteUser()">
+    <div>
+      <ion-icon name="trash"></ion-icon> <!-- name="ios-create-outline" -->
+    </div>
+  </button>
+
+  <ion-item class="title">
+    <h1>{{username}}</h1>
+    <p>User since {{createdAt | date:'dd/MM/yyyy'}} (Updated {{updatedAt | date:'dd/MM/yyyy'}})</p>
+  </ion-item>
+
+  <form (submit)='onSubmit($event)'>
+
+    <ion-list>
+
+      <!-- Change Username -->
+      <ion-item>
+        <ion-label floating>Change Username</ion-label>
+        <ion-input type='text' name='name' #usernameInput='ngModel' [(ngModel)]='authRequest.username'></ion-input>
+      </ion-item>
+
+      <!-- Error message displayed if the username is invalid -->
+      <ion-item *ngIf='usernameInput.invalid && usernameInput.dirty'>
+        <p ion-text color='danger'>Valid username is required.</p>
+      </ion-item>
+
+      <!-- Change Password -->
+      <ion-item>
+        <ion-label floating>Change Password</ion-label>
+        <ion-input type='password' name='password' #passwordInput='ngModel' [(ngModel)]='authRequest.password'></ion-input>
+      </ion-item>
+
+      <!-- Error message displayed if the password is invalid -->
+      <ion-item *ngIf='passwordInput.invalid && passwordInput.dirty' no-lines>
+        <p ion-text color='danger'>Valid password is required.</p>
+      </ion-item>
+
+    </ion-list>
+
+    <div>
+
+      <!-- Submit button -->
+      <button type='submit' [disabled]='form.invalid' ion-button block>
+        <ion-icon name="md-arrow-round-forward"></ion-icon>
+      </button>
+
+      <!-- Error message displayed if the login failed -->
+      <p *ngIf='loginError' ion-text color='danger'>Username or password is invalid.</p>
+
+    </div>
+  </form>
+
+</ion-content>
