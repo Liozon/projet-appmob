@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { TripLocationPage } from './tripLocation';
 import { NewPlacePage} from '../places/newPlace';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { EditTripPage } from './editTrip';
+import { Trip } from '../../models/trip';
 
 @Component({
     selector: 'page-trip',
@@ -10,12 +11,18 @@ import { EditTripPage } from './editTrip';
 })
 
 export class TripPage {
+
+    trip: Trip;
     
-    constructor(public navCtrl: NavController) {
+    constructor(public navCtrl: NavController, public navParams: NavParams) {
     }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad TripPage');
+
+        console.log(this.trip);
+        
+        this.trip = this.navParams.get("trip");
     }
 
     editTrip() {
@@ -34,6 +41,5 @@ export class TripPage {
         this.navCtrl.parent.select(1).then(() => {
             this.navCtrl.parent.getSelected().push(NewPlacePage);
         });
-        //this.navCtrl.push(NewPlacePage);
     }
 }

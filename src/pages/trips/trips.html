@@ -14,13 +14,12 @@
 
       <div id="symb">
         <button ion-button (click)="showUser()">
-          <ion-icon name="md-person"> {{trip.userId}}</ion-icon>
-          <!-- {{username}} -->
+          <ion-icon name="md-person"> {{trip.user.name}}</ion-icon>
         </button>
 
         <ion-icon name="md-time"> {{trip.updatedAt | date:'dd/MM/yyyy'}}</ion-icon>
 
-        <button ion-button (click)="showTrip()">
+        <button ion-button (click)="showTrip(trip)">
           <ion-icon name="add-circle"></ion-icon>
         </button>
       </div>

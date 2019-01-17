@@ -19,12 +19,9 @@ export class TripsPage {
 
   tripList: Trip[];
 
-  title: string;
-  description: string;
-  updatedAt: DateTime;
-  user: string;
-
   trips: any;
+
+  selectedTrip : Trip;
 
   constructor(private auth: AuthProvider, private http: HttpClient, private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.tripList = [];
@@ -32,10 +29,6 @@ export class TripsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TripsPage');
-
-    this.auth.getUser().subscribe(user => {
-      this.user = user.name;
-    });
     
     this.rest.getTrips().subscribe(tripList => {
       this.tripList = tripList;
@@ -53,8 +46,11 @@ export class TripsPage {
     this.navCtrl.push(NewTripPage);
   }
 
-  showTrip() {
-    this.navCtrl.push(TripPage);
+  showTrip(trip) {
+    console.log(trip);
+    this.navCtrl.push(TripPage, {
+      trip: trip
+    });
   }
 
   showUser() {
