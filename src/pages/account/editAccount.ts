@@ -75,7 +75,7 @@ export class EditAccountPage {
                 {
                     text: 'Yes',
                     handler: () => {
-                        this.auth.deleteUser(this.authRequest, this.userid);
+                        this.auth.deleteUser(this.userid).subscribe();
                         this.app.getRootNav().setRoot(StartPage);
                         console.log('Do you want to delete your account? - Yes clicked');
                     }

@@ -13,9 +13,7 @@ ACCOUNT
 
 (1) login works after a few tries
 
-(2) after logout: Problem!
-
-(3) auth.ts => deleteUser() | editUser()
+(3) auth.ts => editUser()
 
 
 ---

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs/Rx';
 import { delayWhen, map } from 'rxjs/operators';
@@ -72,6 +72,7 @@ export class AuthProvider {
     return this.http.post<User>(createUserUrl, authRequest);
   }
 
+  //TODO!!!
   editUser(authRequest: AuthRequest, id: string): Observable<User> {
     /*const editUserUrl = `${config.apiUrl}/users/${auth.user.id}`;
     return this.http.patch<User>(editUserUrl, authRequest);*/
@@ -88,8 +89,8 @@ export class AuthProvider {
     );
   }
 
-  deleteUser(authRequest: AuthRequest, id: string): Observable<User> {
+  deleteUser(id: string): Observable<{}> {
     const deleteUserUrl = `${config.apiUrl}/users/` + id;
-    return this.http.delete<User>(deleteUserUrl);
+    return this.http.delete(deleteUserUrl);
   }
 }
