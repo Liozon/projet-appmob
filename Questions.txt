@@ -6,7 +6,7 @@ QUESTIONS APPMOB
 --- 
 ACCOUNT
 
-(1) editAccount => change update Date!
+(1) editAccount => delete : auth delete
 
 
 ---

@@ -20,7 +20,11 @@ export class RestProvider {
 
   getTrips(): Observable<Trip[]> {
     const tripUrl = `${config.apiUrl}/trips`;
-    return this.http.get<Trip[]>(tripUrl);
+    return this.http.get<Trip[]>(tripUrl, {
+      params: {
+        include: 'user'
+      }
+    });
   };
 
   getUsers(): Observable<User[]> {

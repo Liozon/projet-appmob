@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>((TRIP NAME))</ion-title>
+    <ion-title>{{trip?.title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,31 +15,29 @@
   </button>
 
   <ion-item class="title">
-    <h1>((TRIP Name))</h1>
+    <h1>{{trip?.title}}</h1>
   </ion-item>
 
   <div class="symb">
     <button ion-button (click)="showUser()">
-      <ion-icon name="md-person"> ((username))</ion-icon>
-      <!-- {{username}} -->
+      <ion-icon name="md-person"> {{trip?.user.name}}</ion-icon>
     </button>
 
     <br>
 
-    <ion-icon name="md-time"> ((updatedAt))</ion-icon>
-    <!--{{trips.updatedAt}}-->
+    <ion-icon name="md-time"> {{trip?.updatedAt | date:'dd/MM/yyyy'}}</ion-icon>
     <br>
   </div>
 
   <div class="desc">
-    <p>((Descriptionnfkjdsanfkjnkjdsanfkjdsanfkjndsafkjndsakjflndsajfnjdsaklnfkjdsanfksndakjfbdjfnakjsdmflkdsamfkldsamflkdsanfkjdsnakjfnsakjfdndskjanfjdsknfkjldsanfkjasnmfdlksdnfjknnjkfdsankjflndsjkflnlkjsanfjlksanfjklndsalkjfnsalkjfdnjlknjlknjkdfnfnfnfnfnfnfnnfnfnfnfnfnfnfnfnnfnfdjslkanjkljklhjkhjlkhjlkhkjlhkjlhlkjhjklhjlkhjklhlklnjklnjklnjklnkjlnjklnkjlnkjlnkjnkjnkjlnkjlnkjnkjlnjklnjklnjklnjlnkjnlkjdsakjfndslkanfkjdsanflkasndfkndsfjksa))</p>
+    <p>{{trip?.description}}</p>
   </div>
 
   <ion-buttons class="square">
     <button ion-button (click)="showPlaces()">
       <div>
         <ion-icon name="pin"></ion-icon>
-        <label>XX Places</label>
+        <label>{{trip?.placesCount}} Places</label>
       </div>
     </button>
 
