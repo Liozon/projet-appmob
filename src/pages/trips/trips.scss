@@ -83,7 +83,7 @@ page-editTrip {
 }
 
 page-newTrip {
-  
+
   .toolbar-title-md {
     text-align: left;
     font-size: 16px;
@@ -104,7 +104,7 @@ page-trip {
   * {
     text-align: center;
   }
-  
+
   .toolbar-title-md {
     text-align: left;
     font-size: 16px;
@@ -155,7 +155,7 @@ page-trip {
     margin-left: 15px;
     width: 90%;
     height: 25%;
-    overflow-y:scroll;
+    overflow-y: scroll;
   }
 
   ::-webkit-scrollbar {
@@ -170,8 +170,8 @@ page-trip {
   }
 
   .desc p {
-    margin-top:0;
-    padding-top:0;
+    margin-top: 0;
+    padding-top: 0;
     padding-bottom: 0;
     padding-right: 10px;
     text-align: left;
@@ -237,4 +237,5 @@ page-tripLocation {
   .map {
     height: 87%;
   }
+
 }
