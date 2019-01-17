@@ -5,6 +5,7 @@ import { DateTime, NavController, App, AlertController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { AuthRequest } from '../../models/auth-request';
 import { StartPage } from '../start/start';
+import { User } from '../../models/user';
 
 @Component({
     selector: 'page-editAccount',
@@ -14,7 +15,7 @@ import { StartPage } from '../start/start';
 export class EditAccountPage {
 
     authProvider: AuthProvider;
-    authRequest: AuthRequest;
+    userMod: User;
     editError: boolean;
     username: string;
     userid: string;
@@ -25,22 +26,19 @@ export class EditAccountPage {
     form: NgForm;
     
     constructor(private auth: AuthProvider, private navCtrl: NavController, public http: HttpClient, private app: App, public alertCtrl: AlertController){
-        this.authRequest = new AuthRequest();
+        this.userMod = new User();
     }
 
     ionViewDidLoad() {
-        /*
-        const url = `${config.apiUrl}/users/:id`;
-        this.http.patch(url).subscribe(users => {
-            console.log(`Users loaded`, users);
-        });
-        */
+        
 
         this.auth.getUser().subscribe(user => {
-            this.username = user.name;
-            this.userid = user.id;
-            this.createdAt = user.createdAt;
-            this. updatedAt = user.updatedAt;
+            if (user) {
+                this.username = user.name;
+                this.userid = user.id;
+                this.createdAt = user.createdAt;
+                this.updatedAt = user.updatedAt;
+            }             
         })
     }
 
@@ -61,7 +59,7 @@ export class EditAccountPage {
         this.editError = false;
 
         // Perform the authentication request to the API.
-        this.auth.editUser(this.authRequest, this.userid).subscribe(() => this.accountPage(), err => {
+        this.auth.editUser(this.userid, this.userMod).subscribe(() => this.accountPage(), err => {
             this.editError = true;
             console.warn(`Edit User failed: ${err.message}`);
         });

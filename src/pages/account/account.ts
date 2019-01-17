@@ -46,21 +46,22 @@ export class AccountPage {
 
         console.log('ionViewDidLoad AccountPage');
 
-        this.auth.isAuthenticated().pipe(first()).subscribe(authenticated => {
-            if (authenticated) {
                 //this.navCtrl.setRoot(HomePage, { opentab: 3 });
-                this.auth.getUser().pipe(first()).subscribe(user => {
-                    this.username = user.name;
-                    this.createdAt = user.createdAt;
-                    this.tripsCount = user.tripsCount;
-                    this.updatedAt = user.updatedAt;
-                    console.log(user);
+                this.auth.getUser().subscribe(user => {
+                    if (user) {
+                        
+                        this.username = user.name;
+                        this.createdAt = user.createdAt;
+                        this.tripsCount = user.tripsCount;
+                        this.updatedAt = user.updatedAt;
+                        console.log(user);
+                        this.navCtrl.parent.select(3);
+                    } else {
+
+                        this.navCtrl.push(LoginPage);
+                    }
                 });
                 this.navCtrl.parent.select(3);
-            } else {
-                this.navCtrl.push(LoginPage);
-            }
-        });
     }
 
     editUser() {

@@ -3,20 +3,6 @@ QUESTIONS APPMOB
 ----------------
 
 ---
-GENERAL
-
-(1) Headers => ionViewDidLoad() 
-
-
----
-ACCOUNT
-
-(1) login works after a few tries
-
-(3) auth.ts => editUser()
-
-
----
 TRIPS
 
 (1) trips.ts => showTrip() - load twice!
