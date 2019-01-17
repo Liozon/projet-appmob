@@ -10,9 +10,15 @@
     </ion-title>
 
     <!-- Login button -->
-    <ion-buttons end>
+    <ion-buttons end *ngIf="!username">
       <button ion-button icon-only (click)='logIn()'>
         <ion-icon name='log-in'></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end *ngIf="username">
+      <button ion-button icon-only (click)='logOut()'>
+        <ion-icon name='log-out'></ion-icon>
       </button>
     </ion-buttons>
 
@@ -27,7 +33,7 @@
 ----------- FOOTER ------------
 --------------------------- -->
 <ion-tabs color="primary" [selectedIndex]='setindex'>
-  
+
   <ion-tab *ngFor='let tab of tabs' [tabTitle]='tab.title' [tabIcon]='tab.icon' [root]='tab.component'>
   </ion-tab>
 

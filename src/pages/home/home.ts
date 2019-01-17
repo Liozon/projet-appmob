@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, App } from 'ionic-angular';
 
 import { TripsPage } from '../trips/trips';
 import { PlacesPage } from '../places/places';
@@ -7,6 +7,8 @@ import { UsersPage } from '../users/users';
 import { AccountPage } from '../account/account';
 import { StartPage } from '../start/start';
 import { LoginPage } from '../login/login';
+import { AuthProvider } from '../../providers/auth/auth';
+import { Subscription } from 'rxjs';
 
 export interface HomePageTab {
   title: string;
@@ -24,7 +26,11 @@ export class HomePage {
   tabs: HomePageTab[];
   setindex: number;
 
-  constructor(public navCtrl: NavController, np: NavParams) {
+  username: string;
+
+  userSubscription: Subscription;
+
+  constructor(private auth: AuthProvider, public navCtrl: NavController, np: NavParams, private app: App) {
     this.setindex = np.get('opentab');
     this.tabs = [
       { title: 'Trips', icon: 'map', component: TripsPage },
@@ -34,12 +40,29 @@ export class HomePage {
     ];
   }
 
+  ionViewDidLoad() {
+    this.userSubscription = this.auth.getUser().subscribe(user => {
+      if (user) {
+        this.username = user.name;
+      }
+    })
+  }
+
+  ionViewDidLeave() {
+    this.userSubscription.unsubscribe();
+  }
+
   returnToStart() {
     this.navCtrl.setRoot(StartPage);
   }
 
   logIn() {
     this.navCtrl.push(LoginPage);
+  }
+
+  logOut() {
+    this.auth.logOut();
+    this.app.getRootNav().setRoot(StartPage);
   }
 
 }
