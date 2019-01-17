@@ -1,6 +1,6 @@
-# Project application mobile
+# Project mobile application
 
-- [Project application mobile](#project-application-mobile)
+- [Project mobile application](#project-mobile-application)
   - [Introduction](#introduction)
   - [App preview](#app-preview)
   - [Presentation of the app](#presentation-of-the-app)
@@ -17,11 +17,13 @@ As part of the AppMob course from third and last year of Bachelor, we have creat
 
 ## App preview
 
-In order to preview the app, please use your mobile device and go to this [link](http://tiny.cc/appmob-app) or test our interactive mock-up [here](https://xd.adobe.com/view/0bde5725-48a2-44d4-98ec-80ba0b79f1c6-5e8d/?fullscreen)
+We really recommend that you first download the app and compile it with Ionic first, like [described here](#installation-procedure).
+
+But if you want to preview the app without all the hassle of installing stuff and compiling the code, please use your mobile device and go to [this link](http://tiny.cc/appmob-app) to test the app live or you can test our interactive mock-up [here](https://xd.adobe.com/view/0bde5725-48a2-44d4-98ec-80ba0b79f1c6-5e8d/?fullscreen).
 
 ## Presentation of the app
 
-To read and learn more about this app, please read the [app presentation here](https://github.com/Liozon/projet-appmob/blob/master/PRESENTATION.md).
+To read and learn more about this app, please kindly read the [app presentation here](https://github.com/Liozon/projet-appmob/blob/master/PRESENTATION.md).
 
 ## Installation procedure
 
