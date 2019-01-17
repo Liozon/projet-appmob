@@ -62,4 +62,14 @@ page-signup {
     box-shadow: 0;
     border-width: 0;
   }
+
+  // Media queries
+  @media screen and (min-width: 900px) {
+
+    // Hide the scrollbar
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+  }
 }
