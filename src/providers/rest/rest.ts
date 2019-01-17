@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { config } from '../../app/config';
 import { Trip } from '../../models/trip';
 import { Observable } from 'rxjs';
+import { User } from '../../models/user';
 
 
 /*
@@ -22,14 +23,8 @@ export class RestProvider {
     return this.http.get<Trip[]>(tripUrl);
   };
 
-  /*const tripUrl = `${config.apiUrl}/trips`;
-  return new Promise(resolve => {
-    this.http.get(tripUrl).subscribe(data => {
-      resolve(data);
-    }, err => {
-      console.log(err);
-    });
-  });
-} */
-
+  getUsers(): Observable<User[]> {
+    const userUrl = `${config.apiUrl}/users`;
+    return this.http.get<User[]>(userUrl);
+  };
 }
