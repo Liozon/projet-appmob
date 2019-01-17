@@ -3,6 +3,12 @@ QUESTIONS APPMOB
 ----------------
 
 ---
+GENERAL
+
+(1) Headers => ionViewDidLoad() 
+
+
+---
 ACCOUNT
 
 (1) login works after a few tries
@@ -36,9 +42,3 @@ PLACES
 USERS
 
 (1) Xxx
-
-
----
-GENERAL
-
-(1) Headers => ionViewDidLoad() 
