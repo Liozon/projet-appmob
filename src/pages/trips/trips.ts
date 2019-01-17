@@ -39,26 +39,14 @@ export class TripsPage {
     
     this.rest.getTrips().subscribe(tripList => {
       this.tripList = tripList;
+      
     });
     
   }
 
-  /*
-  getTrips() { 
-    this.restProvider.getTrips().then(data => { 
-      this.trips = data; console.log(this.trips); 
-    }); 
-  }
-  */
-
-  // TODO: add a method to log in.
-  logIn() {
-    this.auth.logOut();
-  }
-
-  // TODO: add a method to log out.
-  logOut() {
-    this.auth.logOut();
+  onInput(e) {
+    // set val to the value of the ev target
+    var val = e.target.value;
   }
 
   addTrip() {

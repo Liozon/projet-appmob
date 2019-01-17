@@ -70,12 +70,6 @@ export class AccountPage {
     logout() {
         this.auth.logOut();
         this.app.getRootNav().setRoot(StartPage);
-
-        /*
-        this.app.getRootNav().setRoot(StartPage).then(res => {
-            this.auth.logOut();
-        });
-        */
     }
 
     /*
