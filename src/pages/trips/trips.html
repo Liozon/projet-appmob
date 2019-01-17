@@ -8,20 +8,17 @@
   </button>
 
   <ion-list>
-<ion-item *ngFor='tripList'>
+    <ion-item *ngFor='let trip of tripList'>
       <h1>{{trip.title}}</h1>
-      <!-- {{trips.title}} -->
-      <p>((trip.description))</p>
-      <!-- {{trips.description}}-->
+      <p>{{trip.description}}</p>
 
       <div id="symb">
         <button ion-button (click)="showUser()">
-          <ion-icon name="md-person"> {{username}}</ion-icon>
+          <ion-icon name="md-person"> {{trip.userId}}</ion-icon>
           <!-- {{username}} -->
         </button>
 
-        <ion-icon name="md-time"> ((updatedAt))</ion-icon>
-        <!--{{trips.updatedAt}}-->
+        <ion-icon name="md-time"> {{trip.updatedAt | date:'dd/MM/yyyy'}}</ion-icon>
 
         <button ion-button (click)="showTrip()">
           <ion-icon name="add-circle"></ion-icon>
