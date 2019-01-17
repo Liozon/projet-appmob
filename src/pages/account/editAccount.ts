@@ -23,8 +23,8 @@ export class EditAccountPage {
 
     @ViewChild(NgForm)
     form: NgForm;
-    
-    constructor(private auth: AuthProvider, private navCtrl: NavController, public http: HttpClient, private app: App, public alertCtrl: AlertController){
+
+    constructor(private auth: AuthProvider, private navCtrl: NavController, public http: HttpClient, private app: App, public alertCtrl: AlertController) {
         this.authRequest = new AuthRequest();
     }
 
@@ -40,7 +40,7 @@ export class EditAccountPage {
             this.username = user.name;
             this.userid = user.id;
             this.createdAt = user.createdAt;
-            this. updatedAt = user.updatedAt;
+            this.updatedAt = user.updatedAt;
         })
     }
 
