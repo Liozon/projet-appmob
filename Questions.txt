@@ -19,10 +19,9 @@ PLACES
 
 (1) Same questions as in TRIPS: datas place? | place => Search?
 
-(2)
 
+----------------
+TODO APPMOB
+----------------
 
----
-USERS
-
-(1) Xxx
+(1) login/update formular; working on errormessage
