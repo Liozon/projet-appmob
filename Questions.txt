@@ -2,6 +2,13 @@
 QUESTIONS APPMOB
 ----------------
 
+
+--- 
+ACCOUNT
+
+(1) editAccount => change update Date!
+
+
 ---
 TRIPS
 

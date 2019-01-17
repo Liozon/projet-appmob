@@ -8,15 +8,15 @@
   </button>
 
   <ion-list>
-    <ion-item (click)="showTrip()">
-      <h1>((title))</h1>
+<ion-item *ngFor='tripList'>
+      <h1>{{trip.title}}</h1>
       <!-- {{trips.title}} -->
-      <p>((description))</p>
+      <p>((trip.description))</p>
       <!-- {{trips.description}}-->
 
       <div id="symb">
         <button ion-button (click)="showUser()">
-          <ion-icon name="md-person"> ((username))</ion-icon>
+          <ion-icon name="md-person"> {{username}}</ion-icon>
           <!-- {{username}} -->
         </button>
 

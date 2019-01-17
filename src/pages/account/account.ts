@@ -31,26 +31,24 @@ export class AccountPage {
 
     ionViewDidLoad() {
 
-        
+
 
         console.log('ionViewDidLoad AccountPage');
 
-                //this.navCtrl.setRoot(HomePage, { opentab: 3 });
-                this.userSubscription = this.auth.getUser().subscribe(user => {
-                    if (user) {
-                        
-                        this.username = user.name;
-                        this.createdAt = user.createdAt;
-                        this.tripsCount = user.tripsCount;
-                        this.updatedAt = user.updatedAt;
-                        console.log(user);
-                        this.navCtrl.parent.select(3);
-                    } else {
-
-                        this.navCtrl.push(LoginPage);
-                    }
-                });
+        //this.navCtrl.setRoot(HomePage, { opentab: 3 });
+        this.userSubscription = this.auth.getUser().subscribe(user => {
+            if (user) {
+                this.username = user.name;
+                this.createdAt = user.createdAt;
+                this.tripsCount = user.tripsCount;
+                this.updatedAt = user.updatedAt;
+                console.log(user);
                 this.navCtrl.parent.select(3);
+            } else {
+                this.navCtrl.push(LoginPage);
+            }
+        });
+        this.navCtrl.parent.select(3);
     }
 
     ionViewDidLeave() {

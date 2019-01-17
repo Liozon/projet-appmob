@@ -6,6 +6,8 @@ import { NgForm } from '@angular/forms';
 import { AuthRequest } from '../../models/auth-request';
 import { StartPage } from '../start/start';
 import { User } from '../../models/user';
+import { Subscription } from 'rxjs';
+import { HomePage } from '../home/home';
 
 @Component({
     selector: 'page-editAccount',
@@ -22,6 +24,8 @@ export class EditAccountPage {
     createdAt: DateTime;
     updatedAt: DateTime;
 
+    userSubscription: Subscription;
+
     @ViewChild(NgForm)
     form: NgForm;
 
@@ -30,7 +34,7 @@ export class EditAccountPage {
     }
 
     ionViewDidLoad() {
-        this.auth.getUser().subscribe(user => {
+        this.userSubscription = this.auth.getUser().subscribe(user => {
             if (user) {
                 this.username = user.name;
                 this.userid = user.id;
@@ -38,6 +42,10 @@ export class EditAccountPage {
                 this.updatedAt = user.updatedAt;
             }
         })
+    }
+
+    ionViewDidLeave() {
+        this.userSubscription.unsubscribe();
     }
 
     /**
@@ -88,6 +96,6 @@ export class EditAccountPage {
     }
 
     accountPage() {
-        this.navCtrl.parent.select(3);
+        this.navCtrl.setRoot(HomePage, { opentab: 3 });
     }
 }
