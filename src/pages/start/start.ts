@@ -11,6 +11,7 @@ import { AccountPage } from '../account/account';
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
 import { SignupPage } from '../signup/signup';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'page-start',
@@ -19,17 +20,20 @@ import { SignupPage } from '../signup/signup';
 
 export class StartPage {
 
+    username: string;
+
+    userSubscription: Subscription;
+
     constructor(private auth: AuthProvider, public http: HttpClient, public navCtrl: NavController, public navParams: NavParams) {
 
     }
 
     ionViewDidLoad() {
-        /*
-        const url = `${config.apiUrl}/start`;
-        this.http.get(url).subscribe(start => {
-            console.log(`StartPage loaded`, start);
-        });
-        */
+        this.userSubscription = this.auth.getUser().subscribe(user => {
+            if (user) {
+                this.username = user.name;
+            }
+        })
         console.log('ionViewDidLoad StartPage');
     }
 

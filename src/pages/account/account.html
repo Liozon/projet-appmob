@@ -7,7 +7,7 @@
   </button>
   <ion-item class="title">
     <h1>{{username}}</h1>
-    <p>User since {{createdAt | date:'dd/MM/yyyy'}} (Updated {{updatedAt | date:'dd/MM/yyyy'}})</p>
+    <p *ngIf='createdAt && updatedAt'>User since {{createdAt | date:'dd/MM/yyyy'}} (Updated {{updatedAt | date:'dd/MM/yyyy'}})</p>
   </ion-item>
 </ion-content>
 

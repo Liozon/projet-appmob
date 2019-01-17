@@ -16,7 +16,7 @@
 
   <ion-item class="title">
     <h1>{{username}}</h1>
-    <p>User since {{createdAt | date:'dd/MM/yyyy'}} (Updated {{updatedAt | date:'dd/MM/yyyy'}})</p>
+    <p *ngIf='createdAt && updatedAt'>User since {{createdAt | date:'dd/MM/yyyy'}} (Updated {{updatedAt | date:'dd/MM/yyyy'}})</p>
   </ion-item>
 
   <form (submit)='onSubmit($event)'>
@@ -26,18 +26,18 @@
       <!-- Change Username -->
       <ion-item>
         <ion-label floating>Change Username</ion-label>
-        <ion-input type='text' name='name' #usernameInput='ngModel' [(ngModel)]='authRequest.username'></ion-input>
+        <ion-input type='text' name='name' #nameInput='ngModel' [(ngModel)]='userMod.name'></ion-input>
       </ion-item>
 
       <!-- Error message displayed if the username is invalid -->
-      <ion-item *ngIf='usernameInput.invalid && usernameInput.dirty'>
+      <ion-item *ngIf='nameInput.invalid && nameInput.dirty'>
         <p ion-text color='danger'>Valid username is required.</p>
       </ion-item>
 
       <!-- Change Password -->
       <ion-item>
         <ion-label floating>Change Password</ion-label>
-        <ion-input type='password' name='password' #passwordInput='ngModel' [(ngModel)]='authRequest.password'></ion-input>
+        <ion-input type='password' name='password' #passwordInput='ngModel' [(ngModel)]='userMod.password'></ion-input>
       </ion-item>
 
       <!-- Error message displayed if the password is invalid -->

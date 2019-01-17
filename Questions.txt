@@ -2,20 +2,11 @@
 QUESTIONS APPMOB
 ----------------
 
----
-GENERAL
 
-(1) Headers => ionViewDidLoad() 
-
-
----
+--- 
 ACCOUNT
 
-(1) login works after a few tries
-
-(2) after logout: Problem!
-
-(3) auth.ts => deleteUser() | editUser()
+(1) editAccount => change update Date!
 
 
 ---
@@ -35,10 +26,9 @@ PLACES
 
 (1) Same questions as in TRIPS: datas place? | place => Search?
 
-(2)
 
+----------------
+TODO APPMOB
+----------------
 
----
-USERS
-
-(1) Xxx
+(1) login/update formular; working on errormessage

@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs/Rx';
-import { delayWhen, map } from 'rxjs/operators';
+import { delayWhen, map, first, switchMap } from 'rxjs/operators';
 import { Storage } from '@ionic/storage';
 import { config } from '../../app/config';
 
@@ -72,24 +72,25 @@ export class AuthProvider {
     return this.http.post<User>(createUserUrl, authRequest);
   }
 
-  editUser(authRequest: AuthRequest, id: string): Observable<User> {
-    /*const editUserUrl = `${config.apiUrl}/users/${auth.user.id}`;
-    return this.http.patch<User>(editUserUrl, authRequest);*/
-    const editUrl = `${config.apiUrl}/users/` + id;
-    return this.http.patch<AuthResponse>(editUrl, authRequest).pipe(
-      delayWhen(auth => {
-        return this.saveAuth(auth);
-      }),
-      map(auth => {
-        this.authSource.next(auth);
-        console.log(`User ${auth.user.name} updated`);
-        return auth.user;
-      })
-    );
+  editUser(id: string, body: User): Observable<User> {
+    return this.authSource.pipe(first(), switchMap(authResponse => {
+
+      const editUrl = `${config.apiUrl}/users/` + id;
+      return this.http.patch<User>(editUrl, body).pipe(
+        switchMap(modifiedUser => {
+          authResponse.user = modifiedUser;
+          return this.saveAuth(authResponse).pipe(map(() => {
+            this.authSource.next(authResponse);
+            return modifiedUser;
+          }));
+        })
+      );
+    }));
+    
   }
 
-  deleteUser(authRequest: AuthRequest, id: string): Observable<User> {
+  deleteUser(id: string): Observable<{}> {
     const deleteUserUrl = `${config.apiUrl}/users/` + id;
-    return this.http.delete<User>(deleteUserUrl);
+    return this.http.delete(deleteUserUrl);
   }
 }

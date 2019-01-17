@@ -7,6 +7,7 @@ import { config } from '../../app/config';
 import { RestProvider } from '../../providers/rest/rest';
 import { TripPage } from './trip';
 import { NewTripPage } from './newTrip';
+import { Trip } from '../../models/trip';
 
 @Component({
   selector: 'page-trips',
@@ -14,7 +15,9 @@ import { NewTripPage } from './newTrip';
 })
 export class TripsPage {
 
-  tripList = [];
+  restProvider: RestProvider;
+
+  tripList: Trip[];
 
   title: string;
   description: string;
@@ -23,25 +26,21 @@ export class TripsPage {
 
   trips: any;
 
-  constructor(private http: HttpClient, private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams, public restProvider: RestProvider) {
-    /*this.getTrips(); */
+  constructor(private auth: AuthProvider, private http: HttpClient, private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
+    this.tripList = [];
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TripsPage');
 
-    /*
     this.auth.getUser().subscribe(user => {
       this.user = user.name;
     });
     
-    
-    this.getTrips().subscribe(trip => {
-      this.title = trip.title;
-      this.description = trip.description;
-      this.updatedAt = trip.updatedAt;
+    this.rest.getTrips().subscribe(tripList => {
+      this.tripList = tripList;
     });
-    */
+    
   }
 
   /*

@@ -87,7 +87,6 @@ import { PlaceLocationPage } from '../pages/places/placeLocation';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthProvider,
-    AuthInterceptorProvider,
     Geolocation,
     Camera,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },
