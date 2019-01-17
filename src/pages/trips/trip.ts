@@ -20,13 +20,13 @@ export class TripPage {
     ionViewDidLoad() {
         console.log('ionViewDidLoad TripPage');
 
-        console.log(this.trip);
-        
         this.trip = this.navParams.get("trip");
     }
 
-    editTrip() {
-        this.navCtrl.push(EditTripPage);
+    editTrip(trip) {
+        this.navCtrl.push(EditTripPage, {
+            trip: trip
+        });
     }
 
     showUser() {

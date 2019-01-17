@@ -47,7 +47,6 @@ export class TripsPage {
   }
 
   showTrip(trip) {
-    console.log(trip);
     this.navCtrl.push(TripPage, {
       trip: trip
     });

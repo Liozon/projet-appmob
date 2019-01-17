@@ -8,7 +8,7 @@
 
 <ion-content padding>
 
-  <button ion-button id="edit" (click)="editTrip()">
+  <button ion-button id="edit" (click)="editTrip(trip)">
     <div>
       <ion-icon name="md-create"></ion-icon> <!-- name="ios-create-outline" -->
     </div>
@@ -19,12 +19,8 @@
   </ion-item>
 
   <div class="symb">
-    <button ion-button (click)="showUser()">
-      <ion-icon name="md-person"> {{trip?.user.name}}</ion-icon>
-    </button>
-
+    <ion-icon name="md-person" (click)="showUser()"> {{trip?.user.name}}</ion-icon>
     <br>
-
     <ion-icon name="md-time"> {{trip?.updatedAt | date:'dd/MM/yyyy'}}</ion-icon>
     <br>
   </div>

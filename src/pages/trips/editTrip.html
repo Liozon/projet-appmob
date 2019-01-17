@@ -1,12 +1,18 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Edit Trip: ((TRIPNAME))</ion-title>
+    <ion-title>Edit Trip: {{trip?.title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
+
+  <button ion-button id="delete" (click)="deleteTrip()">
+    <div>
+      <ion-icon name="trash"></ion-icon>
+    </div>
+  </button>
 
   <form (submit)='onSubmit($event)'>
 

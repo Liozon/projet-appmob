@@ -27,8 +27,14 @@ export class RestProvider {
     });
   };
 
+  editTrip(id: string, body: Trip): Observable<Trip> {
+    const editUrl = `${config.apiUrl}/trips/` + id;
+    return this.http.patch<Trip>(editUrl, body);
+  }
+
   getUsers(): Observable<User[]> {
     const userUrl = `${config.apiUrl}/users`;
     return this.http.get<User[]>(userUrl);
   };
+
 }
