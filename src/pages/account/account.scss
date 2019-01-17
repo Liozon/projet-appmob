@@ -9,7 +9,7 @@ page-account {
   }
 
   .title p {
-    font-size: 10px;
+    font-size: 15px;
   }
 
   .title h1 {
@@ -68,7 +68,7 @@ page-account {
   }
 
   ion-footer .square {
-      margin-bottom: 20%;
+    margin-bottom: 20%;
   }
 
   ion-footer #logout {
@@ -83,7 +83,7 @@ page-account {
 
 page-editAccount {
 
-  *{
+  * {
     text-align: center;
   }
 
@@ -140,15 +140,14 @@ page-editAccount {
     margin-top: 20%;
   }
 
-  #lbl-3, #lbl-4{
+  #lbl-3,
+  #lbl-4 {
     text-align: left;
   }
 
   input {
-      text-align: left;
+    text-align: left;
   }
 
 
 }
-
-
