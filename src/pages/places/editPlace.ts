@@ -7,7 +7,7 @@ import { Component } from "@angular/core";
 
 export class EditPlacePage {
 
-    constructor() {}
+    constructor() { }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad EditPlacePage');
