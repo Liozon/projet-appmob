@@ -5,10 +5,15 @@ export class Place {
     href: string;
     name: string;
     description: string;
-    location: ;
+    location: GeoJsonPoint;
     tripId: string;
     tripHref: string;
     pictureUrl: string;
     createdAt: DateTime;
     updatedAt: DateTime;
+}
+
+export class GeoJsonPoint {
+    type: string;
+    coordinates: [Number];
 }
