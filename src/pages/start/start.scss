@@ -79,6 +79,29 @@ page-start {
     font-size: 18px;
   }
 
+  .square_btn {
+    display: inline-block;
+    padding: 1em 2em 2em 2em;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    color: #FFF;
+    background-image: -webkit-linear-gradient(45deg, #66B266 0%, #a3d0a3 100%);
+    background-image: linear-gradient(45deg, #66B266 0%, #a3d0a3 100%);
+    transition: .4s;
+  }
+
+  .square_btn .button-inner {
+    text-align: center;
+    height: 1em;
+    line-height: 1em;
+  }
+
+  .square_btn:hover {
+    background-image: -webkit-linear-gradient(45deg, #66B266 50%, #a3d0a3 100%);
+    background-image: linear-gradient(45deg, #66B266 50%, #a3d0a3 100%);
+  }
+
   // Media queries
   @media screen and (min-width: 900px) {
     img {
@@ -89,10 +112,6 @@ page-start {
       width: 1000px;
       margin: auto;
     }
-
-    .footer .button {
-      font-size: 25px;
-      text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-    }
+    
   }
 }
