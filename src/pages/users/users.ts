@@ -6,6 +6,8 @@ import { config } from '../../app/config';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { RestProvider } from '../../providers/rest/rest';
 import { User } from '../../models/user';
+import { UserAccountPage } from '../users/userAccount';
+
 
 
 /**
@@ -25,6 +27,7 @@ export class UsersPage {
   userList: User[];
 
   users: any;
+  user: User;
 
   constructor(private auth: AuthProvider, public http: HttpClient, public navCtrl: NavController, private rest: RestProvider, public navParams: NavParams, private camera: Camera) {
     this.userList = [];
@@ -38,8 +41,11 @@ export class UsersPage {
     });
     
   }
-
   
-  
+  showUser(user) {
+ this.navCtrl.push(UserAccountPage, {
+   user: user
+ });
+  }
 
 }
