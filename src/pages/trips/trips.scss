@@ -244,6 +244,14 @@ page-trip {
     display: block;
   }
 
+  #null {
+    color: rgba(29, 71, 62, 0.8);
+  }
+
+  .square #null ion-icon {
+    color: rgba(29, 71, 62, 0.8);
+  }
+
 }
 
 page-tripLocation {

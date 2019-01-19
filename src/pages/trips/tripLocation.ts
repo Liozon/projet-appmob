@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MapOptions, tileLayer, latLng } from 'leaflet';
 import { NavController, NavParams } from 'ionic-angular';
+import { Trip } from '../../models/trip';
 
 @Component({
     selector: 'page-tripLocation',
@@ -9,12 +10,16 @@ import { NavController, NavParams } from 'ionic-angular';
 
 export class TripLocationPage {
 
+    trip: Trip;
+
     mapOptions: MapOptions;
 
     
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad TripLocationPage');
+
+        this.trip = this.navParams.get("trip");
     }
 
     constructor(public navCtrl: NavController, public navParams: NavParams ) {

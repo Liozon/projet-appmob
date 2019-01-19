@@ -33,8 +33,10 @@ export class TripPage {
         alert("todo: show user");
     }
 
-    showPlaces() {
-        this.navCtrl.push(TripLocationPage);
+    showPlaces(trip) {
+        this.navCtrl.push(TripLocationPage, {
+            trip: trip
+        });
     }
 
     addPlace() {

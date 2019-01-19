@@ -4,6 +4,8 @@ import { config } from '../../app/config';
 import { Trip } from '../../models/trip';
 import { Observable } from 'rxjs';
 import { User } from '../../models/user';
+import { switchMap } from 'rxjs/operators';
+
 
 
 /*
@@ -30,6 +32,16 @@ export class RestProvider {
   editTrip(id: string, body: Trip): Observable<Trip> {
     const editUrl = `${config.apiUrl}/trips/` + id;
     return this.http.patch<Trip>(editUrl, body);
+  }
+
+  newTrip(body: Trip): Observable<Trip> {
+    const newTripUrl = `${config.apiUrl}/trips`;
+    return this.http.post<Trip>(newTripUrl, body);
+  }
+
+  deleteTrip(id: string): Observable<{}> {
+    const deleteTripUrl = `${config.apiUrl}/trips/` + id;
+    return this.http.delete(deleteTripUrl);
   }
 
   getUsers(): Observable<User[]> {
