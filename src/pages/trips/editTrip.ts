@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { RestProvider } from '../../providers/rest/rest';
 import { TripPage } from './trip';
 import { TripsPage } from './trips';
+import { HomePage } from '../home/home';
 
 @Component({
     selector: 'page-editTrip',
@@ -15,6 +16,8 @@ export class EditTripPage {
 
     trip: Trip;
     tripMod: Trip;
+    editError: boolean;
+    tripid: string;
 
     restProvider: RestProvider;
 
@@ -29,6 +32,7 @@ export class EditTripPage {
         console.log('ionViewDidLoad editTripPage');
 
         this.trip = this.navParams.get("trip");
+        this.tripid = this.trip.id;
     }
 
     onSubmit($event) {
@@ -41,7 +45,11 @@ export class EditTripPage {
             return;
         }
 
-        this.rest.editTrip(this.trip.id, this.tripMod).subscribe(() => this.tripPage(), err => {
+        // Hide any previous edit error.
+        this.editError = false;
+
+        this.rest.editTrip(this.tripid, this.tripMod).subscribe(() => this.tripPage(this.tripMod), err => {
+            this.editError = true;
             console.warn(`Edit Trip failed: ${err.message}`);
         });
 
@@ -62,7 +70,7 @@ export class EditTripPage {
                     text: 'Yes',
                     handler: () => {
                         this.rest.deleteTrip(this.trip.id).subscribe();
-                        this.app.getRootNav().setRoot(TripsPage);
+                        this.app.getRootNav().setRoot(HomePage, { opentab: 0 });
                         console.log('Do you want to delete this trip? - Yes clicked');
                     }
                 },

@@ -21,13 +21,13 @@
       <!-- Trip Name -->
       <ion-item>
         <ion-label floating>Change Trip Name</ion-label>
-        <ion-input type='text' name='name'></ion-input>
+        <ion-input type='text' name='title' #nameInput='ngModel' [(ngModel)]='tripMod.title'></ion-input>
       </ion-item>
 
       <!-- Trip Description -->
       <ion-item>
         <ion-label floating>Change Trip Description</ion-label>
-        <ion-textarea rows="5" type='text' name='description'></ion-textarea>
+        <ion-textarea rows="5" type='text' name='description' #nameInput='ngModel' [(ngModel)]='tripMod.description'></ion-textarea>
       </ion-item>
 
     </ion-list>
