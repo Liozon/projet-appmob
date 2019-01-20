@@ -35,17 +35,17 @@ export class UsersPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UsersPage');
-   
+
     this.rest.getUsers().subscribe(userList => {
       this.userList = userList;
     });
-    
+
   }
-  
+
   showUser(user) {
- this.navCtrl.push(UserAccountPage, {
-   user: user
- });
+    this.navCtrl.push(UserAccountPage, {
+      user: user
+    });
   }
 
 }

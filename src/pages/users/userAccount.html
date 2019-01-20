@@ -1,26 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{user?.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
 <ion-content padding>
 
-        <ion-item class="title">
-          <h1>{{user?.name}}</h1>
-          <p *ngIf='createdAt && updatedAt'>User since {{user?.createdAt | date:'dd/MM/yyyy'}} (Updated {{user?.updatedAt | date:'dd/MM/yyyy'}})</p>
-        </ion-item>
-      </ion-content>
-      
-      <ion-footer no-border>
-        <ion-buttons class="square">
-          <button ion-button (click)="tripPage()">
-            <div>
-              <ion-icon name="map"></ion-icon>
-              <label>{{user?.tripsCount}} Trips</label>
-            </div>
-          </button>
-          <button ion-button (click)="placePage()">
-            <div>
-              <ion-icon name="pin"></ion-icon>
-              <label>{{user?.placesCount}} Places</label>
-            </div>
-          </button>
-        </ion-buttons>
-      
-      </ion-footer>
-      
+  <ion-item class="title">
+    <h1>{{user?.name}}</h1>
+    <p>User since {{user?.createdAt | date:'dd/MM/yyyy'}} (Updated {{user?.updatedAt |
+      date:'dd/MM/yyyy'}})</p>
+  </ion-item>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-buttons class="square">
+    <button ion-button (click)="showTrips()">
+      <div>
+        <ion-icon name="map"></ion-icon>
+        <label>{{user?.tripsCount}} Trips</label>
+      </div>
+    </button>
+  </ion-buttons>
+
+</ion-footer>
