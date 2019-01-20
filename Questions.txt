@@ -9,6 +9,24 @@ TRIPS
 
 + error trip.html,22: trip?.user.name
 
+(2) editTrip.ts -> after delete, remove trip from list (trips.html)
+
+(3) trip.html -> *ngIf="placesCount !== 0" -> is not working
+
+(4) tripLocation.ts -> how to display places on the map?
+
+(5) trips.ts -> searchbar -> onCancel(e) -> How to rebuilt the list after searching?
+
+
+---
+PLACES
+
+(1) places.html / place.html -> show tripname and username
+
+(2) trip.html -> newPlace.ts -> is not working
+
+(3) newPlace.ts -> getLocation() -> how to save location in place?
+
 
 ----------------
 TODO APPMOB
@@ -19,3 +37,5 @@ TODO APPMOB
 (2) trips => Search?
 
 (3) tripLocation => show places?
+
+(4) if trip questions fixed; make the same in places

@@ -8,9 +8,55 @@
 
 <ion-content padding>
 
-<!--<button ion-button (click)='takePicture()'>Take a Picture</button>
-  <img *ngIf='pictureData' src='data:image/jpeg;base64,{{ pictureData }}' />-->
-<button ion-button (click)='takePicture()'>Take picture</button>
-<img *ngIf='picture' [src]='picture.url' />
+  <button ion-button (click)="getLocation()" id="editButtons">
+    <div>
+      <ion-icon name="md-locate"></ion-icon>
+    </div>
+  </button>
+
+  <div *ngIf='!picture.url'>
+    <button ion-button (click)="takePicture()" id="editButtons">
+      <div>
+        <ion-icon name="md-camera"></ion-icon>
+      </div>
+    </button>
+  </div>
+
+  <div id="picture" *ngIf='picture.url'>
+    <button ion-button (click)="takePicture()" id="editButtons">
+      <div>
+        <ion-icon name="md-camera"></ion-icon>
+      </div>
+    </button>
+    <img [src]='picture.url' />
+  </div>
+
+  <form (submit)='onSubmit($event)'>
+
+    <ion-list>
+
+      <!-- Place Name -->
+      <ion-item>
+        <ion-label floating>Place Name</ion-label>
+        <ion-input type='text' name='name' #nameInput='ngModel' [(ngModel)]='place.name'></ion-input>
+      </ion-item>
+
+      <!-- Place Description -->
+      <ion-item>
+        <ion-label floating>Place Description</ion-label>
+        <ion-textarea rows="5" type='text' name='description' #nameInput='ngModel' [(ngModel)]='place.description'></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+
+    <div>
+
+      <!-- Submit button -->
+      <button type='submit' ion-button block>
+        <ion-icon name="md-arrow-round-forward"></ion-icon>
+      </button>
+
+    </div>
+  </form>
 
 </ion-content>

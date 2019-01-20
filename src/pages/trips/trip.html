@@ -31,21 +31,28 @@
   </div>
 
   <ion-buttons class="square">
-    <button ion-button (click)="showPlaces(trip)" *ngIf="placesCount!=NULL">
+    <button ion-button (click)="showPlaces(trip)" *ngIf="placesCount !== 0">
       <div>
         <ion-icon name="pin"></ion-icon>
         <label>{{trip?.placesCount}} Places</label>
       </div>
     </button>
 
-<button ion-button *ngIf="placesCount==NULL" id="null" disabled>
+    <button ion-button (click)="showPlaces(trip)" *ngIf="placesCount == 0">
       <div>
         <ion-icon name="pin"></ion-icon>
         <label>{{trip?.placesCount}} Places</label>
       </div>
     </button>
 
-    <button ion-button (click)="addPlace()">
+    <button ion-button *ngIf="placesCount=='0'" id="null" disabled>
+      <div>
+        <ion-icon name="pin"></ion-icon>
+        <label>{{trip?.placesCount}} Places</label>
+      </div>
+    </button>
+
+    <button ion-button (click)="addPlace(trip)">
       <div>
         <ion-icon name="add-circle"></ion-icon>
         <label>Add Place</label>

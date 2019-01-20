@@ -4,7 +4,6 @@ import { NavParams, NavController, AlertController, App } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { RestProvider } from '../../providers/rest/rest';
 import { TripPage } from './trip';
-import { TripsPage } from './trips';
 import { HomePage } from '../home/home';
 
 @Component({
@@ -17,7 +16,6 @@ export class EditTripPage {
     trip: Trip;
     tripMod: Trip;
     editError: boolean;
-    tripid: string;
 
     restProvider: RestProvider;
 
@@ -32,7 +30,6 @@ export class EditTripPage {
         console.log('ionViewDidLoad editTripPage');
 
         this.trip = this.navParams.get("trip");
-        this.tripid = this.trip.id;
     }
 
     onSubmit($event) {
@@ -48,7 +45,7 @@ export class EditTripPage {
         // Hide any previous edit error.
         this.editError = false;
 
-        this.rest.editTrip(this.tripid, this.tripMod).subscribe(() => this.tripPage(this.tripMod), err => {
+        this.rest.editTrip(this.trip.id, this.tripMod).subscribe(() => this.tripPage(this.tripMod), err => {
             this.editError = true;
             console.warn(`Edit Trip failed: ${err.message}`);
         });
@@ -77,7 +74,7 @@ export class EditTripPage {
                 {
                     text: 'No',
                     handler: () => {
-                        console.log('Do you want to delete your account? - No clicked');
+                        console.log('Do you want to delete this trip ? - No clicked');
                     }
                 }
             ]
