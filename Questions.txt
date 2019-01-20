@@ -28,14 +28,16 @@ PLACES
 (3) newPlace.ts -> getLocation() -> how to save location in place?
 
 
+--
+USERS
+
+(1) userAccount -> showTrips -> how to show only trips from selected User?
+
+
 ----------------
 TODO APPMOB
 ----------------
 
 (1) all formulars; working on errormessage
 
-(2) trips => Search?
-
-(3) tripLocation => show places?
-
-(4) if trip questions fixed; make the same in places
+(2) if trip questions fixed; make the same in places and users
