@@ -2,33 +2,40 @@
 QUESTIONS APPMOB
 ----------------
 
-
---- 
-ACCOUNT
-
-(1) editAccount => delete : auth delete
-
-
 ---
 TRIPS
 
-(1) trips.ts => showTrip() - load twice!
+(1) editTrip.ts -> Submit($event) -> 50 -> this.tripMod does not transmit all data from trip to tripPage, only the modified data..
 
-(2) datas trip? (=> providers/rest/rest.ts)
++ error trip.html,22: trip?.user.name
 
-(3) trips => Search?
+(2) editTrip.ts -> after delete, remove trip from list (trips.html)
 
-(4) tripLocation => show places?
+(3) trip.html -> *ngIf="placesCount !== 0" -> is not working
+
+(4) tripLocation.ts -> how to display places on the map?
+
+(5) trips.ts -> searchbar -> onCancel(e) -> How to rebuilt the list after searching?
 
 
 ---
 PLACES
 
-(1) Same questions as in TRIPS: datas place? | place => Search?
+(1) places.html / place.html -> show tripname and username
+
+(2) trip.html -> newPlace.ts -> is not working
+
+(3) newPlace.ts -> getLocation() -> how to save location in place?
 
 
 ----------------
 TODO APPMOB
 ----------------
 
-(1) login/update formular; working on errormessage
+(1) all formulars; working on errormessage
+
+(2) trips => Search?
+
+(3) tripLocation => show places?
+
+(4) if trip questions fixed; make the same in places

@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
-import { MapOptions, tileLayer, latLng } from 'leaflet';
+import { Geolocation } from '@ionic-native/geolocation';
+import { MapOptions, tileLayer, latLng, Map, Marker } from 'leaflet';
 import { NavController, NavParams } from 'ionic-angular';
+import { Trip } from '../../models/trip';
+import { Place } from '../../models/place';
+import { RestProvider } from '../../providers/rest/rest';
 
 @Component({
     selector: 'page-tripLocation',
@@ -9,15 +13,16 @@ import { NavController, NavParams } from 'ionic-angular';
 
 export class TripLocationPage {
 
+    trip: Trip;
+    restProvider: RestProvider;
+
     mapOptions: MapOptions;
+    mapMarkers: [];
 
-    
+    map: Map;
+    places: Place[];
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad TripLocationPage');
-    }
-
-    constructor(public navCtrl: NavController, public navParams: NavParams ) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, private rest: RestProvider) {
         const tileLayerUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
         const tileLayerOptions = { maxZoom: 18 };
         this.mapOptions = {
@@ -28,4 +33,20 @@ export class TripLocationPage {
             center: latLng(46.778186, 6.641524)
         };
     }
+
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad TripLocationPage');
+
+        this.trip = this.navParams.get("trip");
+
+        this.rest.getPlaces().subscribe(places => {
+            this.places = places;
+            this.mapMarkers = [];
+            places.forEach((place) => {
+                //this.mapMarkers = place.location.coordinates;
+            });
+        });
+    };
+
+
 }

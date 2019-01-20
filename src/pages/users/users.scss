@@ -1,21 +1,154 @@
 page-users {
 
-    ion-searchbar {
-      width: 80%;
-      float: left;
-    }
+  ion-header {
+    margin-top: 70px;
+    border: 0;
+    background-color: color($colors, secondary);
+    padding-right: 20px;
+  }
 
-    #add {
-      margin-top: 8px;
-      height: 43px;
-      width: 18%;
-      float: right;
-      background-color: rgb(29, 71, 62);
-    }
+  ion-searchbar {
+    margin-left: 20px;
+    width: 95%;
+    float: left;
+    margin-bottom: 15px;
+  }
 
-    ion-icon {
-      zoom: 2;
-      color: rgb(252, 250, 238);
-    }
+  ion-list {
+    padding-top: 20px;
+    padding-bottom: 45px;
+  }
 
+  ion-icon {
+    zoom: 1.2;
+    color:color($colors, primary);
+    display: flex;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  .item-md h2 {
+    font-weight: bold;
+    margin-left: 10px;
+    padding-top: 3px;
+  }
+
+  .button-md {
+    margin-top: 0;
+    padding-top: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  #symb {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #symb p {
+    padding-top: 3px;
+  }
+
+
+
+}
+
+page-userAccount {
+  
+  * {
+    text-align: center;
+  }
+
+  .toolbar-title-md {
+    text-align: left;
+    font-size: 16px;
+  }
+
+  ion-header {
+    margin-top: 55px;
+    color: color($colors, primary);
+  }
+
+  .toolbar-background-md {
+    background-color: transparent;
+  }
+
+  .title {
+    background-color: transparent;
+  }
+
+  .title p {
+    font-size: 10px;
+    margin-bottom: 5%;
+  }
+
+  .title h1 {
+    font-size: 25px;
+    font-weight: bold;
+    color: color($colors, primary);
+    padding-top: 50px;
+  }
+
+  .item-md.item-block .item-inner {
+    border-bottom: 0;
+  }
+
+  #edit {
+    all: unset;
+    zoom: 0.4;
+    margin-bottom: 5%;
+    margin-left: 90%;
+  }
+
+  .square button {
+    width: 40%;
+    height: 120px;
+    border: 2px solid color($colors, primary);
+    border-radius: 10px;
+    margin: 2px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: rgba(11, 28, 24, 0.1);
+    color: color($colors, primary);
+  }
+
+  .square button:hover {
+    background-color: color($colors, secondary);
+    font-weight: normal;
+  }
+
+  ion-footer ion-icon {
+    zoom: 5;
+    color: color($colors, primary);
+  }
+
+  label {
+    display: block;
+  }
+
+  p {
+    margin-bottom: 10%;
+    color: color($colors, primary);
+  }
+
+  footer-md {
+    color: none;
+    color: color($colors, secondary);
+  }
+
+  ion-footer .square {
+    margin-bottom: 20%;
+  }
+
+  ion-footer #logout {
+    width: 80%;
+    height: 60px;
+    margin-bottom: 40px;
+  }
+
+  .scroll-content {
+    bottom: 60px;
+  }
 }

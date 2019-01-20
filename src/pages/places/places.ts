@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Camera, CameraOptions } from '@ionic-native/camera';
-import { QimgImage } from '../../models/qimg-image';
-import { PictureProvider } from '../../providers/picture/picture';
 import { PlacePage } from './place';
 import { TripPage } from '../trips/trip';
+import { RestProvider } from '../../providers/rest/rest';
+import { Place } from '../../models/place';
 
 @Component({
   selector: 'page-places',
@@ -12,15 +11,31 @@ import { TripPage } from '../trips/trip';
 })
 export class PlacesPage {
 
+  restProvider: RestProvider;
+
+  placeList: Place[];
+
+  places: any;
+
+  selectedPlace: Place;
+
+  constructor(private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
+    this.placeList = [];
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad PlacesPage');
+
+    this.rest.getPlaces().subscribe(placeList => {
+      this.placeList = placeList;
+
+    });
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  showPlace() {
-    this.navCtrl.push(PlacePage);
+  showPlace(place) {
+    this.navCtrl.push(PlacePage, {
+      place: place
+    });
   }
 
   showTrip() {
@@ -33,5 +48,4 @@ export class PlacesPage {
     alert("todo: show user");
   }
 
-  
 }

@@ -1,15 +1,22 @@
 page-places {
-  ion-searchbar {
-    width: 100%;
-    float: left;
+
+  ion-header {
+    margin-top: 70px;
+    border: 0;
+    background-color: color($colors, secondary);
+    padding-right: 20px;
   }
 
-  #add {
-    margin-top: 8px;
-    height: 43px;
-    width: 18%;
-    float: right;
-    background-color: rgb(29, 71, 62);
+  ion-searchbar {
+    margin-left: 20px;
+    width: 95%;
+    float: left;
+    margin-bottom: 15px;
+  }
+
+  ion-list {
+    padding-top: 20px;
+    padding-bottom: 45px;
   }
 
   ion-icon {
@@ -26,6 +33,12 @@ page-places {
   .item-md h1 {
     font-weight: bold;
     font-size: 20px;
+  }
+
+  .item-md #trip ion-icon {
+    float: left;
+    width: 100%;
+    margin-bottom: 5px;
   }
 
   .item-md p {
@@ -71,11 +84,11 @@ page-places {
   }
 
   #symb {
-    display: table;
+    display: flex;
     justify-content: space-between;
   }
 
-  ion-img {
+  #picture {
     margin-top: 5px;
     margin-bottom: 5px;
     border-radius: 8px;
@@ -83,6 +96,10 @@ page-places {
     height: 100px;
     float: left;
     margin-right: 5px;
+  }
+
+  #picture img {
+    object-fit: contain;
   }
 
 }
@@ -101,9 +118,32 @@ page-editPlace {
   .toolbar-background-md {
     background-color: transparent;
   }
+
+  #editButtons .button-md {
+    all: unset;
+    zoom: 2;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    color: color($colors, primary);
+    float: right;
+  }
+
+  .scroll-content {
+    bottom: 60px;
+  }
+
+  img {
+    margin-bottom: 10px;
+  }
+
 }
 
 page-newPlace {
+
+  .scroll-content {
+    bottom: 60px;
+  }
+
   .toolbar-title-md {
     text-align: left;
     font-size: 16px;
@@ -117,11 +157,39 @@ page-newPlace {
   .toolbar-background-md {
     background-color: transparent;
   }
+
+  #picture {
+    display: inline;
+  }
+
+  #picture .button-md {
+    margin-right: 0;
+    display: inline;
+  }
+
+  button#editButtons {
+    all: unset;
+    zoom: 2;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    color: color($colors, primary);
+    float: right;
+  }
+
+  form {
+    margin-top: 10px;
+  }
+
 }
 
 page-place {
+
   * {
     text-align: center;
+  }
+
+  .scroll-content {
+    bottom: 60px;
   }
 
   .toolbar-title-md {
@@ -141,7 +209,7 @@ page-place {
   #edit {
     all: unset;
     zoom: 2;
-    margin-bottom: 0%;
+    margin-bottom: 5px;
     margin-left: 90%;
     color: color($colors, primary);
   }
@@ -163,9 +231,13 @@ page-place {
   }
 
   .symb {
-    float: left;
+    justify-content: space-between;
+    display: flex;
     color: color($colors, primary);
     font-size: 12px;
+    margin-left: 18px;
+    margin-top: 5px;
+    margin-bottom: 10px;
   }
 
   .desc {
@@ -236,13 +308,10 @@ page-place {
     display: block;
   }
 
-  ion-img {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 8px;
-    width: 100px;
-    height: 100px;
-    margin-right: 5px;
+  img {
+    margin-left: 15px;
+    float: left;
+    width: 95%;
   }
 }
 
