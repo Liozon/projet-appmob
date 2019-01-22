@@ -48,5 +48,9 @@ export class TripLocationPage {
         });
     };
 
+    onMapReady(e) {
+        
+    }
+
 
 }
