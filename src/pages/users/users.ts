@@ -42,6 +42,12 @@ export class UsersPage {
 
   }
 
+  onInput(e: any) {
+    this.rest.getUsers(e.target.value).subscribe(userList => {
+      this.userList = userList;
+    });
+  }
+
   showUser(user) {
     this.navCtrl.push(UserAccountPage, {
       user: user

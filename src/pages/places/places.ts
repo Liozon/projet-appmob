@@ -28,7 +28,12 @@ export class PlacesPage {
 
     this.rest.getPlaces().subscribe(placeList => {
       this.placeList = placeList;
+    });
+  }
 
+  onInput(e: any) {
+    this.rest.getPlaces(e.target.value).subscribe(placeList => {
+      this.placeList = placeList;
     });
   }
 

@@ -7,17 +7,19 @@ TRIPS
 
 (1) editTrip.ts -> Submit($event) -> 50 -> this.tripMod does not transmit all data from trip to tripPage, only the modified data..
 
-+ error trip.html,22: trip?.user.name
++ error trip.html,22: trip?.user.name 
 
-(2) tripLocation.ts / placeLocation.ts-> how to display places on the map?
+=> subscribe(modifiedTrip
 
-(3) trips.ts -> searchbar -> onCancel(e) -> How to rebuilt the list after searching?
+(2) tripLocation.ts / placeLocation.ts-> how to display place(s) on the map and how to center?
 
 
 ---
 PLACES
 
 (1) places.html / place.html -> show tripname and username
+
+=> fait
 
 (2) trip.html -> newPlace.ts -> is not working
 
