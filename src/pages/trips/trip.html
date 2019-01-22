@@ -19,8 +19,7 @@
   </ion-item>
 
   <div class="symb">
-    <ion-icon name="md-person" (click)="showUser()"> ((trip?.user.name))</ion-icon>
-    <!--{{trip?.user.name}}-->
+    <ion-icon name="md-person" (click)="showUser()"> {{trip?.user.name}}</ion-icon>
     <br>
     <ion-icon name="md-time"> {{trip?.updatedAt | date:'dd/MM/yyyy'}}</ion-icon>
     <br>

@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Trip } from '../../models/trip';
-import { NavParams, NavController, AlertController, App } from 'ionic-angular';
+import { NavParams, NavController, AlertController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { RestProvider } from '../../providers/rest/rest';
 import { TripPage } from './trip';
@@ -24,7 +24,7 @@ export class EditTripPage {
     @ViewChild(NgForm)
     form: NgForm;
 
-    constructor(private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams, private app: App, public alertCtrl: AlertController) {
+    constructor(private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
         this.tripMod = new Trip();
     }
 
@@ -47,7 +47,9 @@ export class EditTripPage {
         // Hide any previous edit error.
         this.editError = false;
 
-        this.rest.editTrip(this.trip.id, this.tripMod).subscribe(() => this.tripPage(this.tripMod), err => {
+        this.rest.editTrip(this.trip.id, this.tripMod).subscribe(modifiedTrip => {
+            this.tripPage(modifiedTrip);
+        }, err => {
             this.editError = true;
             console.warn(`Edit Trip failed: ${err.message}`);
         });

@@ -37,7 +37,11 @@ export class RestProvider {
 
   editTrip(id: string, body: Trip): Observable<Trip> {
     const editTripUrl = `${config.apiUrl}/trips/` + id;
-    return this.http.patch<Trip>(editTripUrl, body);
+    return this.http.patch<Trip>(editTripUrl, body, {
+      params: {
+        include: 'user'
+      }
+    });
   }
 
   newTrip(body: Trip): Observable<Trip> {
