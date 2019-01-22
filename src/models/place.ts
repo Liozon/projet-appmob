@@ -15,5 +15,5 @@ export class Place {
 
 export class GeoJsonPoint {
     type: string;
-    coordinates: [Number];
+    coordinates: number[];
 }

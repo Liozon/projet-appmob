@@ -11,8 +11,7 @@
     <ion-item *ngFor='let place of placeList'>
       <h1>{{place.name}}</h1>
       <button ion-button (click)="showTrip()" id="trip">
-        <ion-icon name="map"> A place from ((tripname))</ion-icon>
-        <!-- {{trip.name}} -->
+        <ion-icon name="map"> A place from {{place.trip.title}}</ion-icon>
       </button>
       <br>
       <div *ngIf='place?.pictureUrl' id="picture">
@@ -23,8 +22,7 @@
       <div id="symb">
 
         <button ion-button (click)="showUser()">
-          <ion-icon name="md-person"> ((username))</ion-icon>
-          <!-- {{place.user.name}} -->
+          <ion-icon name="md-person"> {{place.trip.user.name}}</ion-icon>
         </button>
 
         <ion-icon name="md-time"> {{place.updatedAt | date:'dd/MM/yyyy'}}</ion-icon>

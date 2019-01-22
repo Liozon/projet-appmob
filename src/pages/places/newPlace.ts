@@ -41,6 +41,9 @@ export class NewPlacePage {
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad NewPlacePage');
+        this.trip = this.navParams.get("trip");
+        this.place.tripId;
+
     }
 
     takePicture() {

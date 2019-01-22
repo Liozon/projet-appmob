@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Place } from "../../models/place";
 import { NavParams } from "ionic-angular";
-import { MapOptions, tileLayer, latLng, Marker } from "leaflet";
+import { MapOptions, tileLayer, latLng, Marker, marker } from "leaflet";
 import { getPluralCase } from "@angular/common/src/i18n/localization";
 
 @Component({
@@ -35,7 +35,7 @@ export class PlaceLocationPage {
         */
 
         this.place = this.navParams.get("place");
-        //this.placeMarker = marker(["place.location.coordinates"]);
+        this.placeMarker = marker([this.place.location.coordinates[1], this.place.location.coordinates[0] ]);
 
         //this.getMarker();
     }

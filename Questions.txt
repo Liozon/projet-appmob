@@ -5,19 +5,15 @@ QUESTIONS APPMOB
 ---
 TRIPS
 
-(2) tripLocation.ts / placeLocation.ts-> how to display place(s) on the map and how to center?
+(1) tripLocation.ts / placeLocation.ts-> how to display place(s) on the map and how to center?
 
 
 ---
 PLACES
 
-(1) places.html / place.html -> show tripname and username
+(1) trip.html -> newPlace.ts -> is not working
 
-=> fait
-
-(2) trip.html -> newPlace.ts -> is not working
-
-(3) newPlace.ts -> getLocation() -> how to save location in place?
+(2) newPlace.ts -> getLocation() -> how to save location in place?
 
 
 --

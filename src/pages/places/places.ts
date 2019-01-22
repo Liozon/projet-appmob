@@ -28,7 +28,11 @@ export class PlacesPage {
 
     this.rest.getPlaces().subscribe(placeList => {
       this.placeList = placeList;
+      console.log(this.placeList);
     });
+
+    
+
   }
 
   onInput(e: any) {

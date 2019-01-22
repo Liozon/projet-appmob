@@ -5,7 +5,6 @@ import { Trip } from '../../models/trip';
 import { Observable } from 'rxjs';
 import { User } from '../../models/user';
 import { Place } from '../../models/place';
-import { PARAMETERS } from '@angular/core/src/util/decorators';
 
 
 @Injectable()
@@ -62,14 +61,14 @@ export class RestProvider {
     if (search) {
       return this.http.get<Place[]>(placeUrl, {
         params: {
-          include: 'user',
+          include: 'trip.user',
           search: search
         }
       });
     } else {
       return this.http.get<Place[]>(placeUrl, {
         params: {
-          include: 'user'
+          include: 'trip.user'
         }
       });
     }
@@ -77,7 +76,11 @@ export class RestProvider {
 
   editPlace(id: string, body: Place): Observable<Place> {
     const editPlaceUrl = `${config.apiUrl}/places/` + id;
-    return this.http.patch<Place>(editPlaceUrl, body);
+    return this.http.patch<Place>(editPlaceUrl, body, {
+      params: {
+        include: 'trip.user'
+      }
+    });
   }
 
   newPlace(trip: Trip, body: string): Observable<Place> {
