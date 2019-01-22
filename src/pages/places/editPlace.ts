@@ -21,6 +21,8 @@ export class EditPlacePage {
     editError: boolean;
     picture: QimgImage;
 
+    placeList: Place[];
+
     restProvider: RestProvider;
 
     @ViewChild(NgForm)
@@ -84,7 +86,11 @@ export class EditPlacePage {
                     text: 'Yes',
                     handler: () => {
                         this.rest.deletePlace(this.place.id).subscribe();
-                        this.app.getRootNav().setRoot(HomePage, { opentab: 1 });
+                        this.navCtrl.setRoot(HomePage, { opentab: 1 });
+                        this.rest.getPlaces().subscribe(placeList => {
+                            this.placeList = placeList;
+
+                        });
                         console.log('Do you want to delete this place? - Yes clicked');
                     }
                 },

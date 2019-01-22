@@ -17,7 +17,7 @@ export class TripLocationPage {
     restProvider: RestProvider;
 
     mapOptions: MapOptions;
-    mapMarkers: [];
+    mapMarkers: Marker[];
 
     map: Map;
     places: Place[];
@@ -47,6 +47,10 @@ export class TripLocationPage {
             });
         });
     };
+
+    onMapReady(e) {
+        
+    }
 
 
 }

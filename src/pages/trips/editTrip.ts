@@ -19,6 +19,8 @@ export class EditTripPage {
 
     restProvider: RestProvider;
 
+    tripList: Trip[];
+
     @ViewChild(NgForm)
     form: NgForm;
 
@@ -67,7 +69,11 @@ export class EditTripPage {
                     text: 'Yes',
                     handler: () => {
                         this.rest.deleteTrip(this.trip.id).subscribe();
-                        this.app.getRootNav().setRoot(HomePage, { opentab: 0 });
+                        this.navCtrl.setRoot(HomePage, { opentab: 0 });
+                        this.rest.getTrips().subscribe(tripList => {
+                            this.tripList = tripList;
+
+                        });
                         console.log('Do you want to delete this trip? - Yes clicked');
                     }
                 },

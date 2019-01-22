@@ -57,9 +57,10 @@ export class RestProvider {
     return this.http.patch<Place>(editPlaceUrl, body);
   }
 
-  newPlace(trip: Trip, body: Place): Observable<Place> {
+  newPlace(trip: Trip, body: 'tripId = trip.id'): Observable<Place> {
     const newPlaceUrl = `${config.apiUrl}/places`;
     return this.http.post<Place>(newPlaceUrl, body);
+    
   }
 
   deletePlace(id: string): Observable<{}> {
