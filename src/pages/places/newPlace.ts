@@ -68,7 +68,7 @@ export class NewPlacePage {
         this.placeError = false;
 
         // Perform the authentication request to the API.
-        this.rest.newPlace(this.trip, this.place).subscribe(() => this.placesPage(), err => {
+        this.rest.newPlace(this.trip).subscribe(() => this.placesPage(), err => {
             this.placeError = true;
             console.warn(`Creating Place failed: ${err.message}`);
         });
