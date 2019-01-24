@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { config } from '../../app/config';
 import { Trip } from '../../models/trip';
+import { TripResponse } from '../../models/trip-response';
 import { Observable } from 'rxjs';
 import { User } from '../../models/user';
 import { Place } from '../../models/place';
@@ -16,18 +17,31 @@ export class RestProvider {
 
   /*--------- TRIP-PAGES-----------*/
 
-  getTrips(): Observable<Trip[]> {
+  getTrips(search?: string): Observable<Trip[]> {
     const tripUrl = `${config.apiUrl}/trips`;
-    return this.http.get<Trip[]>(tripUrl, {
-      params: {
-        include: 'user'
-      }
-    });
+    if (search) {
+      return this.http.get<Trip[]>(tripUrl, {
+        params: {
+          include: 'user',
+          search: search
+        }
+      });
+    } else {
+      return this.http.get<Trip[]>(tripUrl, {
+        params: {
+          include: 'user'
+        }
+      });
+    }
   };
 
   editTrip(id: string, body: Trip): Observable<Trip> {
     const editTripUrl = `${config.apiUrl}/trips/` + id;
-    return this.http.patch<Trip>(editTripUrl, body);
+    return this.http.patch<Trip>(editTripUrl, body, {
+      params: {
+        include: 'user'
+      }
+    });
   }
 
   newTrip(body: Trip): Observable<Trip> {
@@ -43,24 +57,36 @@ export class RestProvider {
 
   /*--------- PLACE-PAGES-----------*/
 
-  getPlaces(): Observable<Place[]> {
+  getPlaces(search?: string): Observable<Place[]> {
     const placeUrl = `${config.apiUrl}/places`;
-    return this.http.get<Place[]>(placeUrl, {
-      params: {
-        include: 'user'
-      }
-    });
+    if (search) {
+      return this.http.get<Place[]>(placeUrl, {
+        params: {
+          include: 'trip.user',
+          search: search
+        }
+      });
+    } else {
+      return this.http.get<Place[]>(placeUrl, {
+        params: {
+          include: 'trip.user'
+        }
+      });
+    }
   };
 
   editPlace(id: string, body: Place): Observable<Place> {
     const editPlaceUrl = `${config.apiUrl}/places/` + id;
-    return this.http.patch<Place>(editPlaceUrl, body);
+    return this.http.patch<Place>(editPlaceUrl, body, {
+      params: {
+        include: 'trip.user'
+      }
+    });
   }
 
-  newPlace(trip: Trip, body: string): Observable<Place> {
+  newPlace(tripResponse: TripResponse): Observable<Place> {
     const newPlaceUrl = `${config.apiUrl}/places`;
-    return this.http.post<Place>(newPlaceUrl, body);
-    
+    return this.http.post<Place>(newPlaceUrl, tripResponse);
   }
 
   deletePlace(id: string): Observable<{}> {
@@ -71,9 +97,18 @@ export class RestProvider {
 
   /*--------- USER-PAGES-----------*/
 
-  getUsers(): Observable<User[]> {
+  getUsers(search?: string): Observable<User[]> {
     const userUrl = `${config.apiUrl}/users`;
-    return this.http.get<User[]>(userUrl);
+    if (search) {
+      console.log(search);
+      return this.http.get<User[]>(userUrl, {
+        params: {
+          search: search
+        }
+      });
+    } else {
+      return this.http.get<User[]>(userUrl);
+    }
   };
 
 }

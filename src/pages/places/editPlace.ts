@@ -52,7 +52,9 @@ export class EditPlacePage {
         // Hide any previous edit error.
         this.editError = false;
 
-        this.rest.editPlace(this.place.id, this.placeMod).subscribe(() => this.placePage(this.placeMod), err => {
+        this.rest.editPlace(this.place.id, this.placeMod).subscribe(modifiedPlace => {
+            this.placePage(modifiedPlace);
+        }, err => {
             this.editError = true;
             console.warn(`Edit Place failed: ${err.message}`);
         });

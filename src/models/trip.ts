@@ -5,7 +5,7 @@ export class Trip {
     href: string;
     title: string;
     description: string;
-    placesCount: Number;
+    placesCount: number;
     userId: string;
     userHref: string;
     createdAt: DateTime;

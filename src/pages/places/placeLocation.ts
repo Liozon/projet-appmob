@@ -1,8 +1,7 @@
 import { Component } from "@angular/core";
 import { Place } from "../../models/place";
 import { NavParams } from "ionic-angular";
-import { MapOptions, tileLayer, latLng, Marker } from "leaflet";
-import { getPluralCase } from "@angular/common/src/i18n/localization";
+import { MapOptions, tileLayer, latLng, Marker, marker } from "leaflet";
 
 @Component({
     selector: 'page-placeLocation',
@@ -14,12 +13,10 @@ export class PlaceLocationPage {
     place: Place;
     marker: Marker;
     placeMarker: any;
+    lat: any;
+    lng: any;
 
     mapOptions: MapOptions;
-
-    //this.marker: this.place.location.coordinates
-
-    //placeMarker = marker([46.778186, 6.641524]);
 
     constructor(public navParams: NavParams ) { 
         
@@ -28,16 +25,15 @@ export class PlaceLocationPage {
     ionViewDidLoad() {
         console.log('ionViewDidLoad PlaceLocationPage');
 
-        /*
-        this.place = this.navParams.get("place").subscribe(place => {
-            this.marker = place.location.coordinates;
-        });
-        */
-
         this.place = this.navParams.get("place");
-        //this.placeMarker = marker(["place.location.coordinates"]);
+        //this.placeMarker = marker([this.place.location.coordinates[1], this.place.location.coordinates[0] ]);
+        this.lat = this.place.location.coordinates[1];
+        this.lng = this.place.location.coordinates[0];
+        this.placeMarker = marker([this.lat, this.lng]);
 
-        //this.getMarker();
+        console.log(this.placeMarker);
+        this.getMarker();
+        
     }
 
     getMarker() {
@@ -49,7 +45,7 @@ export class PlaceLocationPage {
                 this.placeMarker
             ],
             zoom: 13,
-            center: latLng(46.778186, 6.641524)
+            center: latLng(this.lat, this.lng)
         };
     }
 

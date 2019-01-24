@@ -31,8 +31,6 @@ export class AccountPage {
 
     ionViewDidLoad() {
 
-
-
         console.log('ionViewDidLoad AccountPage');
 
         //this.navCtrl.setRoot(HomePage, { opentab: 3 });
@@ -59,8 +57,9 @@ export class AccountPage {
         this.navCtrl.push(EditAccountPage);
     }
 
-    tripPage() {
+    tripPage(search: string) {
         this.navCtrl.parent.select(0);
+        console.log(search);
     }
 
     placePage() {
