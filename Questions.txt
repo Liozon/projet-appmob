@@ -3,12 +3,6 @@ QUESTIONS APPMOB
 ----------------
 
 ---
-TRIPS
-
-(1) tripLocation.ts / placeLocation.ts-> how to display place(s) on the map and how to center?
-
-
----
 PLACES
 
 (1) trip.html -> newPlace.ts -> is not working

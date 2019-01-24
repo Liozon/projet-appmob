@@ -6,7 +6,6 @@
 </ion-header>
 
 <ion-content padding>
-  <div class='map' *ngIf='mapOptions' leaflet [leafletOptions]='mapOptions' [leafletLayers]='mapMarkers'
-    (leafletMapReady)='onMapReady($event)'></div>
+<div class='map' *ngIf='mapOptions' leaflet [leafletOptions]='mapOptions' [leafletLayers]='placeMarkers' (leafletMapReady)='onMapReady($event)'></div>
 
 </ion-content>
