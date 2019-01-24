@@ -61,7 +61,6 @@ export class TripLocationPage {
                 ],
                 zoom: 5,
                 center: latLng(this.initialLocation)
-                //center: latLng()
             };
         }).catch(err => {
             console.warn(`Could not retrieve user position because: ${err.message}`);

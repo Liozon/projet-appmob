@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { config } from '../../app/config';
 import { Trip } from '../../models/trip';
+import { TripResponse } from '../../models/trip-response';
 import { Observable } from 'rxjs';
 import { User } from '../../models/user';
 import { Place } from '../../models/place';
@@ -83,10 +84,9 @@ export class RestProvider {
     });
   }
 
-  newPlace(trip: Trip, body: string): Observable<Place> {
+  newPlace(tripResponse: TripResponse): Observable<Place> {
     const newPlaceUrl = `${config.apiUrl}/places`;
-    return this.http.post<Place>(newPlaceUrl, body);
-
+    return this.http.post<Place>(newPlaceUrl, tripResponse);
   }
 
   deletePlace(id: string): Observable<{}> {

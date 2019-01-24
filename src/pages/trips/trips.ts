@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
 import { TripPage } from './trip';
 import { NewTripPage } from './newTrip';
@@ -20,14 +20,20 @@ export class TripsPage {
 
   selectedTrip: Trip;
 
-  constructor(private rest: RestProvider, public navCtrl: NavController) {
+  search: string;
+
+  constructor(private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.tripList = [];
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TripsPage');
+
+    this.search = this.navParams.get("search");
+
+    console.log("this:" + this.search);
     
-    this.rest.getTrips().subscribe(tripList => {
+    this.rest.getTrips(this.trips).subscribe(tripList => {
       this.tripList = tripList;
     });
   }

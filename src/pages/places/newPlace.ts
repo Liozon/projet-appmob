@@ -9,6 +9,7 @@ import { RestProvider } from "../../providers/rest/rest";
 import { NgForm } from "@angular/forms";
 import { PlacesPage } from "./places";
 import { Trip } from "../../models/trip";
+import { latLng } from "leaflet";
 
 @Component({
     selector: 'page-newPlace',
@@ -18,9 +19,11 @@ import { Trip } from "../../models/trip";
 export class NewPlacePage {
 
     place: Place;
-    trip: Trip; 
+    trip: Trip;
     lat: any;
     lng: any;
+    location: Coordinates;
+    coordinates: number[];
 
     restProvider: RestProvider;
 
@@ -36,14 +39,29 @@ export class NewPlacePage {
 
     constructor(private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private pictureService: PictureProvider, private geolocation: Geolocation) {
         this.place = new Place();
+        //this.place.location.coordinates = [];
         this.picture = new QimgImage;
-     }
+    }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad NewPlacePage');
-        this.trip = this.navParams.get("trip");
-        this.place.tripId;
-
+        this.place.tripId = this.navParams.get("trip").id;
+        /*
+        this.geolocation.getCurrentPosition().then(position => {
+            this.lat = position.coords.latitude;
+            this.lng = position.coords.longitude;
+            console.log(this.lat, this.lng);
+            
+            
+            //this.place.location.coordinates = [120.5412, -48.1850159];
+            //this.place.location.coordinates = ([this.lng, this.lat]);
+        })*/
+        /*
+        this.geolocation.getCurrentPosition().then(position => {
+            this.place.location.coordinates[0] = +position.coords.longitude;
+            this.place.location.coordinates[1] = +position.coords.latitude;
+        })      
+        */  
     }
 
     takePicture() {
@@ -59,6 +77,8 @@ export class NewPlacePage {
    */
     onSubmit($event) {
 
+        console.log(this.place);
+
         // Prevent default HTML form behavior.
         $event.preventDefault();
 
@@ -71,7 +91,17 @@ export class NewPlacePage {
         this.placeError = false;
 
         // Perform the authentication request to the API.
-        this.rest.newPlace(this.trip, this.trip.id).subscribe(() => this.placesPage(), err => {
+        this.rest.newPlace(this.place).subscribe(place => {
+            this.place.location.type = "Point";
+            this.geolocation.getCurrentPosition().then(position => {
+                this.lat = position.coords.latitude;
+                this.lng = position.coords.longitude;
+                console.log("hallo:" + this.lat, this.lng);
+                this.place.location.coordinates = ([this.lng, this.lat]);
+                //this.place.location.coordinates[0] = +position.coords.longitude;
+                //this.place.location.coordinates[1] = +position.coords.latitude;
+            })   
+        } , err => {
             this.placeError = true;
             console.warn(`Creating Place failed: ${err.message}`);
         });
@@ -81,10 +111,12 @@ export class NewPlacePage {
         this.navCtrl.push(PlacesPage);
     }
 
+    /*
     getLocation() {
         this.geolocation.getCurrentPosition().then(position => {
-           this.lng = +position.coords.longitude;
-           this.lat = +position.coords.latitude;
-        })        
+            this.place.location.coordinates[0] = +position.coords.longitude;
+            this.place.location.coordinates[1] = +position.coords.latitude;
+        })
     }
+    */
 }
