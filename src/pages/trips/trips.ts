@@ -8,6 +8,8 @@ import { NewTripPage } from './newTrip';
 import { Trip } from '../../models/trip';
 import { Subscription } from 'rxjs';
 import { UserAccountPage } from '../users/userAccount';
+import { User } from '../../models/user';
+import { getSegmentsFromUrlPieces } from 'ionic-angular/umd/navigation/url-serializer';
 
 
 @Component({
@@ -24,8 +26,10 @@ export class TripsPage {
 
   selectedTrip: Trip;
 
-  search: string;
+  user: User;
+  tripsCount: any;
 
+  tripUser: string;
   username: string;
   userSubscription: Subscription;
 
@@ -41,14 +45,23 @@ export class TripsPage {
         this.username = user.name;
       }
     })
-
-    this.search = this.navParams.get("search");
-
-    console.log("this:" + this.search);
     
-    this.rest.getTrips(this.trips).subscribe(tripList => {
-      this.tripList = tripList;
+    this.getTrips();
+    
+  }
+
+  getTrips(search?){
+    this.rest.getTrips(search).subscribe(tripList => {
+      this.tripList = tripList, {
+        search: this.navParams.get("name")
+      };
+      if (this.navParams.get("name")) {
+        console.log(name);
+      } else {
+        console.log("leider nein");
+      }
     });
+
   }
 
   onInput(e: any) {
@@ -71,5 +84,6 @@ export class TripsPage {
     this.navCtrl.push(UserAccountPage, {
       user: user
     });
+    console.log(user);
   }
 }

@@ -20,6 +20,7 @@ export class UserAccountPage {
         ionViewDidLoad() {
             console.log('ionViewDidLoad UserAccountPage');
             this.user = this.navParams.get("user");
+
         }
     
         showTrips() {
