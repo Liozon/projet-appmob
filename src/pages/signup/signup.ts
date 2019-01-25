@@ -35,7 +35,6 @@ export class SignupPage {
     constructor(private auth: AuthProvider, private navCtrl: NavController) {
         this.authRequest = new AuthRequest();
     }
-
     /**
    * Called when the signup form is submitted.
    */

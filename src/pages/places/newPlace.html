@@ -38,14 +38,24 @@
       <!-- Place Name -->
       <ion-item>
         <ion-label floating>Place Name</ion-label>
-        <ion-input type='text' name='name' #nameInput='ngModel' [(ngModel)]='place.name'></ion-input>
+        <ion-input type='text' name='name' #nameInput='ngModel' [(ngModel)]='place.name' minlength="2" required></ion-input>
       </ion-item>
+
+      <!-- Error message displayed if the place name is invalid -->
+      <ion-item *ngIf='nameInput.invalid && nameInput.dirty' no-lines>
+        <p ion-text color='danger'>A place name is required.</p>
+      </ion-item>          
 
       <!-- Place Description -->
       <ion-item>
         <ion-label floating>Place Description</ion-label>
-        <ion-textarea rows="5" type='text' name='description' #nameInput='ngModel' [(ngModel)]='place.description'></ion-textarea>
-      </ion-item>
+        <ion-textarea rows="5" type='text' name='description' #nameInput='ngModel'minlength="2" [(ngModel)]='place.description' required></ion-textarea>
+      </ion-item>      
+      
+      <!-- Error message displayed if the place's description is invalid -->
+      <ion-item *ngIf='nameInput.invalid && nameInput.dirty' no-lines>
+        <p ion-text color='danger'>A place'description is required.</p>
+      </ion-item>    
 
     </ion-list>
 

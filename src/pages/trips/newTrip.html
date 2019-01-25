@@ -15,15 +15,24 @@
       <!-- Trip Name -->
       <ion-item>
         <ion-label floating>Trip Name</ion-label>
-        <ion-input type='text' name='title' #nameInput='ngModel' [(ngModel)]='trip.title'></ion-input>
+        <ion-input type='text' name='title' #nameInput='ngModel' minlength="2" [(ngModel)]='trip.title' required></ion-input>
       </ion-item>
+
+      <!-- Error message displayed if the trip name is invalid -->
+      <ion-item *ngIf='nameInput.invalid && nameInput.dirty' no-lines>
+        <p ion-text color='danger'>A trip name is required.</p>
+      </ion-item>      
 
       <!-- Trip Description -->
       <ion-item>
         <ion-label floating>Trip Description</ion-label>
-        <ion-textarea rows="5" type='text' name='description' #nameInput='ngModel' [(ngModel)]='trip.description'></ion-textarea>
+        <ion-textarea rows="5" type='text' name='description' #nameInput='ngModel' minlength="2" [(ngModel)]='trip.description' required></ion-textarea>
       </ion-item>
 
+      <!-- Error message displayed if the trip's descritpion is invalid -->
+      <ion-item *ngIf='nameInput.invalid && nameInput.dirty' no-lines>
+        <p ion-text color='danger'>A trip's description is required.</p>
+      </ion-item>
     </ion-list>
 
     <div>
