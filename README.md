@@ -17,7 +17,7 @@
 
 ## Introduction
 
-![Smartphone app](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/0.%20Smatphone%20screen.png "Smartphone app")
+![Apps rendering](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/0.%20Smatphone%20screen.png "Apps rendering")
 
 As part of the AppMob course from third and last year of Bachelor, we have created an API. This API is a travel journal, and we'll build an app to work with the API.
 
@@ -55,7 +55,7 @@ Here is a list of all functionalities of the app:
 
 Home screen:
 
-![Home screen](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/0.%20Smatphone%20screen.png "Home screen")
+![Home screen](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/Pages/Home%20screen.png "Home screen")
 
 Trips list:
 
