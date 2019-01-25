@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
+import { AuthProvider } from '../../providers/auth/auth';
+
 import { TripPage } from './trip';
 import { NewTripPage } from './newTrip';
 import { Trip } from '../../models/trip';
+import { Subscription } from 'rxjs';
 import { UserAccountPage } from '../users/userAccount';
 
 
@@ -23,12 +26,21 @@ export class TripsPage {
 
   search: string;
 
-  constructor(private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
+  username: string;
+  userSubscription: Subscription;
+
+  constructor(private auth: AuthProvider, private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.tripList = [];
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TripsPage');
+
+    this.userSubscription = this.auth.getUser().subscribe(user => {
+      if (user) {
+        this.username = user.name;
+      }
+    })
 
     this.search = this.navParams.get("search");
 

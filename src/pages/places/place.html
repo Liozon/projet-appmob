@@ -8,7 +8,7 @@
 
 <ion-content padding>
 
-  <button ion-button id="edit" (click)="editPlace(place)">
+  <button ion-button id="edit" (click)="editPlace(place)" *ngIf="username == place?.trip.user.name">
     <div>
       <ion-icon name="md-create"></ion-icon> <!-- name="ios-create-outline" -->
     </div>

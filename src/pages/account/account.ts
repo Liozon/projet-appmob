@@ -4,10 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { AuthProvider } from '../../providers/auth/auth';
 import { StartPage } from '../start/start';
 import { LoginPage } from '../login/login';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import { EditAccountPage } from '../account/editAccount';
-import { first } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -32,6 +29,7 @@ export class AccountPage {
     ionViewDidLoad() {
 
         console.log('ionViewDidLoad AccountPage');
+    
 
         //this.navCtrl.setRoot(HomePage, { opentab: 3 });
         this.userSubscription = this.auth.getUser().subscribe(user => {

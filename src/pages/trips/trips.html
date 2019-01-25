@@ -1,9 +1,13 @@
 <ion-header>
 
-  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" >
+<ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" *ngIf="username">
   </ion-searchbar>
 
-  <button ion-button (click)="addTrip()" id="add">
+  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" id="noUser"
+    *ngIf="!username">
+  </ion-searchbar>
+
+  <button ion-button (click)="addTrip()" id="add" *ngIf="username">
     <ion-icon name="add"></ion-icon>
   </button>
 

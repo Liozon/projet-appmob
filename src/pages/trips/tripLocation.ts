@@ -5,6 +5,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Trip } from '../../models/trip';
 import { Place } from '../../models/place';
 import { RestProvider } from '../../providers/rest/rest';
+import { PlacesPage } from '../places/places';
 
 @Component({
     selector: 'page-tripLocation',
@@ -49,7 +50,7 @@ export class TripLocationPage {
                     if (place.tripId == this.trip.id) {
                         this.lat = place.location.coordinates[1];
                         this.lng = place.location.coordinates[0];
-                        this.placeMarkers.push(marker([this.lat, this.lng]).bindTooltip("Place : " + place.name));
+                        this.placeMarkers.push(marker([this.lat, this.lng]).bindTooltip("Place : " + place.name).on('click', this.onClick));
                     }
                 });
                 console.log(this.placeMarkers);
@@ -77,6 +78,10 @@ export class TripLocationPage {
             var lng = coord.lng;
             console.log("You clicked the map at latitude: " + lat + " and longitude: " + lng);
         });*/
+    }
+
+    onClick() {
+        this.navCtrl.push(PlacesPage);
     }
 
 }
