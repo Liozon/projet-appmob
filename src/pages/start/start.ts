@@ -2,12 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { AuthProvider } from '../../providers/auth/auth';
-import { config } from '../../app/config';
 
-import { TripsPage } from '../trips/trips';
-import { PlacesPage } from '../places/places';
-import { UsersPage } from '../users/users';
-import { AccountPage } from '../account/account';
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
 import { SignupPage } from '../signup/signup';
