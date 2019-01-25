@@ -11,6 +11,7 @@
     - [Requirements](#requirements)
       - [Hardware](#hardware)
       - [Software](#software)
+      - [API](#api)
     - [How to install](#how-to-install)
   - [How to use Ionic DevApp](#how-to-use-ionic-devapp)
 
@@ -78,6 +79,10 @@ If you want to run and test the app locally on your device, you'll need the foll
 - [NPM](https://www.npmjs.com/), on your computer
 - [Git](https://git-scm.com/downloads), on your computer
 - [Ionic DevApp](https://ionicframework.com/docs/appflow/devapp/), install it on your smartphone (require Android 4.1 or later // iOS 9.2 or later)
+
+#### API
+
+In order to use this app, you'll need to provide an API URL and an image upload service URL.
 
 ### How to install
 
