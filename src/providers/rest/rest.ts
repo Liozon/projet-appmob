@@ -84,9 +84,9 @@ export class RestProvider {
     });
   }
 
-  newPlace(tripResponse: TripResponse): Observable<Place> {
+  newPlace(body: Place): Observable<Place> {
     const newPlaceUrl = `${config.apiUrl}/places`;
-    return this.http.post<Place>(newPlaceUrl, tripResponse);
+    return this.http.post<Place>(newPlaceUrl, body);
   }
 
   deletePlace(id: string): Observable<{}> {

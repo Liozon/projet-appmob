@@ -4,6 +4,8 @@ import { Trip } from '../../models/trip';
 import { EditTripPage } from './editTrip';
 import { TripLocationPage } from './tripLocation';
 import { NewPlacePage } from '../places/newPlace';
+import { Subscription } from 'rxjs';
+import { AuthProvider } from '../../providers/auth/auth';
 
 
 @Component({
@@ -14,11 +16,19 @@ import { NewPlacePage } from '../places/newPlace';
 export class TripPage {
 
     trip: Trip;
+
+    username: string;
+    userSubscription: Subscription;
     
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
+    constructor(private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams) {
     }
 
     ionViewDidLoad() {
+        this.userSubscription = this.auth.getUser().subscribe(user => {
+            if (user) {
+                this.username = user.name;
+            }
+        })
         console.log('ionViewDidLoad TripPage');
 
         this.trip = this.navParams.get("trip");
