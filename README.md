@@ -87,17 +87,23 @@ If you want to run and test the app locally on your device, you'll need the foll
 
 3. Open Git Bash, and navigate to the project folder using
 
-    ```cd /path/to/the/folder```
+    ```bash
+    cd /path/to/the/folder
+    ```
 
 4. Now, we need to install all the packages and dependencies for this project. To do so, run this command in Git Bash:
 
-    ```npm install```
+    ```bash
+    npm install
+    ```
 
     NPM will parse all the dependencies declared in the `package.json` and `package-lock.json` files and install them in the project's folder
 
 5. Once NPM has finished, to run the app on your computer and use the Ionic DevApp at the same time, run this command in Git Bash:
 
-    ```ionic serve -c```
+    ```bash
+    ionic serve -c
+    ```
 
     This command compiles the code, and creates a webserver that'll run on your computer. A new tab on your favorite web browser will open, with the app running.
     To open the app in Ionic DevApp, go to the chapter [How to use Ionic DevApp](#how-to-use-ionic-devapp)
