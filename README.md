@@ -54,7 +54,7 @@ Here is a list of all functionalities of the app:
 
 For developping this app, we used the following technologies:
 
-- [Travel Log API](https://comem-travel-log-api.herokuapp.com/) (API's documentation [here](https://comem-travel-log-api.herokuapp.com/))
+- [Travel Log API](https://comem-travel-log-api.herokuapp.com/) (API documentation [here](https://comem-travel-log-api.herokuapp.com/))
 - [Ionic](https://ionicframework.com/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Ionic DevApp](https://ionicframework.com/docs/appflow/devapp/)
