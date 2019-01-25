@@ -71,7 +71,7 @@ If you want to run and test the app locally on your device, you'll need the foll
 
 #### Hardware
 
-- a PC or Mac computer
+- a PC or Mac
 - a mobile device (it looks like our app runs better on Android for the moment. Sorry, fruits lovers)
 
 #### Software
