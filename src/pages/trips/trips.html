@@ -21,7 +21,7 @@
       <p>{{trip.description}}</p>
 
       <div id="symb">
-        <button ion-button (click)="showUser()">
+        <button ion-button (click)="showUser(trip.user)">
           <ion-icon name="md-person"> {{trip.user.name}}</ion-icon>
         </button>
 
