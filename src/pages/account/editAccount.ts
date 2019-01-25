@@ -69,6 +69,7 @@ export class EditAccountPage {
             this.editError = true;
             console.warn(`Edit User failed: ${err.message}`);
         });
+
     }
 
     deleteUser() {
