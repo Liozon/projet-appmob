@@ -54,6 +54,7 @@ Here is a list of all functionalities of the app:
 
 For developping this app, we used the following technologies:
 
+- [Travel Log API](https://comem-travel-log-api.herokuapp.com/)
 - [Ionic](https://ionicframework.com/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Ionic DevApp](https://ionicframework.com/docs/appflow/devapp/)
@@ -70,8 +71,8 @@ If you want to run and test the app locally on your device, you'll need the foll
 
 #### Hardware
 
-- a PC or Mac computer
-- a mobile device (it looks like Android works best with our app at the moment)
+- a PC or Mac
+- a mobile device (it looks like our app runs better on Android for the moment. Sorry, fruits lovers)
 
 #### Software
 
