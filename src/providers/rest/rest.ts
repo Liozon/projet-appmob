@@ -1,28 +1,114 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { config } from '../../app/config';
+import { Trip } from '../../models/trip';
+import { TripResponse } from '../../models/trip-response';
+import { Observable } from 'rxjs';
+import { User } from '../../models/user';
+import { Place } from '../../models/place';
 
-/*
-  Generated class for the RestProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class RestProvider {
 
-  constructor(public http: HttpClient) { 
+  constructor(public http: HttpClient) {
   }
 
-  getTrips() {
+
+  /*--------- TRIP-PAGES-----------*/
+
+  getTrips(search?: string): Observable<Trip[]> {
     const tripUrl = `${config.apiUrl}/trips`;
-    return new Promise(resolve => {
-      this.http.get(tripUrl).subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
+    if (search) {
+      return this.http.get<Trip[]>(tripUrl, {
+        params: {
+          include: 'user',
+          search: search
+        }
       });
+    } else {
+      return this.http.get<Trip[]>(tripUrl, {
+        params: {
+          include: 'user'
+        }
+      });
+    }
+  };
+
+  editTrip(id: string, body: Trip): Observable<Trip> {
+    const editTripUrl = `${config.apiUrl}/trips/` + id;
+    return this.http.patch<Trip>(editTripUrl, body, {
+      params: {
+        include: 'user'
+      }
     });
   }
+
+  newTrip(body: Trip): Observable<Trip> {
+    const newTripUrl = `${config.apiUrl}/trips`;
+    return this.http.post<Trip>(newTripUrl, body);
+  }
+
+  deleteTrip(id: string): Observable<{}> {
+    const deleteTripUrl = `${config.apiUrl}/trips/` + id;
+    return this.http.delete(deleteTripUrl);
+  }
+
+
+  /*--------- PLACE-PAGES-----------*/
+
+  getPlaces(search?: string): Observable<Place[]> {
+    const placeUrl = `${config.apiUrl}/places`;
+    if (search) {
+      return this.http.get<Place[]>(placeUrl, {
+        params: {
+          include: 'trip.user',
+          search: search
+        }
+      });
+    } else {
+      return this.http.get<Place[]>(placeUrl, {
+        params: {
+          include: 'trip.user'
+        }
+      });
+    }
+  };
+
+  editPlace(id: string, body: Place): Observable<Place> {
+    const editPlaceUrl = `${config.apiUrl}/places/` + id;
+    return this.http.patch<Place>(editPlaceUrl, body, {
+      params: {
+        include: 'trip.user'
+      }
+    });
+  }
+
+  newPlace(tripResponse: TripResponse): Observable<Place> {
+    const newPlaceUrl = `${config.apiUrl}/places`;
+    return this.http.post<Place>(newPlaceUrl, tripResponse);
+  }
+
+  deletePlace(id: string): Observable<{}> {
+    const deletePlaceUrl = `${config.apiUrl}/places/` + id;
+    return this.http.delete(deletePlaceUrl);
+  }
+
+
+  /*--------- USER-PAGES-----------*/
+
+  getUsers(search?: string): Observable<User[]> {
+    const userUrl = `${config.apiUrl}/users`;
+    if (search) {
+      console.log(search);
+      return this.http.get<User[]>(userUrl, {
+        params: {
+          search: search
+        }
+      });
+    } else {
+      return this.http.get<User[]>(userUrl);
+    }
+  };
 
 }

@@ -1,12 +1,10 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { NavController, NavParams, DateTime, List } from 'ionic-angular';
-import { AuthProvider } from '../../providers/auth/auth';
-import { EditTripPage } from '../trips/editTrip';
-import { config } from '../../app/config';
+import { NavController, NavParams } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
 import { TripPage } from './trip';
 import { NewTripPage } from './newTrip';
+import { Trip } from '../../models/trip';
+
 
 @Component({
   selector: 'page-trips',
@@ -14,60 +12,46 @@ import { NewTripPage } from './newTrip';
 })
 export class TripsPage {
 
-  tripList = [];
+  restProvider: RestProvider;
 
-  title: string;
-  description: string;
-  updatedAt: DateTime;
-  user: string;
+  tripList: Trip[];
 
   trips: any;
 
-  constructor(private http: HttpClient, private auth: AuthProvider, public navCtrl: NavController, public navParams: NavParams, public restProvider: RestProvider) {
-    /*this.getTrips(); */
+  selectedTrip: Trip;
+
+  search: string;
+
+  constructor(private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
+    this.tripList = [];
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TripsPage');
 
-    /*
-    this.auth.getUser().subscribe(user => {
-      this.user = user.name;
-    });
+    this.search = this.navParams.get("search");
+
+    console.log("this:" + this.search);
     
-    
-    this.getTrips().subscribe(trip => {
-      this.title = trip.title;
-      this.description = trip.description;
-      this.updatedAt = trip.updatedAt;
+    this.rest.getTrips(this.trips).subscribe(tripList => {
+      this.tripList = tripList;
     });
-    */
   }
 
-  /*
-  getTrips() { 
-    this.restProvider.getTrips().then(data => { 
-      this.trips = data; console.log(this.trips); 
+  onInput(e: any) {
+    this.rest.getTrips(e.target.value).subscribe(tripList => {
+      this.tripList = tripList; 
     }); 
-  }
-  */
-
-  // TODO: add a method to log in.
-  logIn() {
-    this.auth.logOut();
-  }
-
-  // TODO: add a method to log out.
-  logOut() {
-    this.auth.logOut();
   }
 
   addTrip() {
     this.navCtrl.push(NewTripPage);
   }
 
-  showTrip() {
-    this.navCtrl.push(TripPage);
+  showTrip(trip) {
+    this.navCtrl.push(TripPage, {
+      trip: trip
+    });
   }
 
   showUser() {

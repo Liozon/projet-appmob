@@ -5,6 +5,9 @@ import { DateTime, NavController, App, AlertController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { AuthRequest } from '../../models/auth-request';
 import { StartPage } from '../start/start';
+import { User } from '../../models/user';
+import { Subscription } from 'rxjs';
+import { HomePage } from '../home/home';
 
 @Component({
     selector: 'page-editAccount',
@@ -14,34 +17,35 @@ import { StartPage } from '../start/start';
 export class EditAccountPage {
 
     authProvider: AuthProvider;
-    authRequest: AuthRequest;
+    userMod: User;
     editError: boolean;
     username: string;
     userid: string;
     createdAt: DateTime;
     updatedAt: DateTime;
 
+    userSubscription: Subscription;
+
     @ViewChild(NgForm)
     form: NgForm;
 
     constructor(private auth: AuthProvider, private navCtrl: NavController, public http: HttpClient, private app: App, public alertCtrl: AlertController) {
-        this.authRequest = new AuthRequest();
+        this.userMod = new User();
     }
 
     ionViewDidLoad() {
-        /*
-        const url = `${config.apiUrl}/users/:id`;
-        this.http.patch(url).subscribe(users => {
-            console.log(`Users loaded`, users);
-        });
-        */
-
-        this.auth.getUser().subscribe(user => {
-            this.username = user.name;
-            this.userid = user.id;
-            this.createdAt = user.createdAt;
-            this.updatedAt = user.updatedAt;
+        this.userSubscription = this.auth.getUser().subscribe(user => {
+            if (user) {
+                this.username = user.name;
+                this.userid = user.id;
+                this.createdAt = user.createdAt;
+                this.updatedAt = user.updatedAt;
+            }
         })
+    }
+
+    ionViewDidLeave() {
+        this.userSubscription.unsubscribe();
     }
 
     /**
@@ -61,7 +65,7 @@ export class EditAccountPage {
         this.editError = false;
 
         // Perform the authentication request to the API.
-        this.auth.editUser(this.authRequest, this.userid).subscribe(() => this.accountPage(), err => {
+        this.auth.editUser(this.userid, this.userMod).subscribe(() => this.accountPage(), err => {
             this.editError = true;
             console.warn(`Edit User failed: ${err.message}`);
         });
@@ -75,7 +79,8 @@ export class EditAccountPage {
                 {
                     text: 'Yes',
                     handler: () => {
-                        this.auth.deleteUser(this.authRequest, this.userid);
+                        this.auth.deleteUser(this.userid).subscribe();
+                        this.auth.logOut();
                         this.app.getRootNav().setRoot(StartPage);
                         console.log('Do you want to delete your account? - Yes clicked');
                     }
@@ -92,6 +97,6 @@ export class EditAccountPage {
     }
 
     accountPage() {
-        this.navCtrl.parent.select(3);
+        this.navCtrl.setRoot(HomePage, { opentab: 3 });
     }
 }

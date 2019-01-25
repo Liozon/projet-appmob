@@ -31,6 +31,7 @@ import { EditPlacePage } from '../pages/places/editPlace';
 import { NewPlacePage } from '../pages/places/newPlace';
 import { PlacePage } from '../pages/places/place';
 import { PlaceLocationPage } from '../pages/places/placeLocation';
+import { UserAccountPage } from '../pages/users/userAccount';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { PlaceLocationPage } from '../pages/places/placeLocation';
     LoginPage,
     SignupPage,
     AccountPage,
-    EditAccountPage
+    EditAccountPage,
+    UserAccountPage
   ],
   imports: [
     BrowserModule,
@@ -80,14 +82,14 @@ import { PlaceLocationPage } from '../pages/places/placeLocation';
     LoginPage,
     SignupPage,
     AccountPage,
-    EditAccountPage
+    EditAccountPage,
+    UserAccountPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthProvider,
-    AuthInterceptorProvider,
     Geolocation,
     Camera,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorProvider, multi: true },

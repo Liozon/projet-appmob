@@ -1,12 +1,11 @@
 <ion-header>
-
   <ion-navbar>
-    <ion-title>Places of ((TRIP NAME))</ion-title>
+    <ion-title *ngIf="trip?.placesCount !== 1">{{trip?.placesCount}} places of {{trip?.title}}</ion-title>
+    <ion-title *ngIf="trip?.placesCount == 1">{{trip?.placesCount}} place of {{trip?.title}}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content padding>
-  <div class='map' leaflet [leafletOptions]='mapOptions'></div>
+<div class='map' *ngIf='mapOptions' leaflet [leafletOptions]='mapOptions' [leafletLayers]='placeMarkers' (leafletMapReady)='onMapReady($event)'></div>
 
 </ion-content>

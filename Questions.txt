@@ -3,42 +3,23 @@ QUESTIONS APPMOB
 ----------------
 
 ---
-ACCOUNT
-
-(1) login works after a few tries
-
-(2) after logout: Problem!
-
-(3) auth.ts => deleteUser() | editUser()
-
-
----
-TRIPS
-
-(1) trips.ts => showTrip() - load twice!
-
-(2) datas trip? (=> providers/rest/rest.ts)
-
-(3) trips => Search?
-
-(4) tripLocation => show places?
-
-
----
 PLACES
 
-(1) Same questions as in TRIPS: datas place? | place => Search?
+(1) trip.html -> newPlace.ts -> is not working
 
-(2)
+(2) newPlace.ts -> getLocation() -> how to save location in place?
 
 
----
+--
 USERS
 
-(1) Xxx
+(1) userAccount -> showTrips -> how to show only trips from selected User?
 
 
----
-GENERAL
+----------------
+TODO APPMOB
+----------------
 
-(1) Headers => ionViewDidLoad() 
+(1) all formulars; working on errormessage
+
+(2) if trip questions fixed; make the same in places and users

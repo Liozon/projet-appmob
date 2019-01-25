@@ -1,29 +1,29 @@
-<ion-content padding>
+<ion-header>
 
-  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
+  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" >
   </ion-searchbar>
 
   <button ion-button (click)="addTrip()" id="add">
     <ion-icon name="add"></ion-icon>
   </button>
 
+</ion-header>
+
+<ion-content padding>
+
   <ion-list>
-    <ion-item (click)="showTrip()">
-      <h1>((title))</h1>
-      <!-- {{trips.title}} -->
-      <p>((description))</p>
-      <!-- {{trips.description}}-->
+    <ion-item *ngFor='let trip of tripList'>
+      <h1>{{trip.title}}</h1>
+      <p>{{trip.description}}</p>
 
       <div id="symb">
         <button ion-button (click)="showUser()">
-          <ion-icon name="md-person"> ((username))</ion-icon>
-          <!-- {{username}} -->
+          <ion-icon name="md-person"> {{trip.user.name}}</ion-icon>
         </button>
 
-        <ion-icon name="md-time"> ((updatedAt))</ion-icon>
-        <!--{{trips.updatedAt}}-->
+        <ion-icon name="md-time"> {{trip.updatedAt | date:'dd/MM/yyyy'}}</ion-icon>
 
-        <button ion-button (click)="showTrip()">
+        <button ion-button (click)="showTrip(trip)">
           <ion-icon name="add-circle"></ion-icon>
         </button>
       </div>

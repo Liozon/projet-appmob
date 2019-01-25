@@ -7,23 +7,16 @@
   </button>
   <ion-item class="title">
     <h1>{{username}}</h1>
-    <p>User since {{createdAt | date:'dd/MM/yyyy'}}</p>
-    <p>(Last updated: {{updatedAt | date:'dd/MM/yyyy'}})</p>
+    <p *ngIf='createdAt && updatedAt'>User since {{createdAt | date:'dd/MM/yyyy'}} (Updated {{updatedAt | date:'dd/MM/yyyy'}})</p>
   </ion-item>
 </ion-content>
 
 <ion-footer no-border>
   <ion-buttons class="square">
-    <button ion-button (click)="tripPage()">
+    <button ion-button (click)="tripPage(username)">
       <div>
         <ion-icon name="map"></ion-icon>
         <label>{{tripsCount}} Trips</label>
-      </div>
-    </button>
-    <button ion-button (click)="placePage()">
-      <div>
-        <ion-icon name="pin"></ion-icon>
-        <label>{{placesCount}} Places</label>
       </div>
     </button>
   </ion-buttons>

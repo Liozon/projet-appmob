@@ -1,7 +1,15 @@
 page-trips {
 
+  ion-header {
+    margin-top: 70px;
+    border: 0;
+    background-color: color($colors, secondary);
+    padding-right: 20px;
+  }
+
   ion-searchbar {
-    width: 80%;
+    margin-left: 20px;
+    width: 74%;
     float: left;
     margin-bottom: 15px;
   }
@@ -20,8 +28,8 @@ page-trips {
   }
 
   .item-md {
-    margin-left: 8px;
-    width: 96%;
+    margin-left: 10px;
+    width: 94%;
     color: color($colors, primary);
   }
 
@@ -64,6 +72,11 @@ page-trips {
     justify-content: space-between;
   }
 
+  ion-list {
+    padding-top: 20px;
+    padding-bottom: 45px;
+  }
+
 }
 
 page-editTrip {
@@ -79,6 +92,14 @@ page-editTrip {
 
   .toolbar-background-md {
     background-color: transparent;
+  }
+
+  #delete {
+    all: unset;
+    zoom: 2;
+    margin-bottom: 5px;
+    margin-left: 90%;
+    color: color($colors, primary);
   }
 }
 
@@ -147,12 +168,18 @@ page-trip {
     float: left;
     color: color($colors, primary);
     font-size: 12px;
+    margin-left: 20px;
+    text-align: left;
+  }
+
+  .symb ion-icon {
+    margin-bottom: 10px;
   }
 
   .desc {
-    margin-top: 20px;
+    margin-top: 10px;
     float: left;
-    margin-left: 15px;
+    margin-left: 20px;
     width: 90%;
     height: 25%;
     overflow-y: scroll;
@@ -218,6 +245,14 @@ page-trip {
     display: block;
   }
 
+  #null {
+    color: rgba(29, 71, 62, 0.8);
+  }
+
+  .square #null ion-icon {
+    color: rgba(29, 71, 62, 0.8);
+  }
+
 }
 
 page-tripLocation {
@@ -237,6 +272,7 @@ page-tripLocation {
 
   .map {
     height: 87%;
+    background-color: rgb(170, 211, 223);
   }
 
 }

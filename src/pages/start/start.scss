@@ -4,6 +4,10 @@ page-start {
     text-align: center;
   }
 
+  .scroll-content {
+    margin-bottom: 0 !important;
+  }
+
   h1 {
     padding-top: 30px;
     font-weight: lighter;
@@ -20,6 +24,7 @@ page-start {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding: 0;
   }
 
   .square button {

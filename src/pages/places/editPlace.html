@@ -1,9 +1,69 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Edit ((PLACE NAME))</ion-title>
+    <ion-title>Edit place: {{place?.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
+
 <ion-content padding>
+  <ion-buttons id="editButtons">
+    <button ion-button (click)="deletePlace()">
+      <div>
+        <ion-icon name="trash"></ion-icon>
+      </div>
+    </button>
+    
+    <button ion-button (click)="locate()">
+      <div>
+        <ion-icon name="md-locate"></ion-icon>
+      </div>
+    </button>
+
+    <div *ngIf='!picture.url'>
+      <button ion-button (click)="takePicture()" id="editButtons">
+        <div>
+          <ion-icon name="md-camera"></ion-icon>
+        </div>
+      </button>
+    </div>
+
+    <div id="picture" *ngIf='picture.url'>
+      <button ion-button (click)="takePicture()" id="editButtons">
+        <div>
+          <ion-icon name="md-camera"></ion-icon>
+        </div>
+      </button>
+      <img [src]='picture.url' />
+    </div>
+  </ion-buttons>
+
+  <form (submit)='onSubmit($event)'>
+
+    <ion-list>
+
+      <!-- Place Name -->
+      <ion-item>
+        <ion-label floating>Change Place Name</ion-label>
+        <ion-input type='text' name='name' #nameInput='ngModel' [(ngModel)]='placeMod.name'></ion-input>
+      </ion-item>
+
+      <!-- Place Description -->
+      <ion-item>
+        <ion-label floating>Change Place Description</ion-label>
+        <ion-textarea rows="5" type='text' name='description' #nameInput='ngModel' [(ngModel)]='placeMod.description'></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+
+    <div>
+
+      <!-- Submit button -->
+      <button type='submit' ion-button block>
+        <ion-icon name="md-arrow-round-forward"></ion-icon>
+      </button>
+
+    </div>
+  </form>
+
 </ion-content>

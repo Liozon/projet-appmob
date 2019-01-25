@@ -10,9 +10,15 @@
     </ion-title>
 
     <!-- Login button -->
-    <ion-buttons end>
+    <ion-buttons end *ngIf="!username">
       <button ion-button icon-only (click)='logIn()'>
         <ion-icon name='log-in'></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end *ngIf="username">
+      <button ion-button icon-only (click)='logOut()'>
+        <ion-icon name='log-out'></ion-icon>
       </button>
     </ion-buttons>
 
