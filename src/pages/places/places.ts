@@ -18,8 +18,8 @@ export class PlacesPage {
   placeList: Place[];
 
   places: any;
-  users: any;
   user: any;
+
   selectedPlace: Place;
 
   constructor(private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
@@ -61,4 +61,5 @@ export class PlacesPage {
       user: user
     });
   }
+
 }

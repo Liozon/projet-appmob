@@ -4,6 +4,7 @@ import { RestProvider } from '../../providers/rest/rest';
 import { TripPage } from './trip';
 import { NewTripPage } from './newTrip';
 import { Trip } from '../../models/trip';
+import { UserAccountPage } from '../users/userAccount';
 
 
 @Component({
@@ -54,7 +55,9 @@ export class TripsPage {
     });
   }
 
-  showUser() {
-    alert("todo: show user");
+  showUser(user) {
+    this.navCtrl.push(UserAccountPage, {
+      user: user
+    });
   }
 }
