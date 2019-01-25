@@ -20,8 +20,8 @@
 
       <!-- Trip Name -->
       <ion-item>
-        <ion-label floating>Change Trip Name</ion-label>
-        <ion-input type='text' name='title' #changeTripInput='ngModel' minlength="2" [(ngModel)]='tripMod.title'>{{trip?.title}}</ion-input>
+        <ion-label stacked>Change Trip Name</ion-label>
+        <ion-input type='text' name='title' #changeTripInput='ngModel' minlength="2" [(ngModel)]='tripMod.title' placeholder="{{trip?.title}}"></ion-input>
       </ion-item>
 
       <!-- Error message displayed if the trip name is too short-->
@@ -31,8 +31,8 @@
 
       <!-- Trip Description -->
       <ion-item>
-        <ion-label floating>Change Trip Description</ion-label>
-        <ion-textarea rows="5" type='text' name='description' #changeDescriptionTripInput='ngModel' minlength="2" [(ngModel)]='tripMod.description'></ion-textarea>
+        <ion-label stacked>Change Trip Description</ion-label>
+        <ion-textarea rows="5" type='text' name='description' #changeDescriptionTripInput='ngModel' minlength="2" placeholder="{{trip?.description}}" [(ngModel)]='tripMod.description'></ion-textarea>
       </ion-item>
 
       <!-- Error message displayed if the trip description is too short-->

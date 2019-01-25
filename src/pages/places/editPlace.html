@@ -44,8 +44,8 @@
 
       <!-- Place Name -->
       <ion-item>
-        <ion-label floating>Change Place Name</ion-label>
-        <ion-input type='text' name='name' #nameInput='ngModel' [(ngModel)]='placeMod.name' minlength="2"></ion-input>
+        <ion-label stacked>Change Place Name</ion-label>
+        <ion-input type='text' name='name' #nameInput='ngModel' [(ngModel)]='placeMod.name' minlength="2" placeholder="{{place?.name}}"></ion-input>
       </ion-item>
 
       <!-- Error message displayed if the place name is invalid -->
@@ -55,8 +55,8 @@
 
       <!-- Place Description -->
       <ion-item>
-        <ion-label floating>Change Place Description</ion-label>
-        <ion-textarea rows="5" type='text' name='description' #descriptionInput='ngModel' minlength="2" [(ngModel)]='placeMod.description' minlength="2"></ion-textarea>
+        <ion-label stacked>Change Place Description</ion-label>
+        <ion-textarea rows="5" type='text' name='description' #descriptionInput='ngModel' minlength="2" [(ngModel)]='placeMod.description' minlength="2" placeholder="{{place?.description}}"></ion-textarea>
       </ion-item>
 
       <!-- Error message displayed if the place description is invalid -->

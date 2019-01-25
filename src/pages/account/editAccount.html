@@ -25,8 +25,8 @@
 
       <!-- Change Username -->
       <ion-item>
-        <ion-label floating>Change Username</ion-label>
-        <ion-input type='text' name='name' #nameInput='ngModel' [(ngModel)]='userMod.name'></ion-input>
+        <ion-label stacked>Change Username</ion-label>
+        <ion-input type='text' name='name' #nameInput='ngModel' [(ngModel)]='userMod.name'placeholder="{{username}}"></ion-input>
       </ion-item>
 
       <!-- Error message displayed if the username is invalid -->
@@ -36,7 +36,7 @@
 
       <!-- Change Password -->
       <ion-item>
-        <ion-label floating>Change Password</ion-label>
+        <ion-label stacked>Change Password</ion-label>
         <ion-input type='password' name='password' #passwordInput='ngModel' [(ngModel)]='userMod.password'></ion-input>
       </ion-item>
 
