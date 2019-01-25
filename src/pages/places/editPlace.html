@@ -45,13 +45,23 @@
       <!-- Place Name -->
       <ion-item>
         <ion-label floating>Change Place Name</ion-label>
-        <ion-input type='text' name='name' #nameInput='ngModel' [(ngModel)]='placeMod.name'></ion-input>
+        <ion-input type='text' name='name' #nameInput='ngModel' [(ngModel)]='placeMod.name' minlength="2"></ion-input>
+      </ion-item>
+
+      <!-- Error message displayed if the place name is invalid -->
+      <ion-item *ngIf='nameInput.error?.minlength' no-lines>
+        <p ion-text color='danger'>The place name must be longer than 2 characters.</p>
       </ion-item>
 
       <!-- Place Description -->
       <ion-item>
         <ion-label floating>Change Place Description</ion-label>
-        <ion-textarea rows="5" type='text' name='description' #nameInput='ngModel' [(ngModel)]='placeMod.description'></ion-textarea>
+        <ion-textarea rows="5" type='text' name='description' #descriptionInput='ngModel' minlength="2" [(ngModel)]='placeMod.description' minlength="2"></ion-textarea>
+      </ion-item>
+
+      <!-- Error message displayed if the place description is invalid -->
+      <ion-item *ngIf='descriptionInput.error?.minlength' no-lines>
+        <p ion-text color='danger'>The place description must be longer than 2 characters.</p>
       </ion-item>
 
     </ion-list>
@@ -59,7 +69,7 @@
     <div>
 
       <!-- Submit button -->
-      <button type='submit' ion-button block>
+      <button type='submit' [disabled]='form.invalid' ion-button block>
         <ion-icon name="md-arrow-round-forward"></ion-icon>
       </button>
 
