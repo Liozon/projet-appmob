@@ -4,6 +4,8 @@ import { PlacePage } from './place';
 import { TripPage } from '../trips/trip';
 import { RestProvider } from '../../providers/rest/rest';
 import { Place } from '../../models/place';
+import { UserAccountPage } from '../users/userAccount';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'page-places',
@@ -16,7 +18,8 @@ export class PlacesPage {
   placeList: Place[];
 
   places: any;
-
+  users: any;
+  user: any;
   selectedPlace: Place;
 
   constructor(private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
@@ -53,8 +56,9 @@ export class PlacesPage {
     });
   }
 
-  showUser() {
-    alert("todo: show user");
+  showUser(user) {
+    this.navCtrl.push(UserAccountPage, {
+      user: user
+    });
   }
-
 }
