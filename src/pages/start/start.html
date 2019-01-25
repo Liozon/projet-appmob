@@ -39,11 +39,9 @@
 
 
 </ion-content>
-
-<ion-footer no-borde *ngIf="!username">
-  <ion-buttons id="footer" >
-    <button ion-button (click)="signUpPage()" class="footer">Sign up</button>
-    |
-    <button ion-button (click)="logInPage()" class="footer">Log in</button>
+<ion-footer no-border *ngIf="!username">
+  <ion-buttons id="footer">
+    <button ion-button (click)="signUpPage()" class="footer square_btn">Sign up</button>
+    <button ion-button (click)="logInPage()" class="footer square_btn">Log in</button>
   </ion-buttons>
 </ion-footer>

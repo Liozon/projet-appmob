@@ -4,17 +4,19 @@
   - [Introduction](#introduction)
   - [Presentation of the app](#presentation-of-the-app)
   - [Functionalities](#functionalities)
-  - [Technology used](#technology-used)
+  - [Technologies used](#technologies-used)
 
 ## Introduction
 
-Here, you'll find a presentation of the app. Subjects like functionalities and technology used will be addressed in this document.
+Here, you'll find a presentation of the app. Subjects like functionalities and technologies used will be addressed in this document.
 
 ## Presentation of the app
 
 This application aims to centralize and log all your trips and places you visit. TraveLog aims to use geolocation and images to accurately catalog your travels.
 
 In addition, you can share your travels with all TraveLog users, and discover your next trip to organize!
+
+Based on an API, this application can be used on any smartphone running iOS or Android, but also tablets and desktop devices.
 
 ## Functionalities
 
@@ -30,12 +32,12 @@ Here is a list of all functionalities of the app:
 - User profile edit
 - User search
 
-## Technology used
+## Technologies used
 
 For developping this app, we used the following technologies:
 
 - [Ionic](https://ionicframework.com/)
-- [Visual Studio Code](https://code.visualstudio.com/) (or equivalent code editor)
+- [Visual Studio Code](https://code.visualstudio.com/)
 - [Ionic DevApp](https://ionicframework.com/docs/appflow/devapp/)
 - [JavaScript](https://www.javascript.com/)
 - [HTML 5](https://www.w3.org/TR/html52/)

@@ -51,6 +51,7 @@ export class AccountPage {
 
     ionViewDidLeave() {
         this.userSubscription.unsubscribe();
+
     }
 
     editUser() {

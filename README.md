@@ -13,6 +13,8 @@
 
 ## Introduction
 
+![Running app](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/3.%20App%20opened.jpg "Running app")
+
 As part of the AppMob course from third and last year of Bachelor, we have created an API. This API is a travel journal, and we'll build an app to work with the API.
 
 ## App preview
