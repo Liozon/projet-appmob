@@ -26,25 +26,34 @@
       <!-- Change Username -->
       <ion-item>
         <ion-label stacked>Change Username</ion-label>
-        <ion-input type='text' name='name' #nameInput='ngModel' [(ngModel)]='userMod.name'placeholder="{{username}}"></ion-input>
+        <ion-input type='text' name='name' #changeNameInput='ngModel' [(ngModel)]='userMod.name'placeholder="{{username}}" minlength="2"></ion-input>
       </ion-item>
 
       <!-- Error message displayed if the username is invalid -->
-      <ion-item *ngIf='nameInput.invalid && nameInput.dirty'>
+      <ion-item *ngIf='changeNameInput.errors?.invalid && nameInput.errors?.dirty'>
         <p ion-text color='danger'>Valid username is required.</p>
+      </ion-item>
+
+      <!-- Error message displayed if the username is too long -->
+      <ion-item *ngIf='changeNameInput.errors?.minlength'>
+        <p ion-text color='danger'>Valid username must be longer than 2 characters.</p>
       </ion-item>
 
       <!-- Change Password -->
       <ion-item>
         <ion-label stacked>Change Password</ion-label>
-        <ion-input type='password' name='password' #passwordInput='ngModel' [(ngModel)]='userMod.password'></ion-input>
+        <ion-input type='password' name='password' #passwordInput='ngModel' [(ngModel)]='userMod.password' minlength="2"></ion-input>
       </ion-item>
 
       <!-- Error message displayed if the password is invalid -->
-      <ion-item *ngIf='passwordInput.invalid && passwordInput.dirty' no-lines>
+      <ion-item *ngIf='passwordInput.errors?.invalid && passwordInput.errors?.dirty' no-lines>
         <p ion-text color='danger'>Valid password is required.</p>
       </ion-item>
 
+      <!-- Error message displayed if the password is invalid -->
+      <ion-item *ngIf='passwordInput.errors?.minlength' no-lines>
+        <p ion-text color='danger'>Valid password must be longer than 2 characters.</p>
+      </ion-item>
     </ion-list>
 
     <div>
@@ -55,7 +64,7 @@
       </button>
 
       <!-- Error message displayed if the login failed -->
-      <p *ngIf='loginError' ion-text color='danger'>Username or password is invalid.</p>
+      <p *ngIf='editError' ion-text color='danger'>Username is already used.</p>
 
     </div>
   </form>
