@@ -4,7 +4,7 @@
   - [Introduction](#introduction)
   - [App preview](#app-preview)
   - [Presentation of the app](#presentation-of-the-app)
-    - [Goal of the app](#goal-of-the-app)
+    - [Goals of the app](#goals-of-the-app)
     - [Functionalities](#functionalities)
     - [Technologies used](#technologies-used)
   - [Installation procedure](#installation-procedure)
@@ -28,7 +28,7 @@ But if you want to preview the app without all the hassle of installing stuff an
 
 ## Presentation of the app
 
-### Goal of the app
+### Goals of the app
 
 This application aims to centralize and log all your trips and places you visit. TraveLog aims to use geolocation and images to accurately catalog your travels.
 
