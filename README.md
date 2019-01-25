@@ -67,7 +67,7 @@ Trip modification:
 
 Places list:
 
-![Places list](https://raw.githubusercontent.com/Liozon/projet-appmob/steffi/screenshots/Pages/Places%20list2.png "Places list")
+![Places list](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/Pages/Places%20list.png "Places list")
 
 Place modification:
 

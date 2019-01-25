@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { PlacePage } from './place';
 import { TripPage } from '../trips/trip';
 import { RestProvider } from '../../providers/rest/rest';
 import { Place } from '../../models/place';
 import { UserAccountPage } from '../users/userAccount';
-import { User } from '../../models/user';
 
 @Component({
   selector: 'page-places',
@@ -14,15 +13,9 @@ import { User } from '../../models/user';
 export class PlacesPage {
 
   restProvider: RestProvider;
-
   placeList: Place[];
 
-  places: any;
-  user: any;
-
-  selectedPlace: Place;
-
-  constructor(private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private rest: RestProvider, public navCtrl: NavController) {
     this.placeList = [];
   }
 
@@ -33,9 +26,6 @@ export class PlacesPage {
       this.placeList = placeList;
       console.log(this.placeList);
     });
-
-    
-
   }
 
   onInput(e: any) {
@@ -61,5 +51,4 @@ export class PlacesPage {
       user: user
     });
   }
-
 }

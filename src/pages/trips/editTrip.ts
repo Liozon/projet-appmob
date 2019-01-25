@@ -35,7 +35,6 @@ export class EditTripPage {
     }
 
     onSubmit($event) {
-
         // Prevent default HTML form behavior.
         $event.preventDefault();
 
@@ -53,7 +52,6 @@ export class EditTripPage {
             this.editError = true;
             console.warn(`Edit Trip failed: ${err.message}`);
         });
-
     }
 
     tripPage(trip) {
@@ -89,6 +87,4 @@ export class EditTripPage {
         });
         confirm.present();
     }
-
-
 }

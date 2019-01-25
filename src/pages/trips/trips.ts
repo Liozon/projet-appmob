@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
 import { AuthProvider } from '../../providers/auth/auth';
-
 import { TripPage } from './trip';
 import { NewTripPage } from './newTrip';
 import { Trip } from '../../models/trip';
 import { Subscription } from 'rxjs';
 import { UserAccountPage } from '../users/userAccount';
 import { User } from '../../models/user';
-import { getSegmentsFromUrlPieces } from 'ionic-angular/umd/navigation/url-serializer';
 
 
 @Component({
@@ -22,22 +20,18 @@ export class TripsPage {
 
   tripList: Trip[];
 
-  trips: any;
-
-  selectedTrip: Trip;
+  search: string;
 
   user: User;
-  tripsCount: any;
 
-  tripUser: string;
   username: string;
   userSubscription: Subscription;
 
-  constructor(private auth: AuthProvider, private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private auth: AuthProvider, private rest: RestProvider, public navCtrl: NavController) {
     this.tripList = [];
   }
 
-  ionViewDidLoad() {
+  ionViewDidLoad(search?) {
     console.log('ionViewDidLoad TripsPage');
 
     this.userSubscription = this.auth.getUser().subscribe(user => {
@@ -45,23 +39,15 @@ export class TripsPage {
         this.username = user.name;
       }
     })
-    
-    this.getTrips();
-    
-  }
 
-  getTrips(search?){
     this.rest.getTrips(search).subscribe(tripList => {
+      console.log(search);
       this.tripList = tripList, {
-        search: this.navParams.get("name")
+        params:{
+          search: search
+        }
       };
-      if (this.navParams.get("name")) {
-        console.log(name);
-      } else {
-        console.log("leider nein");
-      }
     });
-
   }
 
   onInput(e: any) {

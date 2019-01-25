@@ -14,10 +14,7 @@ export class MyApp {
   
   rootPage:any = StartPage;
    
-  constructor(private auth: AuthProvider,
-    platform: Platform,
-    statusBar: StatusBar,
-    splashScreen: SplashScreen) {
+  constructor(private auth: AuthProvider, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
       
       /*
     this.auth.isAuthenticated().subscribe(authenticated => {

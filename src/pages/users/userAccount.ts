@@ -1,6 +1,5 @@
-import { NavController, NavParams, App, LoadingController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { User } from '../../models/user';
 
 @Component({
@@ -9,22 +8,18 @@ import { User } from '../../models/user';
 })
 
 export class UserAccountPage {
-    
+
     user: User;
 
-    constructor( public http: HttpClient, public navCtrl: NavController, public navParams: NavParams, private app: App,
-        public loadingCtrl: LoadingController){
+    constructor(public navCtrl: NavController, public navParams: NavParams) {
+    }
 
-        }
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad UserAccountPage');
+        this.user = this.navParams.get("user");
+    }
 
-        ionViewDidLoad() {
-            console.log('ionViewDidLoad UserAccountPage');
-            this.user = this.navParams.get("user");
-
-        }
-    
-        showTrips() {
-            this.navCtrl.parent.select(0);
-        }
-
+    showTrips() {
+        this.navCtrl.parent.select(0);
+    }
 }

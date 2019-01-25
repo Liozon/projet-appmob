@@ -23,11 +23,11 @@
   </ion-item>
 
   <div class="symb">
-    <ion-icon name="map" (click)="showTrip()"> A place from {{place?.trip.title}}</ion-icon>
+    <ion-icon name="map" (click)="showTrip(place?.trip)"> A place from {{place?.trip.title}}</ion-icon>
   </div>
 
   <div class="symb">
-    <ion-icon name="md-person" (click)="showUser()"> {{place?.trip.user.name}}</ion-icon>
+    <ion-icon name="md-person" (click)="showUser(place?.trip.user)"> {{place?.trip.user.name}}</ion-icon>
 
     <ion-icon name="md-time"> {{place?.updatedAt | date:'dd/MM/yyyy'}}</ion-icon>
     <ion-icon name="md-locate" (click)="showLocation(place)" id="loc"></ion-icon>
