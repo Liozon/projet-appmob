@@ -85,13 +85,27 @@ If you want to run and test the app locally on your device, you'll need the foll
 
 2. Unzip the folder on your computer
 
-3. Open Git Bash, and navigate to the project folder using
+3. Navigate to `src/app/config.sample.ts` and duplicate it in the same folder
+
+4. Rename the new file to `config.ts`
+
+5. In this file, replace every `API_URL_HERE` and `API_KEY_HERE` with your own APi URLs and keys
+
+    ```typescript
+        export const config = {
+            apiUrl: 'API_URL_HERE',
+            qimgUrl: 'API_URL_HERE',
+            qimgSecret: 'API_KEY_HERE'
+        }
+    ```
+
+6. Open Git Bash, and navigate to the project folder using
 
     ```bash
     cd /path/to/the/folder
     ```
 
-4. Now, we need to install all the packages and dependencies for this project. To do so, run this command in Git Bash:
+7. Now, we need to install all the packages and dependencies for this project. To do so, run this command in Git Bash:
 
     ```bash
     npm install
@@ -99,7 +113,7 @@ If you want to run and test the app locally on your device, you'll need the foll
 
     NPM will parse all the dependencies declared in the `package.json` and `package-lock.json` files and install them in the project's folder
 
-5. Once NPM has finished, to run the app on your computer and use the Ionic DevApp at the same time, run this command in Git Bash:
+8. Once NPM has finished, to run the app on your computer and use the Ionic DevApp at the same time, run this command in Git Bash:
 
     ```bash
     ionic serve -c
