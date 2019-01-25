@@ -21,21 +21,30 @@
       <!-- Trip Name -->
       <ion-item>
         <ion-label floating>Change Trip Name</ion-label>
-        <ion-input type='text' name='title' #nameInput='ngModel' [(ngModel)]='tripMod.title'></ion-input>
+        <ion-input type='text' name='title' #changeTripInput='ngModel' minlength="2" [(ngModel)]='tripMod.title'>{{trip?.title}}</ion-input>
       </ion-item>
+
+      <!-- Error message displayed if the trip name is too short-->
+      <ion-item *ngIf='changeTripInput.errors?.minlength' no-lines>
+        <p ion-text color='danger'>The trip name must be longer than 2 characters.</p>
+      </ion-item>  
 
       <!-- Trip Description -->
       <ion-item>
         <ion-label floating>Change Trip Description</ion-label>
-        <ion-textarea rows="5" type='text' name='description' #nameInput='ngModel' [(ngModel)]='tripMod.description'></ion-textarea>
+        <ion-textarea rows="5" type='text' name='description' #changeDescriptionTripInput='ngModel' minlength="2" [(ngModel)]='tripMod.description'></ion-textarea>
       </ion-item>
 
+      <!-- Error message displayed if the trip description is too short-->
+      <ion-item *ngIf='changeDescriptionTripInput.errors?.minlength' no-lines>
+        <p ion-text color='danger'>The trip description must be longer than 2 characters.</p>
+      </ion-item>  
     </ion-list>
 
     <div>
 
       <!-- Submit button -->
-      <button type='submit' ion-button block>
+      <button type='submit' [disabled]='form.invalid' ion-button block>
         <ion-icon name="md-arrow-round-forward"></ion-icon>
       </button>
 
