@@ -4,6 +4,9 @@
   - [Introduction](#introduction)
   - [App preview](#app-preview)
   - [Presentation of the app](#presentation-of-the-app)
+    - [Purpose of the app](#purpose-of-the-app)
+    - [Functionalities](#functionalities)
+    - [Technologies used](#technologies-used)
   - [Installation procedure](#installation-procedure)
     - [Requirements](#requirements)
       - [Hardware](#hardware)
@@ -25,7 +28,39 @@ But if you want to preview the app without all the hassle of installing stuff an
 
 ## Presentation of the app
 
-To read and learn more about this app, please kindly read the [app presentation here](https://github.com/Liozon/projet-appmob/blob/master/PRESENTATION.md).
+### Purpose of the app
+
+This application aims to centralize and log all your trips and places you visit. TraveLog aims to use geolocation and images to accurately catalog your travels.
+
+In addition, you can share your travels with all TraveLog users, and discover your next trip to organize!
+
+Based on an API, this application can be used on any smartphone running iOS or Android, but also tablets and desktop devices.
+
+### Functionalities
+
+Here is a list of all functionalities of the app:
+
+- Account creation
+- Account login
+- Picture creation
+- Place creation
+- Place search
+- Trip creation
+- Trip search
+- User profile edit
+- User search
+
+### Technologies used
+
+For developping this app, we used the following technologies:
+
+- [Ionic](https://ionicframework.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Ionic DevApp](https://ionicframework.com/docs/appflow/devapp/)
+- [JavaScript](https://www.javascript.com/)
+- [HTML 5](https://www.w3.org/TR/html52/)
+- [CSS](https://www.w3.org/Style/CSS/)
+- [NPM](https://www.npmjs.com/)
 
 ## Installation procedure
 
