@@ -56,8 +56,10 @@ export class AccountPage {
         this.navCtrl.push(EditAccountPage);
     }
 
-    tripPage(search: string) {
-        this.navCtrl.parent.select(0);
+    tripPage(search) {
+        this.navCtrl.parent.select(0, {
+            search: search
+        });
         console.log(search);
     }
 

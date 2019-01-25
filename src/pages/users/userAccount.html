@@ -17,7 +17,19 @@
 
 <ion-footer no-border>
   <ion-buttons class="square">
-    <button ion-button (click)="showTrips()">
+    <button ion-button (click)="showTrips()" *ngIf="user?.tripsCount > 1">
+      <div>
+        <ion-icon name="map"></ion-icon>
+        <label>{{user?.tripsCount}} Trips</label>
+      </div>
+    </button>
+    <button ion-button (click)="showTrips()" *ngIf="user?.tripsCount == 1">
+      <div>
+        <ion-icon name="map"></ion-icon>
+        <label>{{user?.tripsCount}} Trip</label>
+      </div>
+    </button>
+    <button ion-button *ngIf="user?.tripsCount == 0" disabled>
       <div>
         <ion-icon name="map"></ion-icon>
         <label>{{user?.tripsCount}} Trips</label>
