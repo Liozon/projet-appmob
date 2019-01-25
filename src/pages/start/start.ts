@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { HttpClient } from '@angular/common/http';
+import { NavController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
-
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
 import { SignupPage } from '../signup/signup';
@@ -16,11 +14,9 @@ import { Subscription } from 'rxjs';
 export class StartPage {
 
     username: string;
-
     userSubscription: Subscription;
 
-    constructor(private auth: AuthProvider, public http: HttpClient, public navCtrl: NavController, public navParams: NavParams) {
-
+    constructor(private auth: AuthProvider, public navCtrl: NavController) {
     }
 
     ionViewDidLoad() {

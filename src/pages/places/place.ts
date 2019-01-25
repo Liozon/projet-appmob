@@ -5,7 +5,8 @@ import { EditPlacePage } from './editPlace';
 import { PlaceLocationPage } from "./placeLocation";
 import { Subscription } from 'rxjs';
 import { AuthProvider } from "../../providers/auth/auth";
-
+import { UserAccountPage } from "../users/userAccount";
+import { TripPage } from "../trips/trip";
 
 @Component({
     selector: 'page-place',
@@ -39,12 +40,16 @@ export class PlacePage {
         });
     }
 
-    showUser() {
-        alert("todo: show user");
+    showUser(user) {
+        this.navCtrl.push(UserAccountPage, {
+            user: user
+        });
     }
 
-    showTrip() {
-        alert("todo: show user");
+    showTrip(trip) {
+        this.navCtrl.push(TripPage, {
+            trip: trip
+        });
     }
 
     showLocation(place) {

@@ -1,9 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { AuthProvider } from '../../providers/auth/auth';
 import { DateTime, NavController, App, AlertController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
-import { AuthRequest } from '../../models/auth-request';
 import { StartPage } from '../start/start';
 import { User } from '../../models/user';
 import { Subscription } from 'rxjs';
@@ -29,7 +27,7 @@ export class EditAccountPage {
     @ViewChild(NgForm)
     form: NgForm;
 
-    constructor(private auth: AuthProvider, private navCtrl: NavController, public http: HttpClient, private app: App, public alertCtrl: AlertController) {
+    constructor(private auth: AuthProvider, private navCtrl: NavController, private app: App, public alertCtrl: AlertController) {
         this.userMod = new User();
     }
 

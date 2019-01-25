@@ -50,7 +50,7 @@ export class TripLocationPage {
                     if (place.tripId == this.trip.id) {
                         this.lat = place.location.coordinates[1];
                         this.lng = place.location.coordinates[0];
-                        this.placeMarkers.push(marker([this.lat, this.lng]).bindTooltip("Place : " + place.name).on('click', this.onClick));
+                        this.placeMarkers.push(marker([this.lat, this.lng]).bindTooltip("Place : " + place.name));
                     }
                 });
                 console.log(this.placeMarkers);
@@ -83,5 +83,4 @@ export class TripLocationPage {
     onClick() {
         this.navCtrl.push(PlacesPage);
     }
-
 }

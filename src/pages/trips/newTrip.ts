@@ -36,7 +36,6 @@ export class NewTripPage {
    * Called when the newtrip form is submitted.
    */
     onSubmit($event) {
-
         // Prevent default HTML form behavior.
         $event.preventDefault();
 

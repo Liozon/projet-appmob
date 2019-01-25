@@ -1,16 +1,13 @@
 import { Component, ViewChild } from "@angular/core";
 import { Geolocation } from '@ionic-native/geolocation';
-import { Camera } from "@ionic-native/camera";
 import { NavController, NavParams } from "ionic-angular";
 import { QimgImage } from "../../models/qimg-image";
 import { PictureProvider } from "../../providers/picture/picture";
 import { Place } from "../../models/place";
 import { RestProvider } from "../../providers/rest/rest";
 import { NgForm } from "@angular/forms";
-import { PlacesPage } from "./places";
 import { Trip } from "../../models/trip";
 import { TripPage } from "../trips/trip"
-import { latLng } from "leaflet";
 
 @Component({
     selector: 'page-newPlace',
@@ -23,8 +20,6 @@ export class NewPlacePage {
     trip: Trip;
     lat: any;
     lng: any;
-    location: Coordinates;
-    coordinates: number[];
 
     restProvider: RestProvider;
 
@@ -38,7 +33,7 @@ export class NewPlacePage {
 
     picture: QimgImage;
 
-    constructor(private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private pictureService: PictureProvider, private geolocation: Geolocation) {
+    constructor(private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams, private pictureService: PictureProvider, private geolocation: Geolocation) {
         this.place = new Place();
         this.picture = new QimgImage;
     }
@@ -53,17 +48,20 @@ export class NewPlacePage {
             this.lat = position.coords.latitude;
             console.log(this.lat);
             this.lng = position.coords.longitude;
-            this.place.location = { "type": "Point", "coordinates": [this.lng, this.lat] };
+            this.place.location = { 
+                "type": "Point", 
+                "coordinates": [this.lng, this.lat] 
+            };
             alert("The position of your new Place will be saved at latitude: " + this.lat + " and longitude: " + this.lng);
         }, err => {
             alert("Position location failed. Poision will be saved at [ 6.641524, 46.778186 ]");
-            this.place.location = { "type": "Point", "coordinates": [6.641524, 46.77818] };
+            this.place.location = {
+                "type": "Point",
+                "coordinates": [6.641524, 46.77818]
+            };
             console.warn(`Could not retrieve user position because: ${err.message}`);
         })
     }
-
-
-
 
     takePicture() {
         this.pictureService.takeAndUploadPicture().subscribe(picture => {
@@ -106,5 +104,4 @@ export class NewPlacePage {
             trip: trip
         });
     }
-
 }

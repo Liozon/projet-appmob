@@ -2,10 +2,9 @@ import { Component, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Place } from "../../models/place";
 import { RestProvider } from "../../providers/rest/rest";
-import { NavController, NavParams, AlertController, App } from "ionic-angular";
+import { NavController, NavParams, AlertController } from "ionic-angular";
 import { PlacePage } from "./place";
 import { HomePage } from "../home/home";
-import { Camera } from "@ionic-native/camera";
 import { PictureProvider } from "../../providers/picture/picture";
 import { QimgImage } from "../../models/qimg-image";
 
@@ -28,7 +27,7 @@ export class EditPlacePage {
     @ViewChild(NgForm)
     form: NgForm;
 
-    constructor(private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams, private app: App, public alertCtrl: AlertController, private camera: Camera, private pictureService: PictureProvider) {
+    constructor(private rest: RestProvider, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, private pictureService: PictureProvider) {
         this.placeMod = new Place();
         this.picture = new QimgImage;
     }
@@ -40,7 +39,6 @@ export class EditPlacePage {
     }
 
     onSubmit($event) {
-
         // Prevent default HTML form behavior.
         $event.preventDefault();
 
@@ -58,7 +56,6 @@ export class EditPlacePage {
             this.editError = true;
             console.warn(`Edit Place failed: ${err.message}`);
         });
-
     }
 
     placePage(place) {
@@ -73,10 +70,6 @@ export class EditPlacePage {
         }, err => {
             console.warn('Could not take picture', err);
         });
-    }
-
-    locate() {
-        alert("todo: locate");
     }
 
     deletePlace() {

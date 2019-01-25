@@ -6,6 +6,7 @@ import { TripLocationPage } from './tripLocation';
 import { NewPlacePage } from '../places/newPlace';
 import { Subscription } from 'rxjs';
 import { AuthProvider } from '../../providers/auth/auth';
+import { UserAccountPage } from '../users/userAccount';
 
 
 @Component({
@@ -40,8 +41,10 @@ export class TripPage {
         });
     }
 
-    showUser() {
-        alert("todo: show user");
+    showUser(user) {
+        this.navCtrl.push(UserAccountPage, {
+            user: user
+        });
     }
 
     showPlaces(trip) {
