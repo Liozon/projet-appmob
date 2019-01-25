@@ -8,18 +8,23 @@
 
 
 <ion-content padding>
-<ion-title>Create an Account</ion-title>
+  <ion-title>Create an Account</ion-title>
   <form (submit)='onSubmit($event)'>
     <ion-list>
 
       <!-- Username input -->
       <ion-item>
         <ion-label floating>Username</ion-label>
-        <ion-input type='text' name='name' #nameInput='ngModel' [(ngModel)]='authRequest.name' required></ion-input>
+        <ion-input type='text' name='name' #nameInput='ngModel' minlength="2" [(ngModel)]='authRequest.name' required></ion-input>
       </ion-item>
 
       <!-- Error message displayed if the username is invalid -->
-      <ion-item *ngIf='nameInput.invalid && nameInput.dirty' no-lines>
+      <ion-item *ngIf='nameInput.errors?.minlength' no-lines>
+        <p ion-text color='danger'>Username doit être plus long connard.</p>
+      </ion-item>
+
+      <!-- Error message displayed if the username is invalid -->
+      <ion-item *ngIf='nameInput.errors?.invalid && nameInput.errors?.dirty' no-lines>
         <p ion-text color='danger'>Username is required.</p>
       </ion-item>
 
