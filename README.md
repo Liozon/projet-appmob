@@ -4,20 +4,16 @@
   - [Introduction](#introduction)
   - [App preview](#app-preview)
   - [Presentation of the app](#presentation-of-the-app)
-    - [Purpose of the app](#purpose-of-the-app)
-    - [Functionalities](#functionalities)
-    - [Technologies used](#technologies-used)
   - [Installation procedure](#installation-procedure)
     - [Requirements](#requirements)
       - [Hardware](#hardware)
       - [Software](#software)
-      - [API](#api)
     - [How to install](#how-to-install)
   - [How to use Ionic DevApp](#how-to-use-ionic-devapp)
 
 ## Introduction
 
-![Running app](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/3.%20App%20opened.jpg "Running app")
+![Smartphone app](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/0.%20Smatphone%20screen.png "Smartphone app")
 
 As part of the AppMob course from third and last year of Bachelor, we have created an API. This API is a travel journal, and we'll build an app to work with the API.
 
@@ -29,39 +25,7 @@ But if you want to preview the app without all the hassle of installing stuff an
 
 ## Presentation of the app
 
-### Purpose of the app
-
-This application aims to centralize and log all your trips and places you visit. TraveLog aims to use geolocation and images to accurately catalog your travels.
-
-In addition, you can share your travels with all TraveLog users, and discover your next trip to organize!
-
-Based on an API, this application can be used on any smartphone running iOS or Android, but also tablets and desktop devices.
-
-### Functionalities
-
-Here is a list of all functionalities of the app:
-
-- Account creation
-- Account login
-- Picture creation
-- Place creation
-- Place search
-- Trip creation
-- Trip search
-- User profile edit
-- User search
-
-### Technologies used
-
-For developping this app, we used the following technologies:
-
-- [Ionic](https://ionicframework.com/)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Ionic DevApp](https://ionicframework.com/docs/appflow/devapp/)
-- [JavaScript](https://www.javascript.com/)
-- [HTML 5](https://www.w3.org/TR/html52/)
-- [CSS](https://www.w3.org/Style/CSS/)
-- [NPM](https://www.npmjs.com/)
+To read and learn more about this app, please kindly read the [app presentation here](https://github.com/Liozon/projet-appmob/blob/master/PRESENTATION.md).
 
 ## Installation procedure
 
@@ -80,10 +44,6 @@ If you want to run and test the app locally on your device, you'll need the foll
 - [Git](https://git-scm.com/downloads), on your computer
 - [Ionic DevApp](https://ionicframework.com/docs/appflow/devapp/), install it on your smartphone (require Android 4.1 or later // iOS 9.2 or later)
 
-#### API
-
-In order to use this app, you'll need to provide an API URL and an image upload service URL.
-
 ### How to install
 
 1. First, download [a copy of this repo](https://github.com/Liozon/projet-appmob/archive/master.zip) on your computer
@@ -92,27 +52,17 @@ In order to use this app, you'll need to provide an API URL and an image upload 
 
 3. Open Git Bash, and navigate to the project folder using
 
-    ```bash
-    cd /path/to/the/folder
-    ```
+    ```cd /path/to/the/folder```
 
-4. Go to `src/app/` and duplicate the `config.sample.ts` file.
+4. Now, we need to install all the packages and dependencies for this project. To do so, run this command in Git Bash:
 
-5. Rename the new file to `config.ts` and paste your API URL and Image service URL
-
-6. Now, we need to install all the packages and dependencies for this project. To do so, run this command in Git Bash:
-
-    ```bash
-    npm install
-    ```
+    ```npm install```
 
     NPM will parse all the dependencies declared in the `package.json` and `package-lock.json` files and install them in the project's folder
 
-7. Once NPM has finished, to run the app on your computer and use the Ionic DevApp at the same time, run this command in Git Bash:
+5. Once NPM has finished, to run the app on your computer and use the Ionic DevApp at the same time, run this command in Git Bash:
 
-    ```bash
-    ionic serve -c
-    ```
+    ```ionic serve -c```
 
     This command compiles the code, and creates a webserver that'll run on your computer. A new tab on your favorite web browser will open, with the app running.
     To open the app in Ionic DevApp, go to the chapter [How to use Ionic DevApp](#how-to-use-ionic-devapp)
