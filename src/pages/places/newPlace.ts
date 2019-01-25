@@ -51,8 +51,14 @@ export class NewPlacePage {
 
         this.geolocation.getCurrentPosition().then(position => {
             this.lat = position.coords.latitude;
+            console.log(this.lat);
             this.lng = position.coords.longitude;
             this.place.location = { "type": "Point", "coordinates": [this.lng, this.lat] };
+            alert("The position of your new Place will be saved at latitude: " + this.lat + " and longitude: " + this.lng);
+        }, err => {
+            alert("Position location failed. Poision will be saved at [ 6.641524, 46.778186 ]");
+            this.place.location = { "type": "Point", "coordinates": [6.641524, 46.77818] };
+            console.warn(`Could not retrieve user position because: ${err.message}`);
         })
     }
 
@@ -87,7 +93,7 @@ export class NewPlacePage {
 
         // Perform the authentication request to the API.
         this.rest.newPlace(this.place).subscribe(tripPage => {
-            this.trip.placesCount ++;
+            this.trip.placesCount++;
             this.tripPage(this.trip);
         }, err => {
             this.placeError = true;
