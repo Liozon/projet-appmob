@@ -6,6 +6,7 @@
   - [Presentation of the app](#presentation-of-the-app)
     - [Goals of the app](#goals-of-the-app)
     - [Functionalities](#functionalities)
+    - [Rendering](#rendering)
     - [Technologies used](#technologies-used)
   - [Installation procedure](#installation-procedure)
     - [Requirements](#requirements)
@@ -49,6 +50,40 @@ Here is a list of all functionalities of the app:
 - Trip search
 - User profile edit
 - User search
+
+### Rendering
+
+Home screen:
+
+![Home screen](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/0.%20Smatphone%20screen.png "Home screen")
+
+Trips list:
+
+![Trips list](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/Pages/Trips%20list.png "Trips list")
+
+Trip modification:
+
+![Trips modification](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/Pages/Trip%20modification.png "Trips modification")
+
+Places list:
+
+![Places list](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/Pages/Places%20list.png "Places list")
+
+Place modification:
+
+![Places list](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/Pages/Place%20modification.png "Places modification")
+
+Users list:
+
+![Users list](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/Pages/Users%20list.png "Users modification")
+
+User details:
+
+![User details](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/Pages/Other%20user%20details.png "User details")
+
+Your details:
+
+![Your details](https://raw.githubusercontent.com/Liozon/projet-appmob/master/screenshots/Pages/Account%20page.png "Your details")
 
 ### Technologies used
 
