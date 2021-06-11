@@ -35,8 +35,11 @@
     "ionic-angular": "3.9.10",
     "ionicons": "5.5.1",
     "leaflet": "^1.7.1",
+    "mem": "^8.1.1",
     "rxjs": "7.1.0",
     "sw-toolbox": "3.6.0",
+    "trim-newlines": "^4.0.2",
+    "ws": "^7.4.6",
     "zone.js": "0.11.4"
   },
   "devDependencies": {
