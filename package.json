@@ -32,6 +32,7 @@
     "@ionic/storage": "3.0.6",
     "cordova-plugin-camera": "5.0.3",
     "cordova-plugin-geolocation": "4.1.0",
+    "http": "0.0.1-security",
     "ionic-angular": "3.9.10",
     "ionicons": "5.5.3",
     "leaflet": "^1.7.1",
